@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileCreateActivity">
 
 <FrameLayout android:layout_width="match_parent"
              android:layout_height="match_parent"
              xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<org.thoughtcrime.securesms.components.InputAwareLayout
+<com.example.altuncu.blocksignal.components.InputAwareLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +29,7 @@
                        android:layout_height="64dp"
                        android:transitionName="avatar"/>
 
-            <org.thoughtcrime.securesms.components.emoji.EmojiEditText
+            <com.example.altuncu.blocksignal.components.emoji.EmojiEditText
                     android:id="@+id/name"
                     android:hint="@string/profile_create_activity__your_name"
                     android:layout_width="0dp"
@@ -33,7 +39,7 @@
                     android:layout_marginLeft="10dp"
                     android:inputType="textCapWords"/>
 
-            <org.thoughtcrime.securesms.components.emoji.EmojiToggle
+            <com.example.altuncu.blocksignal.components.emoji.EmojiToggle
                     android:id="@+id/emoji_toggle"
                     android:layout_width="37dp"
                     android:layout_height="37dp"
@@ -107,7 +113,7 @@
                       android:textColor="@color/gray50"
                       android:text="@string/profile_create_activity__set_later"/>
 
-            <org.thoughtcrime.securesms.components.emoji.EmojiDrawer
+            <com.example.altuncu.blocksignal.components.emoji.EmojiDrawer
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/emoji_drawer"
                     android:layout_width="match_parent"
@@ -116,7 +122,7 @@
 
         </LinearLayout>
 
-</org.thoughtcrime.securesms.components.InputAwareLayout>
+</com.example.altuncu.blocksignal.components.InputAwareLayout>
 
     <View android:id="@+id/reveal"
           android:background="@color/textsecure_primary"
@@ -125,3 +131,4 @@
           android:visibility="invisible"/>
 
 </FrameLayout>
+</android.support.constraint.ConstraintLayout>

@@ -6,9 +6,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="org.thoughtcrime.securesms.scribbles.ScribbleActivity">
+              tools:context="com.example.altuncu.blocksignal.scribbles.ScribbleActivity">
 
-    <org.thoughtcrime.securesms.scribbles.ScribbleToolbar
+    <com.example.altuncu.blocksignal.scribbles.ScribbleToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,14 +21,14 @@
                  android:background="@color/grey_300"
                   android:gravity="center">
 
-        <org.thoughtcrime.securesms.scribbles.widget.ScribbleView
+        <com.example.altuncu.blocksignal.scribbles.widget.ScribbleView
                 android:id="@+id/scribble_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"/>
 
-        <org.thoughtcrime.securesms.scribbles.widget.VerticalSlideColorPicker
+        <com.example.altuncu.blocksignal.scribbles.widget.VerticalSlideColorPicker
                 android:id="@+id/scribble_color_picker"
                 android:layout_width="13dp"
                 android:layout_height="300dp"

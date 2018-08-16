@@ -49,9 +49,9 @@
               android:layout_below="@id/toolbar"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:name="org.thoughtcrime.securesms.ContactSelectionListFragment" />
+              android:name="com.example.altuncu.blocksignal.ContactSelectionListFragment" />
 
-    <org.thoughtcrime.securesms.components.SearchToolbar
+    <com.example.altuncu.blocksignal.components.SearchToolbar
             android:id="@+id/search_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

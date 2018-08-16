@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockstackActivity">
+
+    <org.blockstack.android.sdk.ui.BlockstackSignInButton
+        android:id="@+id/signInButton"
+        android:layout_width="307dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <TextView
+        android:id="@+id/userDataTextView"
+        android:layout_width="370dp"
+        android:layout_height="27dp"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="BlockSignal uses Blockstack platform to verify your contact's identities so that all your conversations will be secure."
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+</android.support.constraint.ConstraintLayout>

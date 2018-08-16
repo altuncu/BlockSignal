@@ -6,7 +6,7 @@
               android:layout_height="wrap_content"
               android:background="?attachment_type_selector_background">
 
-    <org.thoughtcrime.securesms.components.RecentPhotoViewRail
+    <com.example.altuncu.blocksignal.components.RecentPhotoViewRail
             android:id="@+id/recent_photos"
             android:layout_width="match_parent"
             android:layout_height="90dp"
@@ -26,7 +26,7 @@
                       android:gravity="center"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/gallery_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -49,7 +49,7 @@
                       android:layout_weight="1"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/audio_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -72,7 +72,7 @@
                       android:layout_weight="1"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/document_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -95,7 +95,7 @@
                       android:orientation="vertical"
                       android:layout_weight="1">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/contact_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -129,7 +129,7 @@
                       android:gravity="center"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/camera_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -154,7 +154,7 @@
                       android:gravity="center"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/location_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -178,7 +178,7 @@
                       android:gravity="center"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/giphy_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
@@ -201,7 +201,7 @@
                       android:gravity="center"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.CircleColorImageView
+            <com.example.altuncu.blocksignal.components.CircleColorImageView
                     android:id="@+id/close_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"

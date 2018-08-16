@@ -814,6 +814,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="profile_create_activity__finish">BİTİR</string>
   <string name="profile_create_activity__who_can_see_this_information">Bu bilgiyi kimler görebilir?</string>
   <string name="profile_create_activity__your_name">Adınız</string>
+  <string name="profile_create_activity__recommend_blockstack">Daha iyi bir güvenlik deneyimi için Blockstack kullanmanızı öneriyoruz.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__shared_media">Paylaşılan medya</string>
   <!--recipient_preferences-->

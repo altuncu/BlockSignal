@@ -12,13 +12,13 @@
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <org.thoughtcrime.securesms.components.AvatarImageView
+        <com.example.altuncu.blocksignal.components.AvatarImageView
             android:id="@+id/editable_contact_avatar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"/>
 
-        <org.thoughtcrime.securesms.components.emoji.EmojiTextView
+        <com.example.altuncu.blocksignal.components.emoji.EmojiTextView
             android:id="@+id/editable_contact_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

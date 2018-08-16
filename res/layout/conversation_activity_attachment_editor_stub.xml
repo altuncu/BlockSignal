@@ -7,20 +7,20 @@
              android:gravity="center_horizontal"
              android:visibility="gone">
 
-    <org.thoughtcrime.securesms.components.RemovableEditableMediaView
+    <com.example.altuncu.blocksignal.components.RemovableEditableMediaView
             android:id="@+id/removable_media_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-        <org.thoughtcrime.securesms.components.location.SignalMapView
+        <com.example.altuncu.blocksignal.components.location.SignalMapView
                 android:id="@+id/attachment_location"
                 android:layout_width="210dp"
                 android:layout_height="210dp"
                 android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
 
-        <org.thoughtcrime.securesms.components.ThumbnailView
+        <com.example.altuncu.blocksignal.components.ThumbnailView
                 android:id="@+id/attachment_thumbnail"
                 android:layout_width="230dp"
                 android:layout_height="150dp"
@@ -33,7 +33,7 @@
                 app:minHeight="100dp"
                 app:maxHeight="300dp" />
 
-        <org.thoughtcrime.securesms.components.AudioView
+        <com.example.altuncu.blocksignal.components.AudioView
                 android:id="@+id/attachment_audio"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 app:foregroundTintColor="@color/grey_500"
                 app:backgroundTintColor="?conversation_item_bubble_background"/>
 
-        <org.thoughtcrime.securesms.components.DocumentView
+        <com.example.altuncu.blocksignal.components.DocumentView
                 android:id="@+id/attachment_document"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
                 app:documentBackgroundTintColor="?conversation_item_bubble_background"/>
 
 
-    </org.thoughtcrime.securesms.components.RemovableEditableMediaView>
+    </com.example.altuncu.blocksignal.components.RemovableEditableMediaView>
 
 </FrameLayout>
 

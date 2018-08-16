@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.thoughtcrime.securesms.MessageRecipientListItem
+<com.example.altuncu.blocksignal.MessageRecipientListItem
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-    <org.thoughtcrime.securesms.components.AvatarImageView
+    <com.example.altuncu.blocksignal.components.AvatarImageView
             android:id="@+id/contact_photo_image"
             android:foreground="@drawable/contact_photo_background"
             android:layout_width="40dp"
@@ -36,7 +36,7 @@
                       android:layout_height="wrap_content"
                       android:orientation="vertical">
 
-            <org.thoughtcrime.securesms.components.FromTextView
+            <com.example.altuncu.blocksignal.components.FromTextView
                       android:id="@+id/from"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                 android:visibility="gone"
                 tools:visibility="gone" />
 
-        <org.thoughtcrime.securesms.components.DeliveryStatusView
+        <com.example.altuncu.blocksignal.components.DeliveryStatusView
                 android:id="@+id/delivery_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,4 +101,4 @@
 
     </LinearLayout>
 
-</org.thoughtcrime.securesms.MessageRecipientListItem>
+</com.example.altuncu.blocksignal.MessageRecipientListItem>
