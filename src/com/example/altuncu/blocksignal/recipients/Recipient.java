@@ -47,6 +47,7 @@ import com.example.altuncu.blocksignal.recipients.RecipientProvider.RecipientDet
 import com.example.altuncu.blocksignal.util.FutureTaskListener;
 import com.example.altuncu.blocksignal.util.ListenableFutureTask;
 import com.example.altuncu.blocksignal.util.Util;
+import com.example.altuncu.blocksignal.BlockstackActivity;
 import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.Collections;
@@ -90,7 +91,6 @@ public class Recipient implements RecipientModifiedListener {
   private @Nullable String         profileName;
   private @Nullable String         profileAvatar;
   private           boolean        profileSharing;
-
 
   @SuppressWarnings("ConstantConditions")
   public static @NonNull Recipient from(@NonNull Context context, @NonNull Address address, boolean asynchronous) {

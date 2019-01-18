@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 
 import com.example.altuncu.blocksignal.R;
+import com.example.altuncu.blocksignal.components.AlertView;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.IdentityDatabase;
 import com.example.altuncu.blocksignal.database.IdentityDatabase.IdentityRecord;
@@ -25,7 +26,7 @@ public class UnverifiedSendDialog extends AlertDialog.Builder implements DialogI
                               @NonNull List<IdentityRecord> untrustedRecords,
                               @NonNull ResendListener resendListener)
   {
-    super(context);
+    super(new android.view.ContextThemeWrapper(context,R.style.AlertDialogCustom));
     this.untrustedRecords = untrustedRecords;
     this.resendListener   = resendListener;
 

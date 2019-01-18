@@ -697,10 +697,10 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     DirectoryRefreshListener.schedule(RegistrationActivity.this);
     RotateSignedPreKeyListener.schedule(RegistrationActivity.this);
 
-    Intent nextIntent = new Intent(RegistrationActivity.this, BlockstackActivity.class);
+    Intent nextIntent = getIntent().getParcelableExtra("next_intent");
 
     if (nextIntent == null) {
-      nextIntent = new Intent(RegistrationActivity.this, BlockstackActivity.class);
+      nextIntent = new Intent(this, ConversationListActivity.class);
     }
 
     startActivity(nextIntent);

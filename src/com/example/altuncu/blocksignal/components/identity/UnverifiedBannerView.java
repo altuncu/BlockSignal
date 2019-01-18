@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
+import org.whispersystems.libsignal.logging.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.altuncu.blocksignal.R;
-import com.example.altuncu.blocksignal.database.IdentityDatabase;
 import com.example.altuncu.blocksignal.database.IdentityDatabase.IdentityRecord;
 import com.example.altuncu.blocksignal.util.ViewUtil;
 
@@ -27,7 +26,6 @@ public class UnverifiedBannerView extends LinearLayout {
 
   private View      container;
   private TextView  text;
-  private ImageView closeButton;
 
   public UnverifiedBannerView(Context context) {
     super(context);
@@ -55,44 +53,17 @@ public class UnverifiedBannerView extends LinearLayout {
     LayoutInflater.from(getContext()).inflate(R.layout.unverified_banner_view, this, true);
     this.container   = ViewUtil.findById(this, R.id.container);
     this.text        = ViewUtil.findById(this, R.id.unverified_text);
-    this.closeButton = ViewUtil.findById(this, R.id.cancel);
   }
 
   public void display(@NonNull final String text,
-                      @NonNull final List<IdentityRecord> unverifiedIdentities,
-                      @NonNull final ClickListener clickListener,
-                      @NonNull final DismissListener dismissListener)
+                      @NonNull final List<IdentityRecord> unverifiedIdentities)
   {
     this.text.setText(text);
     setVisibility(View.VISIBLE);
-
-    this.container.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Log.w(TAG, "onClick()");
-        clickListener.onClicked(unverifiedIdentities);
-      }
-    });
-
-    this.closeButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        hide();
-        dismissListener.onDismissed(unverifiedIdentities);
-      }
-    });
   }
 
   public void hide() {
     setVisibility(View.GONE);
-  }
-
-  public interface DismissListener {
-    public void onDismissed(List<IdentityRecord> unverifiedIdentities);
-  }
-
-  public interface ClickListener {
-    public void onClicked(List<IdentityRecord> unverifiedIdentities);
   }
 
 }

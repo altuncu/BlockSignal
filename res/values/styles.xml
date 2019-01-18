@@ -244,4 +244,10 @@
         <item name="colorControlActivated">@color/white</item>
     </style>
 
+    <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
+        <item name="android:textColor">@color/core_white</item>
+        <item name="android:background">@color/core_red</item>
+        <item name="android:alertDialogIcon">@color/core_white</item>
+    </style>
+
 </resources>

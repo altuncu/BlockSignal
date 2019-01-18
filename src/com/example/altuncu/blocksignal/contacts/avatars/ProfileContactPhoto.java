@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.profiles.AvatarHelper;
+import com.example.altuncu.blocksignal.providers.PhotoProvider;
 import com.example.altuncu.blocksignal.util.Conversions;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class ProfileContactPhoto implements ContactPhoto {
 
   @Override
   public @Nullable Uri getUri(@NonNull Context context) {
-    return Uri.fromFile(AvatarHelper.getAvatarFile(context, address));
+    return PhotoProvider.getPhotoUri(AvatarHelper.getAvatarFile(context, address));
   }
 
   @Override

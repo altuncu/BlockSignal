@@ -1,23 +1,25 @@
 package com.example.altuncu.blocksignal
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-
 import android.content.Intent
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.Toast
-import android.util.Log
 import kotlinx.android.synthetic.main.blockstack_activity.*
-import org.blockstack.android.sdk.BlockstackSession
-import org.blockstack.android.sdk.BlockstackConfig
-import org.blockstack.android.sdk.Scope
-import org.blockstack.android.sdk.UserData
-import java.net.URI
-// TODO => Add next intent to ConversationListActivity & Update XML & Handle Blockstack sign-in
+import org.blockstack.android.sdk.*
+
+
 class BlockstackActivity : AppCompatActivity() {
+    private val TAG = BlockstackActivity::class.java.simpleName
 
     private var _blockstackSession: BlockstackSession? = null
-    private val TAG = BlockstackActivity::class.java.simpleName
+    companion object {
+        @JvmStatic
+        var _username: String? = null
+        @JvmStatic
+        var _avatar: String? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,43 +27,43 @@ class BlockstackActivity : AppCompatActivity() {
 
         signInButton.isEnabled = false
 
-        val config = java.net.URI("https://flamboyant-darwin-d11c17.netlify.com").run {
-            org.blockstack.android.sdk.BlockstackConfig(
-                    this,
-                    java.net.URI("${this}/redirect"),
-                    java.net.URI("${this}/manifest.json"),
-                    kotlin.arrayOf(org.blockstack.android.sdk.Scope.StoreWrite))
-        }
+        val config = "https://flamboyant-darwin-d11c17.netlify.com"
+                .toBlockstackConfig(kotlin.arrayOf(Scope.StoreWrite))
 
-        _blockstackSession = BlockstackSession(this, config,
-                onLoadedCallback = {
-                    // Wait until this callback fires before using any of the
-                    // BlockstackSession API methods
-
-                    signInButton.isEnabled = true
-                })
+        _blockstackSession = BlockstackSession(this@BlockstackActivity, config)
+        signInButton.isEnabled = true
 
         signInButton.setOnClickListener { _: View ->
-            blockstackSession().redirectUserToSignIn { userDataResult ->
-                if (userDataResult.hasValue) {
-                    Log.d(TAG, "signed in!")
-                    runOnUiThread {
-                        onSignIn(userDataResult.value!!)
-                    }
-                } else {
-                    Toast.makeText(this, "error: " + userDataResult.error, Toast.LENGTH_SHORT).show()
+            blockstackSession().redirectUserToSignIn { errorResult ->
+                if (errorResult.hasErrors) {
+                    Toast.makeText(this, "error: " + errorResult.error, Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-
-        if (intent?.action == Intent.ACTION_VIEW) {
-            handleAuthResponse(intent)
         }
     }
 
     private fun onSignIn(userData: UserData) {
-        userDataTextView.text = "Signed in as ${userData.decentralizedID}"
-        signInButton.isEnabled = false
+        var nextIntent: Intent? = intent.getParcelableExtra("next_intent")
+
+        _username = userData.json.getString("username")
+        _avatar = userData.profile?.avatarImage
+
+        _blockstackSession?.putFile("blockstack/app.key", userData.decentralizedID, PutFileOptions(true),
+                { readURLResult ->
+                    if (readURLResult.hasValue) {
+                        val readURL = readURLResult.value!!
+                        Log.d(TAG, "File stored at: ${readURL}")
+                    } else {
+                        Toast.makeText(this, "error: " + readURLResult.error, Toast.LENGTH_SHORT).show()
+                    }
+                })
+
+        if (nextIntent == null) {
+            nextIntent = Intent(this@BlockstackActivity, ConversationListActivity::class.java)
+        }
+
+        startActivity(nextIntent)
+        finish()
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -69,23 +71,21 @@ class BlockstackActivity : AppCompatActivity() {
         Log.d(TAG, "onNewIntent")
 
         if (intent?.action == Intent.ACTION_MAIN) {
-            blockstackSession().loadUserData { userData ->
-                if (userData != null) {
-                    runOnUiThread {
-                        onSignIn(userData)
-                    }
-                } else {
-                    Toast.makeText(this, "no user data", Toast.LENGTH_SHORT).show()
+            val userData = blockstackSession().loadUserData()
+            if (userData != null) {
+                runOnUiThread {
+                    onSignIn(userData)
                 }
+            } else {
+                Toast.makeText(this, "no user data", Toast.LENGTH_SHORT).show()
             }
         } else if (intent?.action == Intent.ACTION_VIEW) {
             handleAuthResponse(intent)
         }
-       // startActivity(Intent(this, ConversationListActivity::class.java))
     }
 
-    private fun handleAuthResponse(intent: Intent) {
-        val response = intent.dataString
+    private fun handleAuthResponse(intent: Intent?) {
+        val response = intent?.dataString
         Log.d(TAG, "response ${response}")
         if (response != null) {
             val authResponseTokens = response.split(':')
@@ -93,7 +93,8 @@ class BlockstackActivity : AppCompatActivity() {
             if (authResponseTokens.size > 1) {
                 val authResponse = authResponseTokens[1]
                 Log.d(TAG, "authResponse: ${authResponse}")
-                blockstackSession().handlePendingSignIn(authResponse, { userDataResult ->
+                blockstackSession().handlePendingSignIn(authResponse) { userDataResult: Result<UserData> ->
+
                     if (userDataResult.hasValue) {
                         val userData = userDataResult.value!!
                         Log.d(TAG, "signed in!")
@@ -103,7 +104,7 @@ class BlockstackActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(this, "error: " + userDataResult.error, Toast.LENGTH_SHORT).show()
                     }
-                })
+                }
             }
         }
     }
@@ -116,6 +117,4 @@ class BlockstackActivity : AppCompatActivity() {
             throw IllegalStateException("No session.")
         }
     }
-
-
 }

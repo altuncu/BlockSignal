@@ -31,11 +31,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.dd.CircularProgressButton;
+import com.example.altuncu.blocksignal.providers.PhotoProvider;
 import com.soundcloud.android.crop.Crop;
 
 import com.example.altuncu.blocksignal.components.InputAwareLayout;
-import com.example.altuncu.blocksignal.components.emoji.EmojiDrawer;
-import com.example.altuncu.blocksignal.components.emoji.EmojiToggle;
+//import com.example.altuncu.blocksignal.components.emoji.EmojiDrawer;
+//import com.example.altuncu.blocksignal.components.emoji.EmojiToggle;
 import com.example.altuncu.blocksignal.contacts.avatars.ResourceContactPhoto;
 import com.example.altuncu.blocksignal.crypto.ProfileKeyUtil;
 import com.example.altuncu.blocksignal.database.Address;
@@ -56,6 +57,7 @@ import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import com.example.altuncu.blocksignal.util.Util;
 import com.example.altuncu.blocksignal.util.ViewUtil;
 import com.example.altuncu.blocksignal.util.concurrent.ListenableFuture;
+import com.example.altuncu.blocksignal.BlockstackActivity;
 import org.whispersystems.signalservice.api.SignalServiceAccountManager;
 import org.whispersystems.signalservice.api.crypto.ProfileCipher;
 import org.whispersystems.signalservice.api.util.StreamDetails;
@@ -91,8 +93,8 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
   private ImageView              avatar;
   private CircularProgressButton finishButton;
   private EditText               name;
-  private EmojiToggle            emojiToggle;
-  private EmojiDrawer            emojiDrawer;
+ // private EmojiToggle            emojiToggle;
+ // private EmojiDrawer            emojiDrawer;
   private View                   reveal;
 
   private Intent nextIntent;
@@ -112,7 +114,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
     getSupportActionBar().setTitle(com.example.altuncu.blocksignal.R.string.CreateProfileActivity_your_profile_info);
 
     initializeResources();
-    initializeEmojiInput();
+ //   initializeEmojiInput();
     initializeProfileName(getIntent().getBooleanExtra(EXCLUDE_SYSTEM, false));
     initializeProfileAvatar(getIntent().getBooleanExtra(EXCLUDE_SYSTEM, false));
 
@@ -136,9 +138,9 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
   public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
 
-    if (container.getCurrentInput() == emojiDrawer) {
+ /*   if (container.getCurrentInput() == emojiDrawer) {
       container.hideAttachedInput(true);
-    }
+    }*/
   }
 
   @Override
@@ -153,11 +155,11 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
     switch (requestCode) {
       case REQUEST_CODE_AVATAR:
         if (resultCode == Activity.RESULT_OK) {
-          Uri outputFile = Uri.fromFile(new File(getCacheDir(), "cropped"));
+          Uri outputFile = PhotoProvider.getPhotoUri(new File(getCacheDir(), "cropped"));
           Uri inputFile  = (data != null ? data.getData() : null);
 
           if (inputFile == null && captureFile != null) {
-            inputFile = Uri.fromFile(captureFile);
+            inputFile = PhotoProvider.getPhotoUri(captureFile);
           }
 
           if (data != null && data.getBooleanExtra("delete", false)) {
@@ -204,21 +206,27 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
   }
 
   private void initializeResources() {
-    TextView skipButton       = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.skip_button);
-    TextView informationLabel = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.information_label);
+   // TextView skipButton       = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.skip_button);
+   // TextView informationLabel = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.information_label);
 
     this.avatar       = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.avatar);
     this.name         = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.name);
-    this.emojiToggle  = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.emoji_toggle);
-    this.emojiDrawer  = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.emoji_drawer);
+ //   this.emojiToggle  = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.emoji_toggle);
+ //   this.emojiDrawer  = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.emoji_drawer);
     this.container    = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.container);
     this.finishButton = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.finish_button);
     this.reveal       = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.reveal);
     this.nextIntent   = getIntent().getParcelableExtra(NEXT_INTENT);
 
-    this.avatar.setImageDrawable(new ResourceContactPhoto(com.example.altuncu.blocksignal.R.drawable.ic_camera_alt_white_24dp).asDrawable(this, getResources().getColor(com.example.altuncu.blocksignal.R.color.grey_400)));
+    GlideApp.with(CreateProfileActivity.this)
+            .load(BlockstackActivity.get_avatar())
+            .into(avatar);
 
-    this.avatar.setOnClickListener(view -> Permissions.with(this)
+    name.setText(BlockstackActivity.get_username());
+    name.setEnabled(false);
+    name.setFocusable(false);
+
+   /* this.avatar.setOnClickListener(view -> Permissions.with(this)
                                                       .request(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                                                       .ifNecessary()
                                                       .onAnyResult(this::handleAvatarSelectionWithPermissions)
@@ -240,26 +248,26 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
         }
       }
     });
-
+*/
     this.finishButton.setOnClickListener(view -> {
       this.finishButton.setIndeterminateProgressMode(true);
       this.finishButton.setProgress(50);
       handleUpload();
     });
-
+/*
     skipButton.setOnClickListener(view -> {
       if (nextIntent != null) startActivity(nextIntent);
       finish();
     });
-
-    informationLabel.setOnClickListener(view -> {
+*/
+  /*  informationLabel.setOnClickListener(view -> {
       Intent intent = new Intent(Intent.ACTION_VIEW);
       intent.setData(Uri.parse("https://support.signal.org/hc/en-us/articles/115001434171"));
 
       if (getPackageManager().queryIntentActivities(intent, 0).size() > 0) {
         startActivity(intent);
       }
-    });
+    });*/
   }
 
   private void initializeProfileName(boolean excludeSystem) {
@@ -332,7 +340,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
       });
     }
   }
-
+/*
   private void initializeEmojiInput() {
     this.emojiToggle.attach(emojiDrawer);
 
@@ -362,9 +370,9 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
 
     this.container.addOnKeyboardShownListener(() -> emojiToggle.setToEmoji());
     this.name.setOnClickListener(v -> container.showSoftkey(name));
-  }
+  }*/
 
-  private Intent createAvatarSelectionIntent(@Nullable File captureFile, boolean includeClear, boolean includeCamera) {
+ /* private Intent createAvatarSelectionIntent(@Nullable File captureFile, boolean includeClear, boolean includeCamera) {
     List<Intent> extraIntents  = new LinkedList<>();
     Intent       galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
     galleryIntent.setType("image/*");
@@ -396,8 +404,8 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
 
     return chooserIntent;
   }
-
-  private void handleAvatarSelectionWithPermissions() {
+*/
+/*  private void handleAvatarSelectionWithPermissions() {
     boolean hasCameraPermission = Permissions.hasAll(this, Manifest.permission.CAMERA);
 
     if (hasCameraPermission) {
@@ -412,7 +420,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
     Intent chooserIntent = createAvatarSelectionIntent(captureFile, avatarBytes != null, hasCameraPermission);
     startActivityForResult(chooserIntent, REQUEST_CODE_AVATAR);
   }
-
+*/
   private void handleUpload() {
     final String        name;
     final StreamDetails avatar;

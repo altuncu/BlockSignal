@@ -100,7 +100,8 @@
         tools:replace="android:allowBackup"
         android:allowBackup="false"
         android:theme="@style/TextSecure.LightTheme"
-        android:largeHeap="true">
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -287,10 +288,6 @@
             android:label="@string/AndroidManifest__change_passphrase"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-        <activity android:name=".VerifyIdentityActivity"
-            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
-        </activity>
-
         <activity android:name=".ApplicationPreferencesActivity"
             android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -419,14 +416,13 @@
         <activity android:name=".BlockstackActivity"
             android:theme="@style/TextSecure.LightTheme"
             android:windowSoftInputMode="stateVisible"
-            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-            android:parentActivityName=".CountrySelectionActivity">
-
+            android:configChanges="touchscreen|orientation|screenLayout|screenSize"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="blocksignal" />
+                <data android:scheme="myblockstackapp" />
             </intent-filter>
         </activity>
 
@@ -475,6 +471,7 @@
         <receiver android:name=".gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
                 <category android:name="com.example.altuncu.blocksignal" />
             </intent-filter>
         </receiver>
@@ -542,6 +539,12 @@
             </intent-filter>
         </receiver>
 
+
+        <provider
+            android:name=".providers.PhotoProvider"
+            android:authorities="com.example.altuncu.blocksignal.photoprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
 
         <provider android:name=".providers.PartProvider"
             android:grantUriPermissions="true"

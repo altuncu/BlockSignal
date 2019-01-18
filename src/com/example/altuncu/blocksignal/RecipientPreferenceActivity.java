@@ -38,6 +38,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 import com.example.altuncu.blocksignal.color.MaterialColor;
 import com.example.altuncu.blocksignal.color.MaterialColors;
 import com.example.altuncu.blocksignal.components.ThreadPhotoRailView;
@@ -591,11 +592,8 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
 
       @Override
       public boolean onPreferenceClick(Preference preference) {
-        Intent verifyIdentityIntent = new Intent(getActivity(), VerifyIdentityActivity.class);
-        verifyIdentityIntent.putExtra(VerifyIdentityActivity.ADDRESS_EXTRA, recipient.getAddress());
-        verifyIdentityIntent.putExtra(VerifyIdentityActivity.IDENTITY_EXTRA, new IdentityKeyParcelable(identityKey.getIdentityKey()));
-        verifyIdentityIntent.putExtra(VerifyIdentityActivity.VERIFIED_EXTRA, identityKey.getVerifiedStatus() == IdentityDatabase.VerifiedStatus.VERIFIED);
-        startActivity(verifyIdentityIntent);
+        //VerifyIdentity blockstack = new VerifyIdentity();
+        //boolean isVerified = blockstack.verifyKeys(recipient, RecipientPreferenceActivity.this);;
 
         return true;
       }

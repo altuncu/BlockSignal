@@ -206,7 +206,8 @@ public class RecipientDatabase extends Database {
                                              RegisteredState.fromId(registeredState),
                                              profileKey, systemDisplayName, systemContactPhoto,
                                              systemPhoneLabel, systemContactUri,
-                                             signalProfileName, signalProfileAvatar, profileSharing));
+                                             signalProfileName, signalProfileAvatar, profileSharing
+    ));
   }
 
   public BulkOperationsHandle resetAllSystemContactInfo() {

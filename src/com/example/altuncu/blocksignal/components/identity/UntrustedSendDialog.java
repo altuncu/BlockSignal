@@ -26,7 +26,7 @@ public class UntrustedSendDialog extends AlertDialog.Builder implements DialogIn
                              @NonNull List<IdentityRecord> untrustedRecords,
                              @NonNull ResendListener resendListener)
   {
-    super(context);
+    super(new android.view.ContextThemeWrapper(context,R.style.AlertDialogCustom));
     this.untrustedRecords = untrustedRecords;
     this.resendListener   = resendListener;
 

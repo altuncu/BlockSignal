@@ -27,12 +27,5 @@
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="70dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="BlockSignal uses Blockstack platform to verify your contact's identities so that all your conversations will be secure."
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="32dp" />
 
 </android.support.constraint.ConstraintLayout>

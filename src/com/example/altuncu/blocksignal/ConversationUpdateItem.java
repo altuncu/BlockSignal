@@ -14,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 import com.example.altuncu.blocksignal.crypto.IdentityKeyParcelable;
+import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.IdentityDatabase;
 import com.example.altuncu.blocksignal.database.IdentityDatabase.IdentityRecord;
 import com.example.altuncu.blocksignal.database.model.MessageRecord;
@@ -133,17 +135,59 @@ public class ConversationUpdateItem extends LinearLayout
   }
 
   private void setIdentityRecord(final MessageRecord messageRecord) {
-    icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_security_white_24dp);
-    icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#757575"), PorterDuff.Mode.MULTIPLY));
+    IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(getContext());
+
+    VerifyIdentity blockstack = new VerifyIdentity();
+    boolean isVerified;
+
+    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient(), getContext());
+    if (isVerified) {
+      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
+                                   identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
+                                   IdentityDatabase.VerifiedStatus.VERIFIED);
+    }
+    else
+      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
+              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
+              IdentityDatabase.VerifiedStatus.UNVERIFIED);
+    if (messageRecord.isIdentityVerified()) {
+      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_check_white_24dp);
+      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#00ff00"), PorterDuff.Mode.MULTIPLY));
+    }
+    else {
+      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_info_outline_white_24dp);
+      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.MULTIPLY));
+    }
+
     body.setText(messageRecord.getDisplayBody());
     date.setVisibility(View.GONE);
   }
 
   private void setIdentityVerifyUpdate(final MessageRecord messageRecord) {
-    if (messageRecord.isIdentityVerified()) icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_check_white_24dp);
-    else                                    icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_info_outline_white_24dp);
+    IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(getContext());
 
-    icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#757575"), PorterDuff.Mode.MULTIPLY));
+    VerifyIdentity blockstack = new VerifyIdentity();
+    boolean isVerified;
+
+    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient(), getContext());
+    if (isVerified) {
+      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
+              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
+              IdentityDatabase.VerifiedStatus.VERIFIED);
+    }
+    else
+      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
+              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
+              IdentityDatabase.VerifiedStatus.UNVERIFIED);
+    if (messageRecord.isIdentityVerified()) {
+      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_check_white_24dp);
+      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#00ff00"), PorterDuff.Mode.MULTIPLY));
+    }
+    else {
+      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_info_outline_white_24dp);
+      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.MULTIPLY));
+    }
+
     body.setText(messageRecord.getDisplayBody());
     date.setVisibility(View.GONE);
   }
@@ -214,12 +258,7 @@ public class ConversationUpdateItem extends LinearLayout
         @Override
         public void onSuccess(Optional<IdentityRecord> result) {
           if (result.isPresent()) {
-            Intent intent = new Intent(getContext(), VerifyIdentityActivity.class);
-            intent.putExtra(VerifyIdentityActivity.ADDRESS_EXTRA, sender.getAddress());
-            intent.putExtra(VerifyIdentityActivity.IDENTITY_EXTRA, new IdentityKeyParcelable(result.get().getIdentityKey()));
-            intent.putExtra(VerifyIdentityActivity.VERIFIED_EXTRA, result.get().getVerifiedStatus() == IdentityDatabase.VerifiedStatus.VERIFIED);
-
-            getContext().startActivity(intent);
+            // Probably Redundant
           }
         }
 

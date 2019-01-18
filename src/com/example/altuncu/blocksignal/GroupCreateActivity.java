@@ -40,6 +40,7 @@ import android.widget.Toast;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.altuncu.blocksignal.providers.PhotoProvider;
 import com.soundcloud.android.crop.Crop;
 
 import com.example.altuncu.blocksignal.components.PushRecipientsPanel;
@@ -274,7 +275,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity
   @Override
   public void onActivityResult(int reqCode, int resultCode, final Intent data) {
     super.onActivityResult(reqCode, resultCode, data);
-    Uri outputFile = Uri.fromFile(new File(getCacheDir(), "cropped"));
+    Uri outputFile = PhotoProvider.getPhotoUri(new File(getCacheDir(), "cropped"));
 
     if (data == null || resultCode != Activity.RESULT_OK)
       return;

@@ -207,6 +207,15 @@ public class IdentityUtil {
                                             R.string.IdentityUtil_unverified_banner_many);
   }
 
+  public static @Nullable String getVerifiedBannerDescription(@NonNull Context context,
+                                                              @NonNull List<Recipient> verified)
+  {
+    return getPluralizedIdentityDescription(context, verified,
+            R.string.IdentityUtil_verified_banner_one,
+            R.string.IdentityUtil_verified_banner_two,
+            R.string.IdentityUtil_verified_banner_many);
+  }
+
   public static @Nullable String getUnverifiedSendDialogDescription(@NonNull Context context,
                                                                     @NonNull List<Recipient> unverified)
   {
@@ -224,7 +233,25 @@ public class IdentityUtil {
                                             R.string.IdentityUtil_untrusted_dialog_two,
                                             R.string.IdentityUtil_untrusted_dialog_many);
   }
+/*
+  public static @Nullable String getVerifiedSendDialogDescription(@NonNull Context context,
+                                                                  @NonNull List<Recipient> verified)
+  {
+    return getPluralizedIdentityDescription(context, verified,
+            R.string.IdentityUtil_verified_dialog_one,
+            R.string.IdentityUtil_verified_dialog_two,
+            R.string.IdentityUtil_verified_dialog_many);
+  }
 
+  public static @Nullable String getTrustedSendDialogDescription(@NonNull Context context,
+                                                                 @NonNull List<Recipient> trusted)
+  {
+    return getPluralizedIdentityDescription(context, trusted,
+            R.string.IdentityUtil_trusted_dialog_one,
+            R.string.IdentityUtil_trusted_dialog_two,
+            R.string.IdentityUtil_trusted_dialog_many);
+  }
+*/
   private static @Nullable String getPluralizedIdentityDescription(@NonNull Context context,
                                                                    @NonNull List<Recipient> recipients,
                                                                    @StringRes int resourceOne,

@@ -32,11 +32,11 @@ public abstract class SendJob extends MasterSecretJob {
 
   @Override
   public final void onRun(MasterSecret masterSecret) throws Exception {
-    if (Util.getDaysTillBuildExpiry() <= 0) {
+    /*if (Util.getDaysTillBuildExpiry() <= 0) {
       throw new TextSecureExpiredException(String.format("TextSecure expired (build %d, now %d)",
                                                          BuildConfig.BUILD_TIMESTAMP,
                                                          System.currentTimeMillis()));
-    }
+    }*/
 
     onSend(masterSecret);
   }

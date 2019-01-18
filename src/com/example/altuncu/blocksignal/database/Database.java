@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.database.helpers.SQLCipherOpenHelper;
+import com.example.altuncu.blocksignal.providers.PhotoProvider;
 
 import java.util.Set;
 
@@ -47,29 +48,29 @@ public abstract class Database {
   }
 
   protected void notifyConversationListeners(long threadId) {
-    context.getContentResolver().notifyChange(Uri.parse(CONVERSATION_URI + threadId), null);
+    context.getContentResolver().notifyChange(PhotoProvider.parseGetPhotoUri(CONVERSATION_URI + threadId), null);
   }
 
   protected void notifyConversationListListeners() {
-    context.getContentResolver().notifyChange(Uri.parse(CONVERSATION_LIST_URI), null);
+    context.getContentResolver().notifyChange(PhotoProvider.parseGetPhotoUri(CONVERSATION_LIST_URI), null);
   }
 
   protected void setNotifyConverationListeners(Cursor cursor, long threadId) {
-    cursor.setNotificationUri(context.getContentResolver(), Uri.parse(CONVERSATION_URI + threadId));
+    cursor.setNotificationUri(context.getContentResolver(), PhotoProvider.parseGetPhotoUri(CONVERSATION_URI + threadId));
   }
 
   protected void setNotifyConverationListListeners(Cursor cursor) {
-    cursor.setNotificationUri(context.getContentResolver(), Uri.parse(CONVERSATION_LIST_URI));
+    cursor.setNotificationUri(context.getContentResolver(), PhotoProvider.parseGetPhotoUri(CONVERSATION_LIST_URI));
   }
 
   protected void registerAttachmentListeners(@NonNull ContentObserver observer) {
-    context.getContentResolver().registerContentObserver(Uri.parse(ATTACHMENT_URI),
+    context.getContentResolver().registerContentObserver(PhotoProvider.parseGetPhotoUri(ATTACHMENT_URI),
                                                          true,
                                                          observer);
   }
 
   protected void notifyAttachmentListeners() {
-    context.getContentResolver().notifyChange(Uri.parse(ATTACHMENT_URI), null);
+    context.getContentResolver().notifyChange(PhotoProvider.parseGetPhotoUri(ATTACHMENT_URI), null);
   }
 
   public void reset(SQLCipherOpenHelper databaseHelper) {

@@ -90,6 +90,7 @@ import com.example.altuncu.blocksignal.components.emoji.EmojiStrings;
 import com.example.altuncu.blocksignal.components.identity.UntrustedSendDialog;
 import com.example.altuncu.blocksignal.components.identity.UnverifiedBannerView;
 import com.example.altuncu.blocksignal.components.identity.UnverifiedSendDialog;
+import com.example.altuncu.blocksignal.components.identity.VerifiedBannerView;
 import com.example.altuncu.blocksignal.components.location.SignalPlace;
 import com.example.altuncu.blocksignal.components.reminder.ExpiredBuildReminder;
 import com.example.altuncu.blocksignal.components.reminder.InviteReminder;
@@ -184,6 +185,8 @@ import static com.example.altuncu.blocksignal.database.GroupDatabase.GroupRecord
 import static org.whispersystems.libsignal.SessionCipher.SESSION_LOCK;
 import static org.whispersystems.signalservice.internal.push.SignalServiceProtos.GroupContext;
 
+import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
+
 /**
  * Activity for displaying a message thread, as well as
  * composing/sending a new message into that thread.
@@ -239,6 +242,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   View                        composePanel;
   protected Stub<ReminderView>          reminderView;
   private   Stub<UnverifiedBannerView>  unverifiedBannerView;
+  private   Stub<VerifiedBannerView>    verifiedBannerView;
   private   Stub<GroupShareProfileView> groupShareProfileView;
 
   private   AttachmentTypeSelector attachmentTypeSelector;
@@ -1184,23 +1188,54 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         if (identityRecordList.isUnverified()) {
           message = IdentityUtil.getUnverifiedBannerDescription(ConversationActivity.this, identityRecordList.getUnverifiedRecipients(ConversationActivity.this));
         }
+        else {
+          message = IdentityUtil.getVerifiedBannerDescription(ConversationActivity.this, identityRecordList.getUnverifiedRecipients(ConversationActivity.this));
+        }
 
         return new Pair<>(identityRecordList, message);
       }
 
       @Override
       protected void onPostExecute(@NonNull Pair<IdentityRecordList, String> result) {
+        IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(ConversationActivity.this);
+
         Log.w(TAG, "Got identity records: " + result.first.isUnverified());
         identityRecords.replaceWith(result.first);
 
+        VerifyIdentity blockstack = new VerifyIdentity();
+        boolean isVerified;
+
         if (result.second != null) {
-          Log.w(TAG, "Replacing banner...");
-          unverifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords(),
-                                             new UnverifiedClickedListener(),
-                                             new UnverifiedDismissedListener());
-        } else if (unverifiedBannerView.resolved()) {
-          Log.w(TAG, "Clearing banner...");
-          unverifiedBannerView.get().hide();
+          Log.w(TAG, "Verifying: " + result.first.getUnverifiedRecords().size());
+          if (result.first.getUnverifiedRecords().size() == 1) {
+            isVerified = blockstack.verifyKeys(recipient, ConversationActivity.this);
+            if (isVerified) {
+                Log.d(TAG, "Replacing banner...");
+                verifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords());
+                for (IdentityRecord identityRecord : result.first.getUnverifiedRecords()) {
+                        identityDatabase.setVerified(identityRecord.getAddress(),
+                        identityRecord.getIdentityKey(),
+                        VerifiedStatus.DEFAULT);
+                }
+            }
+            else {
+                unverifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords());
+            }
+          } else {
+            String[] unverifiedNames = new String[result.first.getUnverifiedRecords().size()];
+
+            for (int i=0;i<result.first.getUnverifiedRecords().size();i++) {
+              unverifiedNames[i] = Recipient.from(ConversationActivity.this, result.first.getUnverifiedRecords().get(i).getAddress(), false).toShortString();
+            }
+
+           /* AlertDialog.Builder builder = new AlertDialog.Builder(ConversationActivity.this);
+            builder.setIconAttribute(com.example.altuncu.blocksignal.R.attr.dialog_alert_icon);
+            builder.setTitle("No longer verified");
+            builder.setItems(unverifiedNames, (dialog, which) -> {
+              //  Implement verifyKeys()
+            });
+            builder.show();*/
+          }
         }
 
         titleView.setVerified(isSecureText && identityRecords.isVerified());
@@ -1230,7 +1265,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composePanel          = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.bottom_panel);
     container             = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.layout_container);
     reminderView          = ViewUtil.findStubById(this, com.example.altuncu.blocksignal.R.id.reminder_stub);
-    unverifiedBannerView  = ViewUtil.findStubById(this, com.example.altuncu.blocksignal.R.id.unverified_banner_stub);
+ //   unverifiedBannerView  = ViewUtil.findStubById(this, com.example.altuncu.blocksignal.R.id.unverified_banner_stub);
     groupShareProfileView = ViewUtil.findStubById(this, com.example.altuncu.blocksignal.R.id.group_share_profile_view_stub);
     quickAttachmentDrawer = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.quick_attachment_drawer);
     quickAttachmentToggle = ViewUtil.findById(this, com.example.altuncu.blocksignal.R.id.quick_attachment_toggle);
@@ -2124,67 +2159,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public void onAttachmentChanged() {
     handleSecurityChange(isSecureText, isDefaultSms);
     updateToggleButtonState();
-  }
-
-  private class UnverifiedDismissedListener implements UnverifiedBannerView.DismissListener {
-    @Override
-    public void onDismissed(final List<IdentityRecord> unverifiedIdentities) {
-      final IdentityDatabase identityDatabase = DatabaseFactory.getIdentityDatabase(ConversationActivity.this);
-
-      new AsyncTask<Void, Void, Void>() {
-        @Override
-        protected Void doInBackground(Void... params) {
-          synchronized (SESSION_LOCK) {
-            for (IdentityRecord identityRecord : unverifiedIdentities) {
-              identityDatabase.setVerified(identityRecord.getAddress(),
-                                           identityRecord.getIdentityKey(),
-                                           VerifiedStatus.DEFAULT);
-            }
-          }
-
-          return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-          initializeIdentityRecords();
-        }
-      }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-    }
-  }
-
-  private class UnverifiedClickedListener implements UnverifiedBannerView.ClickListener {
-    @Override
-    public void onClicked(final List<IdentityRecord> unverifiedIdentities) {
-      Log.w(TAG, "onClicked: " + unverifiedIdentities.size());
-      if (unverifiedIdentities.size() == 1) {
-        Intent intent = new Intent(ConversationActivity.this, VerifyIdentityActivity.class);
-        intent.putExtra(VerifyIdentityActivity.ADDRESS_EXTRA, unverifiedIdentities.get(0).getAddress());
-        intent.putExtra(VerifyIdentityActivity.IDENTITY_EXTRA, new IdentityKeyParcelable(unverifiedIdentities.get(0).getIdentityKey()));
-        intent.putExtra(VerifyIdentityActivity.VERIFIED_EXTRA, false);
-
-        startActivity(intent);
-      } else {
-        String[] unverifiedNames = new String[unverifiedIdentities.size()];
-
-        for (int i=0;i<unverifiedIdentities.size();i++) {
-          unverifiedNames[i] = Recipient.from(ConversationActivity.this, unverifiedIdentities.get(i).getAddress(), false).toShortString();
-        }
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(ConversationActivity.this);
-        builder.setIconAttribute(com.example.altuncu.blocksignal.R.attr.dialog_alert_icon);
-        builder.setTitle("No longer verified");
-        builder.setItems(unverifiedNames, (dialog, which) -> {
-          Intent intent = new Intent(ConversationActivity.this, VerifyIdentityActivity.class);
-          intent.putExtra(VerifyIdentityActivity.ADDRESS_EXTRA, unverifiedIdentities.get(which).getAddress());
-          intent.putExtra(VerifyIdentityActivity.IDENTITY_EXTRA, new IdentityKeyParcelable(unverifiedIdentities.get(which).getIdentityKey()));
-          intent.putExtra(VerifyIdentityActivity.VERIFIED_EXTRA, false);
-
-          startActivity(intent);
-        });
-        builder.show();
-      }
-    }
   }
 
   private class QuoteRestorationTask extends AsyncTask<Void, Void, MessageRecord> {
