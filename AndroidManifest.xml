@@ -511,8 +511,7 @@
 
                 <data
                     android:scheme="http"
-                    android:host="altuncu.github.io"
-                    android:pathPrefix="/BlockSignal/redirect" />
+                    android:host="blocksignal.netlify.com" />
             </intent-filter>
         </activity>
 
