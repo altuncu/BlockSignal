@@ -12,15 +12,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.util.Pair;
 import android.widget.Toast;
 
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.attachments.AttachmentServer;
-import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.mms.AudioSlide;
 import com.example.altuncu.blocksignal.util.ServiceUtil;
 import com.example.altuncu.blocksignal.util.Util;

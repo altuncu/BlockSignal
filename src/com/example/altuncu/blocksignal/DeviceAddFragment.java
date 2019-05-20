@@ -2,15 +2,12 @@ package com.example.altuncu.blocksignal;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -19,21 +16,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.google.zxing.BinaryBitmap;
-import com.google.zxing.ChecksumException;
-import com.google.zxing.FormatException;
-import com.google.zxing.NotFoundException;
-import com.google.zxing.PlanarYUVLuminanceSource;
-import com.google.zxing.Result;
-import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.qrcode.QRCodeReader;
-
 import com.example.altuncu.blocksignal.components.camera.CameraView;
-import com.example.altuncu.blocksignal.components.camera.CameraView.PreviewCallback;
-import com.example.altuncu.blocksignal.components.camera.CameraView.PreviewFrame;
 import com.example.altuncu.blocksignal.qr.ScanListener;
 import com.example.altuncu.blocksignal.qr.ScanningThread;
-import com.example.altuncu.blocksignal.util.Util;
 import com.example.altuncu.blocksignal.util.ViewUtil;
 
 public class DeviceAddFragment extends Fragment {

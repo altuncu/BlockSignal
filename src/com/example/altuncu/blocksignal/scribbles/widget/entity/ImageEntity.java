@@ -24,9 +24,9 @@ package com.example.altuncu.blocksignal.scribbles.widget.entity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.scribbles.viewmodel.Layer;
 

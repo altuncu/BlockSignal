@@ -4,8 +4,8 @@ package com.example.altuncu.blocksignal.mms;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.WorkerThread;
+import androidx.annotation.Nullable;
+import androidx.annotation.WorkerThread;
 
 import com.android.mms.service_alt.MmsConfig;
 

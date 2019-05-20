@@ -1,8 +1,8 @@
 package com.example.altuncu.blocksignal.preferences;
 
 
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 
 import com.example.altuncu.blocksignal.R;
 

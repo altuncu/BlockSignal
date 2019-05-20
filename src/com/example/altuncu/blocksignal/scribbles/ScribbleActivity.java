@@ -11,14 +11,13 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 
 import com.example.altuncu.blocksignal.PassphraseRequiredActionBarActivity;
 import com.example.altuncu.blocksignal.R;
-import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.mms.GlideApp;
 import com.example.altuncu.blocksignal.mms.GlideRequests;
 import com.example.altuncu.blocksignal.providers.PersistentBlobProvider;

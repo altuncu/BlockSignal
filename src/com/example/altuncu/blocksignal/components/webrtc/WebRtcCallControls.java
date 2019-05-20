@@ -5,7 +5,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +20,6 @@ import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.components.AccessibleToggleButton;
 import com.example.altuncu.blocksignal.util.ServiceUtil;
 import com.example.altuncu.blocksignal.util.ViewUtil;
-import com.example.altuncu.blocksignal.webrtc.CameraState;
 
 public class WebRtcCallControls extends LinearLayout {
 

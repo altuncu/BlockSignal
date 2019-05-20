@@ -4,14 +4,13 @@ package com.example.altuncu.blocksignal.database.loaders;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.annotation.NonNull;
+import androidx.loader.content.AsyncTaskLoader;
 
 import com.annimon.stream.Stream;
 
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.database.Address;
-import com.example.altuncu.blocksignal.database.Database;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.MediaDatabase;
 import com.example.altuncu.blocksignal.recipients.Recipient;

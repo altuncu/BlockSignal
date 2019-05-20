@@ -3,17 +3,14 @@ package com.example.altuncu.blocksignal.contactshare;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.json.JSONException;
 import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.attachments.AttachmentId;
 import com.example.altuncu.blocksignal.attachments.UriAttachment;

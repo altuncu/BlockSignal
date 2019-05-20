@@ -1,12 +1,11 @@
 package com.example.altuncu.blocksignal;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
-import com.example.altuncu.blocksignal.crypto.IdentityKeyParcelable;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.IdentityDatabase;
 import com.example.altuncu.blocksignal.database.IdentityDatabase.IdentityRecord;

@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal.attachments;
 
 import android.net.Uri;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.mms.PartAuthority;
 

@@ -22,8 +22,8 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v4.content.CursorLoader;
+import androidx.annotation.NonNull;
+import androidx.loader.content.CursorLoader;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -37,14 +37,6 @@ import com.example.altuncu.blocksignal.permissions.Permissions;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 
 import com.example.altuncu.blocksignal.R;
-import com.example.altuncu.blocksignal.database.Address;
-import com.example.altuncu.blocksignal.database.DatabaseFactory;
-import com.example.altuncu.blocksignal.database.GroupDatabase;
-import com.example.altuncu.blocksignal.database.RecipientDatabase;
-import com.example.altuncu.blocksignal.database.ThreadDatabase;
-import com.example.altuncu.blocksignal.database.model.ThreadRecord;
-import com.example.altuncu.blocksignal.permissions.Permissions;
-import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.util.NumberUtil;
 
 import java.util.ArrayList;

@@ -20,7 +20,7 @@ package com.example.altuncu.blocksignal.crypto;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.backup.BackupProtos;
 import com.example.altuncu.blocksignal.util.Base64;

@@ -1,15 +1,13 @@
 package com.example.altuncu.blocksignal.database;
 
 import android.content.Context;
-import android.database.ContentObservable;
 import android.database.ContentObserver;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
-import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.attachments.DatabaseAttachment;
 import com.example.altuncu.blocksignal.database.helpers.SQLCipherOpenHelper;
 

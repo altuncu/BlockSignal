@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.gcm;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.content.WakefulBroadcastReceiver;
+import androidx.legacy.content.WakefulBroadcastReceiver;
 import android.text.TextUtils;
 import android.util.Log;
 

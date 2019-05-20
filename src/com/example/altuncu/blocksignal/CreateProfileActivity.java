@@ -1,7 +1,6 @@
 package com.example.altuncu.blocksignal;
 
 
-import android.Manifest;
 import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,21 +11,17 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.text.Editable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -51,28 +46,21 @@ import com.example.altuncu.blocksignal.util.BitmapDecodingException;
 import com.example.altuncu.blocksignal.util.BitmapUtil;
 import com.example.altuncu.blocksignal.util.DynamicLanguage;
 import com.example.altuncu.blocksignal.util.DynamicTheme;
-import com.example.altuncu.blocksignal.util.FileProviderUtil;
-import com.example.altuncu.blocksignal.util.IntentUtils;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import com.example.altuncu.blocksignal.util.Util;
 import com.example.altuncu.blocksignal.util.ViewUtil;
 import com.example.altuncu.blocksignal.util.concurrent.ListenableFuture;
-import com.example.altuncu.blocksignal.BlockstackActivity;
+
 import org.whispersystems.signalservice.api.SignalServiceAccountManager;
-import org.whispersystems.signalservice.api.crypto.ProfileCipher;
 import org.whispersystems.signalservice.api.util.StreamDetails;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import javax.inject.Inject;
-
-import static android.provider.MediaStore.EXTRA_OUTPUT;
 
 @SuppressLint("StaticFieldLeak")
 public class CreateProfileActivity extends BaseActionBarActivity implements InjectableType {

@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal.crypto.storage;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import org.whispersystems.libsignal.InvalidKeyIdException;

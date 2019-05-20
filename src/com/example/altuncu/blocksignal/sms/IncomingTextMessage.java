@@ -3,8 +3,8 @@ package com.example.altuncu.blocksignal.sms;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.telephony.SmsMessage;
 
 import com.example.altuncu.blocksignal.database.Address;

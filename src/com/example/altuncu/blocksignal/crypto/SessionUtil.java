@@ -1,16 +1,13 @@
 package com.example.altuncu.blocksignal.crypto;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.crypto.storage.TextSecureSessionStore;
 import com.example.altuncu.blocksignal.database.Address;
 import org.whispersystems.libsignal.SignalProtocolAddress;
-import org.whispersystems.libsignal.state.SessionRecord;
 import org.whispersystems.libsignal.state.SessionStore;
 import org.whispersystems.signalservice.api.push.SignalServiceAddress;
-
-import java.util.List;
 
 public class SessionUtil {
 

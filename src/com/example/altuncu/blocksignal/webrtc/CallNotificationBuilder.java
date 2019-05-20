@@ -1,21 +1,18 @@
 package com.example.altuncu.blocksignal.webrtc;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.v4.app.NotificationCompat;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+import androidx.core.app.NotificationCompat;
 
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.WebRtcCallActivity;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.service.WebRtcCallService;
-import com.example.altuncu.blocksignal.util.ServiceUtil;
 
 /**
  * Manages the state of the WebRtc items in the Android notification bar.

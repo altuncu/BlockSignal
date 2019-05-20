@@ -20,10 +20,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import android.util.Log;
 
-import com.example.altuncu.blocksignal.BuildConfig;
 import com.google.android.gms.security.ProviderInstaller;
 
 import com.example.altuncu.blocksignal.crypto.PRNGFixes;

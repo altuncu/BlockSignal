@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal.jobs;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.dependencies.InjectableType;
 import org.whispersystems.jobqueue.JobParameters;

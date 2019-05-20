@@ -26,8 +26,8 @@ import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -49,7 +49,7 @@ import com.example.altuncu.blocksignal.service.WebRtcCallService;
 import com.example.altuncu.blocksignal.util.ServiceUtil;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import com.example.altuncu.blocksignal.util.ViewUtil;
-import com.example.altuncu.blocksignal.webrtc.CameraState;
+
 import org.whispersystems.libsignal.IdentityKey;
 import org.whispersystems.libsignal.SignalProtocolAddress;
 

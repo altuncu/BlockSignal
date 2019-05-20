@@ -4,7 +4,7 @@ package com.example.altuncu.blocksignal.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import net.sqlcipher.database.SQLiteDatabase;

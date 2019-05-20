@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.push;
 
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.BuildConfig;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;

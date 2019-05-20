@@ -40,7 +40,7 @@
 
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
                 app:fabSize="normal"
                 app:backgroundTint="@color/white"
                 app:elevation="1dp"
@@ -295,14 +295,14 @@
             </LinearLayout>
 
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="100dp"
                     android:paddingRight="100dp">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                         android:imeOptions="actionDone"
                         android:hint="@string/registration_activity__registration_lock_pin"/>
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.dd.CircularProgressButton
                     android:id="@+id/pinButton"

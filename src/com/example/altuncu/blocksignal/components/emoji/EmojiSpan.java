@@ -3,7 +3,7 @@ package com.example.altuncu.blocksignal.components.emoji;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetricsInt;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.widget.TextView;
 
 import com.example.altuncu.blocksignal.R;

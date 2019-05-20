@@ -10,7 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,7 +20,6 @@ import com.annimon.stream.Stream;
 import com.example.altuncu.blocksignal.ApplicationContext;
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.contacts.ContactAccessor;
-import com.example.altuncu.blocksignal.contacts.ContactsDatabase;
 import com.example.altuncu.blocksignal.crypto.SessionUtil;
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;

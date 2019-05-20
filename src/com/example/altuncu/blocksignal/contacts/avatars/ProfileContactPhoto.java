@@ -3,13 +3,12 @@ package com.example.altuncu.blocksignal.contacts.avatars;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.profiles.AvatarHelper;
 import com.example.altuncu.blocksignal.providers.PhotoProvider;
-import com.example.altuncu.blocksignal.util.Conversions;
 
 import java.io.IOException;
 import java.io.InputStream;

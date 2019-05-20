@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.giph.ui;
 
 
 import android.os.Bundle;
-import android.support.v4.content.Loader;
+import androidx.loader.content.Loader;
 
 import com.example.altuncu.blocksignal.giph.model.GiphyImage;
 import com.example.altuncu.blocksignal.giph.net.GiphyStickerLoader;

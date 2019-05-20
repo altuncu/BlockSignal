@@ -6,14 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.example.altuncu.blocksignal.ConversationActivity;
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.WebRtcCallActivity;
-import com.example.altuncu.blocksignal.contactshare.Contact;
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.permissions.Permissions;

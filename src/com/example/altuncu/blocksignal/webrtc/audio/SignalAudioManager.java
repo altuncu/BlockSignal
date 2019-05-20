@@ -6,8 +6,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.util.ServiceUtil;

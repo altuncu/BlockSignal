@@ -10,9 +10,9 @@ import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.*;
-import android.support.annotation.WorkerThread;
-import android.support.media.ExifInterface;
+import androidx.annotation.*;
+import androidx.annotation.WorkerThread;
+import androidx.exifinterface.media.ExifInterface;
 import android.util.Log;
 import android.util.Pair;
 

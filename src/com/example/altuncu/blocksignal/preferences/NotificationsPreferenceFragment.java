@@ -9,18 +9,16 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
+import androidx.annotation.Nullable;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import android.text.TextUtils;
 
 import com.example.altuncu.blocksignal.ApplicationPreferencesActivity;
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.components.SwitchPreferenceCompat;
 import com.example.altuncu.blocksignal.notifications.MessageNotifier;
-import com.example.altuncu.blocksignal.preferences.widgets.SignalPreference;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
-import org.w3c.dom.Text;
 
 import static android.app.Activity.RESULT_OK;
 

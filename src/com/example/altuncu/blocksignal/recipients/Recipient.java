@@ -20,8 +20,8 @@ package com.example.altuncu.blocksignal.recipients;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -47,7 +47,7 @@ import com.example.altuncu.blocksignal.recipients.RecipientProvider.RecipientDet
 import com.example.altuncu.blocksignal.util.FutureTaskListener;
 import com.example.altuncu.blocksignal.util.ListenableFutureTask;
 import com.example.altuncu.blocksignal.util.Util;
-import com.example.altuncu.blocksignal.BlockstackActivity;
+
 import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.Collections;
@@ -333,7 +333,7 @@ public class Recipient implements RecipientModifiedListener {
     notifyListeners();
   }
 
-  public synchronized @Nullable String getProfileName() {
+  public synchronized String getProfileName() {
     return profileName;
   }
 

@@ -1,15 +1,14 @@
 package com.example.altuncu.blocksignal.jobs;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.MessagingDatabase.InsertResult;
 import com.example.altuncu.blocksignal.database.SmsDatabase;
-import com.example.altuncu.blocksignal.jobs.requirements.MasterSecretRequirement;
 import com.example.altuncu.blocksignal.jobs.requirements.SqlCipherMigrationRequirement;
 import com.example.altuncu.blocksignal.notifications.MessageNotifier;
 import com.example.altuncu.blocksignal.recipients.Recipient;

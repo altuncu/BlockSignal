@@ -2,8 +2,8 @@ package com.example.altuncu.blocksignal.jobs;
 
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.attachments.AttachmentId;

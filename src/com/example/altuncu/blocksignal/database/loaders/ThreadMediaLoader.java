@@ -3,7 +3,7 @@ package com.example.altuncu.blocksignal.database.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;

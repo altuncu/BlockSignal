@@ -3,7 +3,7 @@ package com.example.altuncu.blocksignal.util;
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.Context;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 import android.text.TextPaint;
 import android.text.style.URLSpan;
 import android.view.View;

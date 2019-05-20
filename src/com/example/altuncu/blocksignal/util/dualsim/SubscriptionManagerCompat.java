@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.util.dualsim;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 

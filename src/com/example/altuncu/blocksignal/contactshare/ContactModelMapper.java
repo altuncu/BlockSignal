@@ -1,10 +1,8 @@
 package com.example.altuncu.blocksignal.contactshare;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.attachments.Attachment;
-import com.example.altuncu.blocksignal.attachments.AttachmentId;
 import com.example.altuncu.blocksignal.attachments.PointerAttachment;
 import org.whispersystems.libsignal.util.guava.Optional;
 import org.whispersystems.signalservice.api.messages.shared.SharedContact;

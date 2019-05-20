@@ -17,7 +17,7 @@
 package com.example.altuncu.blocksignal;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 public class PlayServicesProblemActivity extends FragmentActivity {
 

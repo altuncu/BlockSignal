@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.jobs.requirements;
 
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import org.whispersystems.jobqueue.dependencies.ContextDependent;

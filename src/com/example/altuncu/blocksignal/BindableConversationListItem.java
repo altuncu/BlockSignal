@@ -1,8 +1,7 @@
 package com.example.altuncu.blocksignal;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.database.model.ThreadRecord;
 import com.example.altuncu.blocksignal.mms.GlideRequests;
 

@@ -1,6 +1,6 @@
 package com.example.altuncu.blocksignal.search.model;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.database.CursorList;
 import com.example.altuncu.blocksignal.database.model.ThreadRecord;

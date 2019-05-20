@@ -18,7 +18,7 @@ package com.example.altuncu.blocksignal.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.format.DateFormat;
 
 import com.example.altuncu.blocksignal.R;

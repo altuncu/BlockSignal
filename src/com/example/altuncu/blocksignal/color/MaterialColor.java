@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.color;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.R;
 

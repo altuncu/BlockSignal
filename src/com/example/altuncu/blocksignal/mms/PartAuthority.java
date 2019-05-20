@@ -4,12 +4,11 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.UriMatcher;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.attachments.AttachmentId;
-import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.providers.PersistentBlobProvider;
 import com.example.altuncu.blocksignal.providers.PartProvider;

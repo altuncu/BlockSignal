@@ -1,6 +1,6 @@
 package com.example.altuncu.blocksignal.contacts.avatars;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.color.MaterialColor;
 import com.example.altuncu.blocksignal.color.MaterialColors;

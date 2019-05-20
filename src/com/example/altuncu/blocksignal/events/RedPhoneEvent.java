@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal.events;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.recipients.Recipient;
 

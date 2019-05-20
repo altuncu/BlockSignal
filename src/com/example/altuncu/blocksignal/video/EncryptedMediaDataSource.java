@@ -4,8 +4,8 @@ package com.example.altuncu.blocksignal.video;
 import android.annotation.TargetApi;
 import android.media.MediaDataSource;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.altuncu.blocksignal.crypto.AttachmentSecret;
 import com.example.altuncu.blocksignal.crypto.ClassicDecryptingPartInputStream;

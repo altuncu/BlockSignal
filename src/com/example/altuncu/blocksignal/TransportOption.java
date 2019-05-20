@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.util.CharacterCalculator;
 import com.example.altuncu.blocksignal.util.CharacterCalculator.CharacterState;

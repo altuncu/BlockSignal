@@ -20,9 +20,9 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -36,15 +36,12 @@ import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.components.RecyclerViewFastScroller.FastScrollAdapter;
 import com.example.altuncu.blocksignal.contacts.ContactSelectionListAdapter.HeaderViewHolder;
 import com.example.altuncu.blocksignal.contacts.ContactSelectionListAdapter.ViewHolder;
-import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.CursorRecyclerViewAdapter;
 import com.example.altuncu.blocksignal.mms.GlideRequests;
 import com.example.altuncu.blocksignal.util.StickyHeaderDecoration.StickyHeaderAdapter;
 import com.example.altuncu.blocksignal.util.Util;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**

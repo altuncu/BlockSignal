@@ -1,10 +1,8 @@
 package com.example.altuncu.blocksignal.jobs;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.example.altuncu.blocksignal.BuildConfig;
-import com.example.altuncu.blocksignal.TextSecureExpiredException;
 import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.database.AttachmentDatabase;
@@ -14,7 +12,7 @@ import com.example.altuncu.blocksignal.mms.MediaStream;
 import com.example.altuncu.blocksignal.mms.MmsException;
 import com.example.altuncu.blocksignal.transport.UndeliverableMessageException;
 import com.example.altuncu.blocksignal.util.MediaUtil;
-import com.example.altuncu.blocksignal.util.Util;
+
 import org.whispersystems.jobqueue.JobParameters;
 
 import java.io.IOException;

@@ -1,12 +1,11 @@
 package com.example.altuncu.blocksignal.util;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-import com.example.altuncu.blocksignal.crypto.IdentityKeyParcelable;
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.documents.IdentityKeyMismatch;
 import org.whispersystems.libsignal.IdentityKey;

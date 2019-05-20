@@ -1,6 +1,6 @@
 package com.example.altuncu.blocksignal.glide;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;

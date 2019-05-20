@@ -2,7 +2,7 @@ package com.example.altuncu.blocksignal.qr;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.google.zxing.BarcodeFormat;

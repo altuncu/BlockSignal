@@ -3,16 +3,13 @@ package com.example.altuncu.blocksignal.preferences.widgets;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.PreferenceViewHolder;
+import androidx.annotation.RequiresApi;
+import androidx.preference.ListPreference;
+import androidx.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
-import android.util.TypedValue;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.altuncu.blocksignal.R;
-import com.example.altuncu.blocksignal.util.ViewUtil;
 
 public class SignalListPreference extends ListPreference {
 

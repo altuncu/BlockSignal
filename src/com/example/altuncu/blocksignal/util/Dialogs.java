@@ -17,7 +17,7 @@
 package com.example.altuncu.blocksignal.util;
 
 import android.content.Context;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.altuncu.blocksignal.R;
 

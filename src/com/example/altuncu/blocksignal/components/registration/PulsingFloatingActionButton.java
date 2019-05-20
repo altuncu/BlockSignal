@@ -3,7 +3,7 @@ package com.example.altuncu.blocksignal.components.registration;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.support.design.widget.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.util.AttributeSet;
 
 import com.example.altuncu.blocksignal.animation.AnimationCompleteListener;

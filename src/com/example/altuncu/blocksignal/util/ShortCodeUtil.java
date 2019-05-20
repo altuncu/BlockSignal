@@ -1,6 +1,6 @@
 package com.example.altuncu.blocksignal.util;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.google.i18n.phonenumbers.NumberParseException;

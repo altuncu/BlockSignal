@@ -1,7 +1,7 @@
 package com.example.altuncu.blocksignal.util.views;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.ViewStub;
 
 public class Stub<T> {

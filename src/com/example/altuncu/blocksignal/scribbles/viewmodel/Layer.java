@@ -22,7 +22,7 @@
 
 package com.example.altuncu.blocksignal.scribbles.viewmodel;
 
-import android.support.annotation.FloatRange;
+import androidx.annotation.FloatRange;
 import android.util.Log;
 
 public class Layer {

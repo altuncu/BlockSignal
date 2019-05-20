@@ -10,10 +10,10 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AlertDialog;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -433,7 +433,9 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
       return;
     }
 
-    final String e164number = getConfiguredE164Number();
+    BlockstackActivity session = new BlockstackActivity();
+    session.storePhoneNumber(getConfiguredE164Number());
+    final String e164number = session.getPhoneNumber();
 
     if (!PhoneNumberFormatter.isValidNumber(e164number)) {
       Dialogs.showAlertDialog(this, getString(com.example.altuncu.blocksignal.R.string.RegistrationActivity_invalid_number),

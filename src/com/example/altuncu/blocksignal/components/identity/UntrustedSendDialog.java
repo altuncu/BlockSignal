@@ -4,8 +4,8 @@ package com.example.altuncu.blocksignal.components.identity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;

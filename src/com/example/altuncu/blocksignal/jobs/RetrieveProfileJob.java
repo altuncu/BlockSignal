@@ -2,13 +2,12 @@ package com.example.altuncu.blocksignal.jobs;
 
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.altuncu.blocksignal.ApplicationContext;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
-import com.example.altuncu.blocksignal.database.RecipientDatabase.RecipientSettings;
 import com.example.altuncu.blocksignal.dependencies.InjectableType;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.service.MessageRetrievalService;
@@ -18,7 +17,6 @@ import com.example.altuncu.blocksignal.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.libsignal.IdentityKey;
 import org.whispersystems.libsignal.InvalidKeyException;
-import org.whispersystems.libsignal.util.guava.Optional;
 import org.whispersystems.signalservice.api.SignalServiceMessagePipe;
 import org.whispersystems.signalservice.api.SignalServiceMessageReceiver;
 import org.whispersystems.signalservice.api.crypto.ProfileCipher;

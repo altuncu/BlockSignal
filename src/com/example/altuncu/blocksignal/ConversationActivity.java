@@ -38,12 +38,12 @@ import android.os.Vibrator;
 import android.provider.Browser;
 import android.provider.ContactsContract;
 import android.provider.Telephony;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.WindowCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.MenuItemCompat;
+import androidx.core.view.WindowCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -101,7 +101,6 @@ import com.example.altuncu.blocksignal.contacts.ContactAccessor.ContactData;
 import com.example.altuncu.blocksignal.contactshare.Contact;
 import com.example.altuncu.blocksignal.contactshare.ContactShareEditActivity;
 import com.example.altuncu.blocksignal.contactshare.ContactUtil;
-import com.example.altuncu.blocksignal.crypto.IdentityKeyParcelable;
 import com.example.altuncu.blocksignal.crypto.SecurityEvent;
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
@@ -182,7 +181,6 @@ import java.util.concurrent.ExecutionException;
 
 import static com.example.altuncu.blocksignal.TransportOption.Type;
 import static com.example.altuncu.blocksignal.database.GroupDatabase.GroupRecord;
-import static org.whispersystems.libsignal.SessionCipher.SESSION_LOCK;
 import static org.whispersystems.signalservice.internal.push.SignalServiceProtos.GroupContext;
 
 import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
@@ -702,9 +700,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     startActivityForResult(intent, SMS_DEFAULT);
   }
 
-  private void handleRegisterForSignal() {
-    Intent intent = new Intent(this, RegistrationActivity.class);
-    intent.putExtra(RegistrationActivity.RE_REGISTRATION_EXTRA, true);
+  private void handleSignInBlockstack() {
+    Intent intent = new Intent(this, BlockstackActivity.class);
     startActivity(intent);
   }
 
@@ -1309,7 +1306,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     titleView.setOnBackClickedListener(view -> super.onBackPressed());
     unblockButton.setOnClickListener(v -> handleUnblock());
     makeDefaultSmsButton.setOnClickListener(v -> handleMakeDefaultSms());
-    registerButton.setOnClickListener(v -> handleRegisterForSignal());
+    registerButton.setOnClickListener(v -> handleSignInBlockstack());
 
     composeText.setOnKeyListener(composeKeyPressedListener);
     composeText.addTextChangedListener(composeKeyPressedListener);

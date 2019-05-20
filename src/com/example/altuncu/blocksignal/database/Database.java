@@ -19,8 +19,8 @@ package com.example.altuncu.blocksignal.database;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
-import android.net.Uri;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.example.altuncu.blocksignal.database.helpers.SQLCipherOpenHelper;
 import com.example.altuncu.blocksignal.providers.PhotoProvider;

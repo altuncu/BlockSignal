@@ -2,7 +2,7 @@
 
 package com.example.altuncu.blocksignal.giph.util;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class InfiniteScrollListener extends RecyclerView.OnScrollListener {
 

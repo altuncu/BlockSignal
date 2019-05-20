@@ -3,9 +3,8 @@ package com.example.altuncu.blocksignal.util;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
-import com.annimon.stream.Objects;
 import com.annimon.stream.Stream;
 
 import com.example.altuncu.blocksignal.database.NoExternalStorageException;

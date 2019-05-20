@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 
 import com.example.altuncu.blocksignal.crypto.MasterSecretUtil;
@@ -182,11 +182,11 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   }
 
   private Intent getPushRegistrationIntent() {
-    return getRoutedIntent(RegistrationActivity.class, getBlockstackIntent());
+    return getRoutedIntent(BlockstackActivity.class, getRegistrationIntent());
   }
 
-  private Intent getBlockstackIntent() {
-        return getRoutedIntent(BlockstackActivity.class, getCreateProfileIntent());
+  private Intent getRegistrationIntent() {
+        return getRoutedIntent(RegistrationActivity.class, getCreateProfileIntent());
   }
 
   private Intent getCreateProfileIntent() {

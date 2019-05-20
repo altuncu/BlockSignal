@@ -2,36 +2,37 @@ package com.example.altuncu.blocksignal.blockstack
 
 import android.content.Context
 import android.util.Log
-import android.app.Activity
 import com.example.altuncu.blocksignal.recipients.Recipient
-import org.blockstack.android.sdk.*
+import org.blockstack.android.sdk.BlockstackSession
+import org.blockstack.android.sdk.model.GetFileOptions
+import com.example.altuncu.blocksignal.BlockstackActivity
+import org.whispersystems.libsignal.ecc.Curve.decodePoint
+import org.whispersystems.libsignal.ecc.Curve.verifySignature
 
 
 class VerifyIdentity {
 
     private val TAG = VerifyIdentity::class.java.simpleName
 
-    private var _blockstackSession: BlockstackSession? = null
-    private var userData: UserData? = null
+    private var _blockstackSession: BlockstackSession = BlockstackActivity().blockstackSession()
+    //private var userData: UserData? = null
 
-    fun verifyKeys(recipient: Recipient, context: Context): Boolean? {
-        val runjs = RunJavaScript()
-        val config = "https://flamboyant-darwin-d11c17.netlify.com"
-                .toBlockstackConfig(kotlin.arrayOf(org.blockstack.android.sdk.Scope.StoreWrite))
+    fun verifyKeys(recipient: Recipient, context: Context): Boolean {
+       /* val config = "https://flamboyant-darwin-d11c17.netlify.com"
+                .toBlockstackConfig(arrayOf(org.blockstack.android.sdk.Scope.StoreWrite))
 
         _blockstackSession = BlockstackSession(context, config)
-        checkLogin()
+        checkLogin()*/
 
-        var appKey = getAppKey("app.key")
-        var appOrigin = "https://flamboyant-darwin-d11c17.netlify.com"
+        var appKey = getAppKey(recipient.profileName)
 
-        return runjs.fetchProfileValidateAppAddress(recipient.profileName, appKey, appOrigin)
+        return verifySignature(decodePoint(recipient.profileKey, 0), recipient.profileName.toByteArray(),  appKey.toByteArray())
     }
-
+/*
     private fun checkLogin() {
-        val signedIn = blockstackSession().isUserSignedIn()
+        val signedIn = _blockstackSession.isUserSignedIn()
         if (signedIn) {
-            userData = blockstackSession().loadUserData()
+            userData = _blockstackSession.loadUserData()
             if (userData != null) {
                 //runOnUiThread {
                     onSignIn(userData!!)
@@ -43,20 +44,11 @@ class VerifyIdentity {
     private fun onSignIn(userData: UserData) {
         this.userData = userData
     }
-
-    fun blockstackSession(): BlockstackSession {
-        val session = _blockstackSession
-        if (session != null) {
-            return session
-        } else {
-            throw IllegalStateException("No session.")
-        }
-    }
-
-    fun getAppKey(path: String): String {
-        var result: String = "NULL"
-        val options = GetFileOptions()
-        blockstackSession().getFile(path, options, { contentResult ->
+*/
+    fun getAppKey(username: String): String {
+        var result = "NULL"
+        val options = GetFileOptions(decrypt = true, username = username)
+        _blockstackSession.getFile("blockstack/app.key", options, { contentResult ->
             if (contentResult.hasValue) {
                 result = contentResult.value.toString()
                 Log.d(TAG, "File contents: ${result}")
@@ -66,7 +58,6 @@ class VerifyIdentity {
         })
         return result
     }
-
 }
 
 

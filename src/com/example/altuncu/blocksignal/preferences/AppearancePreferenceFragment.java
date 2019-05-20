@@ -2,8 +2,8 @@ package com.example.altuncu.blocksignal.preferences;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.preference.ListPreference;
+import androidx.annotation.Nullable;
+import androidx.preference.ListPreference;
 
 import com.example.altuncu.blocksignal.ApplicationPreferencesActivity;
 import com.example.altuncu.blocksignal.R;

@@ -1,10 +1,12 @@
 package com.example.altuncu.blocksignal.search;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.annotation.NonNull;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.altuncu.blocksignal.search.model.SearchResult;
 import com.example.altuncu.blocksignal.util.Debouncer;
@@ -15,7 +17,7 @@ import com.example.altuncu.blocksignal.util.Debouncer;
  *
  * This class should be view- and Android-agnostic, and therefore should contain no references to
  * things like {@link android.content.Context}, {@link android.view.View},
- * {@link android.support.v4.app.Fragment}, etc.
+ * {@link Fragment}, etc.
  */
 class SearchViewModel extends ViewModel {
 

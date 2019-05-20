@@ -1,34 +1,20 @@
 package com.example.altuncu.blocksignal.crypto.storage;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+
 import android.util.Log;
 
-import com.example.altuncu.blocksignal.crypto.MasterCipher;
-import com.example.altuncu.blocksignal.crypto.MasterSecret;
 import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.SessionDatabase;
-import com.example.altuncu.blocksignal.util.Conversions;
-import org.whispersystems.libsignal.InvalidMessageException;
+
 import org.whispersystems.libsignal.SignalProtocolAddress;
 import org.whispersystems.libsignal.protocol.CiphertextMessage;
 import org.whispersystems.libsignal.state.SessionRecord;
-import org.whispersystems.libsignal.state.SessionState;
 import org.whispersystems.libsignal.state.SessionStore;
-import org.whispersystems.signalservice.api.push.SignalServiceAddress;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.LinkedList;
 import java.util.List;
-
-import static org.whispersystems.libsignal.state.StorageProtos.SessionStructure;
 
 public class TextSecureSessionStore implements SessionStore {
 
