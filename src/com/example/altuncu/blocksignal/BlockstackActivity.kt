@@ -1,3 +1,25 @@
+/**
+ * Copyright (c) 2019 Enes Altuncu
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package com.example.altuncu.blocksignal
 
 import android.content.Intent
@@ -6,59 +28,79 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.example.altuncu.blocksignal.crypto.IdentityKeyUtil
-import kotlinx.android.synthetic.main.blockstack_activity.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import org.blockstack.android.sdk.*
 import org.blockstack.android.sdk.model.GetFileOptions
 import org.blockstack.android.sdk.model.PutFileOptions
 import org.blockstack.android.sdk.model.UserData
 import org.blockstack.android.sdk.model.toBlockstackConfig
 import org.whispersystems.libsignal.ecc.Curve.calculateSignature
+import java.util.concurrent.locks.ReentrantLock
+import kotlin.concurrent.withLock
 
 
 class BlockstackActivity : AppCompatActivity() {
     private val TAG = BlockstackActivity::class.java.simpleName
 
-    private var _blockstackSession: BlockstackSession? = null
-
     companion object {
         @JvmStatic
-        var _username: String? = null
+        var username: String? = null
         @JvmStatic
-        var _avatar: String? = null
+        var avatar: String? = null
+        @JvmStatic
+        var blockstackSession: BlockstackSession? = null
+        @JvmStatic
+        var phoneNumber: String = "NULL"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) = runBlocking {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.blockstack_activity)
 
-        signInButton.isEnabled = false
+        var nextIntent: Intent? = intent.getParcelableExtra("next_intent")
 
-        val config = "https://altuncu.github.io/BlockSignal/redirect"
-                .toBlockstackConfig(arrayOf(Scope.StoreWrite))
+        val newSession = async { establishSession() }
+        newSession.await()
 
-        _blockstackSession = BlockstackSession(this, config)
+        if (intent?.action == Intent.ACTION_VIEW) {
+            handleAuthResponse(intent)
+        }
 
-        signInButton.isEnabled = true
-
-        signInButton.setOnClickListener {
+        val signedIn = blockstackSession().isUserSignedIn()
+        if (signedIn) {
+            if (nextIntent == null) {
+                nextIntent = Intent(this@BlockstackActivity, RegistrationActivity::class.java)
+            }
+            startActivity(nextIntent)
+            finish()
+        } else {
             blockstackSession().redirectUserToSignIn { errorResult ->
                 if (errorResult.hasErrors) {
-                    Toast.makeText(this, "error: " + errorResult.error, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BlockstackActivity, "error: " + errorResult.error, Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
-    private fun onSignIn(userData: UserData) {
+    private fun establishSession() {
+        val config = "https://blocksignal.netlify.com"
+                .toBlockstackConfig(arrayOf(Scope.StoreWrite))
+
+        blockstackSession = BlockstackSession(this@BlockstackActivity, config)
+    }
+
+    private fun onSignIn() {
         var nextIntent: Intent? = intent.getParcelableExtra("next_intent")
 
-        _username = userData.json.getString("username")
-        _avatar = userData.profile?.avatarImage
+        var userData: UserData? = blockstackSession().loadUserData()
+
+        username = userData?.json?.getString("username")
+        avatar = userData?.profile?.avatarImage
 
         val keyPair = IdentityKeyUtil.getIdentityKeyPair(this@BlockstackActivity)
-        var sign = calculateSignature(keyPair.privateKey, userData.decentralizedID.toByteArray())
+        var sign = calculateSignature(keyPair.privateKey, userData?.decentralizedID?.toByteArray())
 
-        _blockstackSession?.putFile("blockstack/app.key", sign, PutFileOptions(true),
+        blockstackSession?.putFile("blockstack/app.key", sign, PutFileOptions(true),
                 { readURLResult ->
                     if (readURLResult.hasValue) {
                         val readURL = readURLResult.value!!
@@ -69,7 +111,7 @@ class BlockstackActivity : AppCompatActivity() {
                 })
 
         if (nextIntent == null) {
-            nextIntent = Intent(this@BlockstackActivity, ConversationListActivity::class.java)
+            nextIntent = Intent(this, RegistrationActivity::class.java)
         }
 
         startActivity(nextIntent)
@@ -80,47 +122,44 @@ class BlockstackActivity : AppCompatActivity() {
         super.onNewIntent(intent)
         Log.d(TAG, "onNewIntent")
 
-        if (intent?.action == Intent.ACTION_MAIN) {
-            val userData = blockstackSession().loadUserData()
-            if (userData != null) {
-                runOnUiThread {
-                    onSignIn(userData)
-                }
-            } else {
-                Toast.makeText(this, "no user data", Toast.LENGTH_SHORT).show()
+       /* val userData = blockstackSession().loadUserData()
+        if (userData != null) {
+            runOnUiThread {
+                onSignIn(userData)
             }
-        } else if (intent?.action == Intent.ACTION_VIEW) {
+        } else {
+            Toast.makeText(this, "no user data", Toast.LENGTH_SHORT).show()
+        }*/
+        if (intent?.action == Intent.ACTION_VIEW) {
             handleAuthResponse(intent)
         }
     }
 
     private fun handleAuthResponse(intent: Intent?) {
-        val response = intent?.dataString
+        val response = intent?.data?.query
         Log.d(TAG, "response ${response}")
         if (response != null) {
-            val authResponseTokens = response.split(':')
+            val authResponseTokens = response.split('=')
 
             if (authResponseTokens.size > 1) {
                 val authResponse = authResponseTokens[1]
                 Log.d(TAG, "authResponse: ${authResponse}")
-                blockstackSession().handlePendingSignIn(authResponse) { userDataResult: Result<UserData> ->
-
-                    if (userDataResult.hasValue) {
-                        val userData = userDataResult.value!!
+                blockstackSession().handlePendingSignIn(authResponse, {
+                    if (it.hasErrors) {
+                        Toast.makeText(this, it.error, Toast.LENGTH_SHORT).show()
+                    } else {
                         Log.d(TAG, "signed in!")
                         runOnUiThread {
-                            onSignIn(userData)
+                            onSignIn()
                         }
-                    } else {
-                        Toast.makeText(this, "error: " + userDataResult.error, Toast.LENGTH_SHORT).show()
                     }
-                }
+                })
             }
         }
     }
 
     fun blockstackSession(): BlockstackSession {
-        val session = _blockstackSession
+        val session = blockstackSession
         if (session != null) {
             return session
         } else {
@@ -128,29 +167,24 @@ class BlockstackActivity : AppCompatActivity() {
         }
     }
 
-    fun storePhoneNumber(number: String) {
-        blockstackSession().putFile("blockstack/phone.number", number, PutFileOptions(true),
-                { readURLResult ->
-                    if (readURLResult.hasValue) {
-                        val readURL = readURLResult.value!!
-                        Log.d(TAG, "File stored at: ${readURL}")
-                    } else {
-                        Toast.makeText(this, "error: " + readURLResult.error, Toast.LENGTH_SHORT).show()
-                    }
-                })
-    }
-
-    fun getPhoneNumber(): String {
-        var result = "NULL"
-        val options = GetFileOptions(decrypt = true)
-        blockstackSession().getFile("blockstack/phone.number", options, { contentResult ->
-            if (contentResult.hasValue) {
-                result = contentResult.value.toString()
-                Log.d(TAG, "File contents: ${result}")
+    fun proveOwnership(number: String) {
+        blockstackSession().putFile("blockstack/phone.number", number, PutFileOptions(false), { readURLResult ->
+            if (readURLResult.hasValue) {
+                val readURL = readURLResult.value!!
+                Log.d(TAG, "File stored at: ${readURL}")
             } else {
-                Log.d(TAG, contentResult.error)
+                Toast.makeText(this@BlockstackActivity, "error: " + readURLResult.error, Toast.LENGTH_SHORT).show()
             }
         })
-        return result
+
+        val options = GetFileOptions(decrypt = false)
+        blockstackSession().getFile("blockstack/phone.number", options, {
+            if (it.hasValue) {
+                phoneNumber = it.value.toString()
+                Log.d(TAG, "File contents: ${it.value.toString()}")
+            } else {
+                Log.d(TAG, it.error)
+            }
+        })
     }
 }

@@ -47,6 +47,7 @@ import com.google.i18n.phonenumbers.Phonenumber;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.blockstack.android.sdk.BlockstackSession;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -145,6 +146,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
   private ChallengeReceiver           challengeReceiver;
   private SignalServiceAccountManager accountManager;
 
+  private BlockstackSession _blockstackSession;
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -156,6 +158,8 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     initializePermissions();
     initializeNumber();
     initializeChallengeListener();
+
+    _blockstackSession = BlockstackActivity.getBlockstackSession();
   }
 
   @Override
@@ -434,7 +438,19 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     }
 
     BlockstackActivity session = new BlockstackActivity();
-    session.storePhoneNumber(getConfiguredE164Number());
+
+    Object lock = new Object();
+    synchronized (lock) {
+        if (_blockstackSession.getLoaded() == true) {
+            if (session.blockstackSession().isUserSignedIn()) {
+              session.proveOwnership(getConfiguredE164Number());
+            } else {
+                startActivity(new Intent(this, BlockstackActivity.class));
+            }
+        }
+
+    }
+
     final String e164number = session.getPhoneNumber();
 
     if (!PhoneNumberFormatter.isValidNumber(e164number)) {

@@ -207,10 +207,10 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Inje
     this.nextIntent   = getIntent().getParcelableExtra(NEXT_INTENT);
 
     GlideApp.with(CreateProfileActivity.this)
-            .load(BlockstackActivity.get_avatar())
+            .load(BlockstackActivity.getAvatar())
             .into(avatar);
 
-    name.setText(BlockstackActivity.get_username());
+    name.setText(BlockstackActivity.getUsername());
     name.setEnabled(false);
     name.setFocusable(false);
 

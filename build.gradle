@@ -176,7 +176,8 @@ dependencies {
  androidTestImplementation 'androidx.test:runner:1.1.1'
  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
- implementation 'com.github.blockstack:blockstack-android:0.4.5'
+ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1'
+ implementation 'com.github.altuncu:blockstack-android:a751bf60b4'
 }
 
 /*
@@ -272,8 +273,8 @@ android {
  }
 
  defaultConfig {
-  versionCode 362
-  versionName "4.20.4"
+  versionCode 1071
+  versionName "1.0.0"
 
   applicationId "com.example.altuncu.blocksignal"
   minSdkVersion 19

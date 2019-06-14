@@ -1,11 +1,15 @@
 package com.example.altuncu.blocksignal;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +26,7 @@ import com.example.altuncu.blocksignal.mms.GlideRequests;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.recipients.RecipientModifiedListener;
 import com.example.altuncu.blocksignal.util.DateUtils;
+import com.example.altuncu.blocksignal.util.Dialogs;
 import com.example.altuncu.blocksignal.util.GroupUtil;
 import com.example.altuncu.blocksignal.util.IdentityUtil;
 import com.example.altuncu.blocksignal.util.Util;
@@ -144,18 +149,25 @@ public class ConversationUpdateItem extends LinearLayout
                                    identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
                                    IdentityDatabase.VerifiedStatus.VERIFIED);
     }
-    else
+    else {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
               identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
               IdentityDatabase.VerifiedStatus.UNVERIFIED);
-    if (messageRecord.isIdentityVerified()) {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_check_white_24dp);
-      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#00ff00"), PorterDuff.Mode.MULTIPLY));
+
+      AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+      dialog.setTitle("Critical Security Issue");
+      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
+      dialog.setIconAttribute(R.attr.dialog_alert_icon);
+      DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dif, int i) {
+          getContext().startActivity(new Intent(getContext(), ConversationListActivity.class));
+        }
+      };
+      dialog.setPositiveButton(R.string.ok, dialogClickListener);
+      dialog.show();
     }
-    else {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_info_outline_white_24dp);
-      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.MULTIPLY));
-    }
+
 
     body.setText(messageRecord.getDisplayBody());
     date.setVisibility(View.GONE);
@@ -167,23 +179,29 @@ public class ConversationUpdateItem extends LinearLayout
     VerifyIdentity blockstack = new VerifyIdentity();
     boolean isVerified;
 
-    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient(), getContext());
+    isVerified = false;
     if (isVerified) {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
               identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
               IdentityDatabase.VerifiedStatus.VERIFIED);
     }
-    else
+    else {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
               identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
               IdentityDatabase.VerifiedStatus.UNVERIFIED);
-    if (messageRecord.isIdentityVerified()) {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_check_white_24dp);
-      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#00ff00"), PorterDuff.Mode.MULTIPLY));
-    }
-    else {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_info_outline_white_24dp);
-      icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.MULTIPLY));
+
+      AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+      dialog.setTitle("Critical Security Issue");
+      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
+      dialog.setIconAttribute(R.attr.dialog_alert_icon);
+      DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dif, int i) {
+          getContext().startActivity(new Intent(getContext(), ConversationListActivity.class));
+        }
+      };
+      dialog.setPositiveButton(R.string.ok, dialogClickListener);
+      dialog.show();
     }
 
     body.setText(messageRecord.getDisplayBody());
