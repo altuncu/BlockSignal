@@ -100,7 +100,7 @@ dependencies {
  implementation('org.whispersystems:libpastelog:1.1.2') {
   exclude group: 'com.squareup.okhttp3', module: 'okhttp'
  }
- implementation 'org.whispersystems:signal-service-android:2.7.6'
+ implementation 'com.github.altuncu:signal-service-android:2.7.6x'
  implementation 'org.whispersystems:webrtc-android:M64'
  implementation 'me.leolin:ShortcutBadger:1.1.16'
  implementation 'se.emilsjolander:stickylistheaders:2.7.0'
@@ -177,7 +177,7 @@ dependencies {
  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1'
- implementation 'com.github.altuncu:blockstack-android:a751bf60b4'
+ implementation 'com.github.altuncu:blockstack-android:41b834ba6e'
 }
 
 /*
@@ -274,7 +274,7 @@ android {
 
  defaultConfig {
   versionCode 1071
-  versionName "1.0.0"
+  versionName "1.1.0"
 
   applicationId "com.example.altuncu.blocksignal"
   minSdkVersion 19
@@ -282,7 +282,7 @@ android {
   multiDexEnabled true
 
   vectorDrawables.useSupportLibrary = true
-  project.ext.set("archivesBaseName", "Signal")
+  project.ext.set("archivesBaseName", "BlockSignal")
 
   buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
   buildConfigField "String", "SIGNAL_URL", "\"https://jqx60n8xm3ldjygb.v1.p.beameio.net\""
@@ -366,11 +366,10 @@ android {
 
  android.applicationVariants.all { variant ->
   variant.outputs.all {
-   def flavor = variant.productFlavors[0].name.capitalize()
    def version = variant.versionName
    def date = new Date()
    def formattedDate = date.format('ddMMyy')
-   outputFileName = "AppName${flavor}${version}_${formattedDate}.apk"
+   outputFileName = "BlockSignal_${version}_${formattedDate}.apk"
   }
  }
 

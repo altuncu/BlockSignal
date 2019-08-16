@@ -12,6 +12,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.AlertDialog;
 import android.text.Editable;
@@ -437,13 +439,13 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
       return;
     }
 
-    BlockstackActivity session = new BlockstackActivity();
+    VerifyIdentity session = new VerifyIdentity();
 
     Object lock = new Object();
     synchronized (lock) {
         if (_blockstackSession.getLoaded() == true) {
-            if (session.blockstackSession().isUserSignedIn()) {
-              session.proveOwnership(getConfiguredE164Number());
+            if (_blockstackSession.isUserSignedIn()) {
+                session.storeNumber(getConfiguredE164Number());
             } else {
                 startActivity(new Intent(this, BlockstackActivity.class));
             }
@@ -452,6 +454,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     }
 
     final String e164number = session.getPhoneNumber();
+    final String gaiaHubURL = _blockstackSession.loadUserData().getHubUrl() + "blockstack/phone.number";
 
     if (!PhoneNumberFormatter.isValidNumber(e164number)) {
       Dialogs.showAlertDialog(this, getString(com.example.altuncu.blocksignal.R.string.RegistrationActivity_invalid_number),
@@ -463,9 +466,9 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     PlayServicesStatus gcmStatus = PlayServicesUtil.getPlayServicesStatus(this);
 
     if (gcmStatus == PlayServicesStatus.SUCCESS) {
-      handleRequestVerification(e164number, true);
+      handleRequestVerification(gaiaHubURL, e164number, true);
     } else if (gcmStatus == PlayServicesStatus.MISSING) {
-      handlePromptForNoPlayServices(e164number);
+      handlePromptForNoPlayServices(gaiaHubURL, e164number);
     } else if (gcmStatus == PlayServicesStatus.NEEDS_UPDATE) {
       GoogleApiAvailability.getInstance().getErrorDialog(this, ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED, 0).show();
     } else {
@@ -475,7 +478,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
   }
 
   @SuppressLint("StaticFieldLeak")
-  private void handleRequestVerification(@NonNull String e164number, boolean gcmSupported) {
+  private void handleRequestVerification(@NonNull String gaiaHubURL, @NonNull String e164number, boolean gcmSupported) {
     createButton.setIndeterminateProgressMode(true);
     createButton.setProgress(50);
 
@@ -495,7 +498,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
             gcmToken = Optional.absent();
           }
 
-          accountManager = AccountManagerFactory.createManager(RegistrationActivity.this, e164number, password);
+          accountManager = AccountManagerFactory.createManager(RegistrationActivity.this, gaiaHubURL, e164number, password);
           accountManager.requestSmsVerificationCode();
 
           return new Pair<>(password, gcmToken);
@@ -972,11 +975,11 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     finish();
   }
 
-  private void handlePromptForNoPlayServices(@NonNull String e164number) {
+  private void handlePromptForNoPlayServices(@NonNull String gaiaHubURL, @NonNull String e164number) {
     AlertDialog.Builder dialog = new AlertDialog.Builder(this);
     dialog.setTitle(com.example.altuncu.blocksignal.R.string.RegistrationActivity_missing_google_play_services);
     dialog.setMessage(com.example.altuncu.blocksignal.R.string.RegistrationActivity_this_device_is_missing_google_play_services);
-    dialog.setPositiveButton(com.example.altuncu.blocksignal.R.string.RegistrationActivity_i_understand, (dialog1, which) -> handleRequestVerification(e164number, false));
+    dialog.setPositiveButton(com.example.altuncu.blocksignal.R.string.RegistrationActivity_i_understand, (dialog1, which) -> handleRequestVerification(gaiaHubURL, e164number, false));
     dialog.setNegativeButton(android.R.string.cancel, null);
     dialog.show();
   }

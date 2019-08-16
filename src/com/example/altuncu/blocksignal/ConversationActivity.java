@@ -1205,7 +1205,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         if (result.second != null) {
           Log.w(TAG, "Verifying: " + result.first.getUnverifiedRecords().size());
           if (result.first.getUnverifiedRecords().size() == 1) {
-            isVerified = blockstack.verifyKeys(recipient, ConversationActivity.this);
+            isVerified = blockstack.verifyKeys(recipient);
             if (isVerified) {
                 Log.d(TAG, "Replacing banner...");
                 verifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords());
@@ -1224,14 +1224,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
             for (int i=0;i<result.first.getUnverifiedRecords().size();i++) {
               unverifiedNames[i] = Recipient.from(ConversationActivity.this, result.first.getUnverifiedRecords().get(i).getAddress(), false).toShortString();
             }
-
-           /* AlertDialog.Builder builder = new AlertDialog.Builder(ConversationActivity.this);
-            builder.setIconAttribute(com.example.altuncu.blocksignal.R.attr.dialog_alert_icon);
-            builder.setTitle("No longer verified");
-            builder.setItems(unverifiedNames, (dialog, which) -> {
-              //  Implement verifyKeys()
-            });
-            builder.show();*/
           }
         }
 

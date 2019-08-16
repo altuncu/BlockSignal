@@ -10,17 +10,21 @@ import android.graphics.PorterDuffColorFilter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog.Builder;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 import com.example.altuncu.blocksignal.database.DatabaseFactory;
 import com.example.altuncu.blocksignal.database.IdentityDatabase;
 import com.example.altuncu.blocksignal.database.IdentityDatabase.IdentityRecord;
+import com.example.altuncu.blocksignal.database.IdentityDatabase.VerifiedStatus;
 import com.example.altuncu.blocksignal.database.model.MessageRecord;
 import com.example.altuncu.blocksignal.mms.GlideRequests;
 import com.example.altuncu.blocksignal.recipients.Recipient;
@@ -143,28 +147,27 @@ public class ConversationUpdateItem extends LinearLayout
     VerifyIdentity blockstack = new VerifyIdentity();
     boolean isVerified;
 
-    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient(), getContext());
+    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient());
     if (isVerified) {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
                                    identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
                                    IdentityDatabase.VerifiedStatus.VERIFIED);
+       // Toast.makeText(getContext(), "Verified by Blockstack", Toast.LENGTH_LONG).show();
     }
     else {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
               identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
-              IdentityDatabase.VerifiedStatus.UNVERIFIED);
+              VerifiedStatus.UNVERIFIED);
 
-      AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+      Builder dialog = new Builder(getContext());
       dialog.setTitle("Critical Security Issue");
       dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
       dialog.setIconAttribute(R.attr.dialog_alert_icon);
-      DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dif, int i) {
-          getContext().startActivity(new Intent(getContext(), ConversationListActivity.class));
-        }
-      };
-      dialog.setPositiveButton(R.string.ok, dialogClickListener);
+      DialogInterface.OnClickListener dialogClickListener = (dif, i) -> {
+        Intent intent = new Intent(getContext(), ConversationListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        getContext().startActivity(intent);
+      };      dialog.setPositiveButton(R.string.ok, dialogClickListener);
       dialog.show();
     }
 

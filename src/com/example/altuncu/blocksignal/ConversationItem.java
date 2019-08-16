@@ -20,6 +20,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -28,6 +29,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.core.view.ViewCompat;
 import androidx.appcompat.app.AlertDialog;
 import android.text.SpannableString;
@@ -45,6 +47,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.altuncu.blocksignal.R.attr;
+import com.example.altuncu.blocksignal.R.string;
 import com.example.altuncu.blocksignal.attachments.Attachment;
 import com.example.altuncu.blocksignal.attachments.DatabaseAttachment;
 import com.example.altuncu.blocksignal.components.AlertView;
@@ -89,6 +93,7 @@ import com.example.altuncu.blocksignal.util.dualsim.SubscriptionInfoCompat;
 import com.example.altuncu.blocksignal.util.dualsim.SubscriptionManagerCompat;
 import com.example.altuncu.blocksignal.util.views.Stub;
 import org.whispersystems.libsignal.util.guava.Optional;
+import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 
 import java.util.HashSet;
 import java.util.List;
@@ -663,7 +668,21 @@ public class ConversationItem extends LinearLayout
       throw new AssertionError("Identity mismatch count: " + mismatches.size());
     }
 
-    new ConfirmIdentityDialog(context, messageRecord, mismatches.get(0)).show();
+    VerifyIdentity vi = new VerifyIdentity();
+    if (!vi.verifyKeys(recipient)) {
+      Builder dialog = new Builder(getContext());
+      dialog.setTitle("Critical Security Issue");
+      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
+      dialog.setIconAttribute(attr.dialog_alert_icon);
+      DialogInterface.OnClickListener dialogClickListener = (dif, i) -> {
+        Intent intent = new Intent(context, ConversationListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(intent);
+      };
+
+      dialog.setPositiveButton(string.ok, dialogClickListener);
+      dialog.show();
+    }
   }
 
   @Override
