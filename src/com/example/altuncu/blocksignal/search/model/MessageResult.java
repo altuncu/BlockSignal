@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Represents a search result for a message.
  */
 public class MessageResult {

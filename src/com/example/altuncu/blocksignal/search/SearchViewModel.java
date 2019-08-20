@@ -12,6 +12,7 @@ import com.example.altuncu.blocksignal.search.model.SearchResult;
 import com.example.altuncu.blocksignal.util.Debouncer;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A {@link ViewModel} for handling all the business logic and interactions that take place inside
  * of the {@link SearchFragment}.
  *
@@ -54,6 +55,7 @@ class SearchViewModel extends ViewModel {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Ensures that the previous {@link SearchResult} is always closed whenever we set a new one.
    */
   private static class ClosingLiveData extends MutableLiveData<SearchResult> {

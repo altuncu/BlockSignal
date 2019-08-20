@@ -1,4 +1,5 @@
-/** 
+/**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +18,7 @@
 package com.example.altuncu.blocksignal.contacts;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Name and number tuple.
  * 
  * @author Moxie Marlinspike

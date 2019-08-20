@@ -152,7 +152,7 @@ public class ConversationUpdateItem extends LinearLayout
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
                                    identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
                                    IdentityDatabase.VerifiedStatus.VERIFIED);
-       // Toast.makeText(getContext(), "Verified by Blockstack", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Verified by Blockstack", Toast.LENGTH_LONG).show();
     }
     else {
       identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),

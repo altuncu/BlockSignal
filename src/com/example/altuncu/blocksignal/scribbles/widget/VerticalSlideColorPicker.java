@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 Mark Charles
  * Copyright (c) 2016 Open Whisper Systems
  *

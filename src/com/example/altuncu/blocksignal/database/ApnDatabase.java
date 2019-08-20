@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2014 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -34,6 +35,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Database to query APN and MMSC information
  */
 public class ApnDatabase {

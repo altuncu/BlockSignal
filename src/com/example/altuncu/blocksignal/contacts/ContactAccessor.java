@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,6 +44,7 @@ import java.util.Set;
 import static com.example.altuncu.blocksignal.database.GroupDatabase.GroupRecord;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class was originally a layer of indirection between
  * ContactAccessorNewApi and ContactAccesorOldApi, which corresponded
  * to the API changes between 1.x and 2.x.
@@ -286,7 +288,8 @@ public class ContactAccessor {
     }
   }
 
-  /***
+  /**
+ * Copyright (c) 2019 Enes Altuncu*
    * If the code below looks shitty to you, that's because it was taken
    * directly from the Android source, where shitty code is all you get.
    */

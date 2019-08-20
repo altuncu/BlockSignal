@@ -42,6 +42,7 @@ import com.example.altuncu.blocksignal.sms.MessageSender;
 import com.example.altuncu.blocksignal.util.Util;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A simple view to show the recipients of a message
  *
  * @author Jake McGinty

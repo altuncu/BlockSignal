@@ -27,6 +27,7 @@ import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A lifecycle-aware observable that sends only new updates after subscription, used for events like
  * navigation and Snackbar messages.
  * <p>
@@ -63,6 +64,7 @@ public class SingleLiveEvent<T> extends MutableLiveData<T> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Used for cases where T is Void, to make calls cleaner.
    */
   @MainThread

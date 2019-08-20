@@ -72,6 +72,7 @@ import me.leolin.shortcutbadger.ShortcutBadger;
 
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Handles posting system notifications for new messages.
  *
  *

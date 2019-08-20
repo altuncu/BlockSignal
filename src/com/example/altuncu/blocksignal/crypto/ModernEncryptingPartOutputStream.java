@@ -21,6 +21,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Constructs an OutputStream that encrypts data written to it with the AttachmentSecret provided.
  *
  * The on-disk format is very simple, and intentionally no longer includes authentication.

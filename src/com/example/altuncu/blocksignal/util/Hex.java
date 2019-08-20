@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +20,7 @@ package com.example.altuncu.blocksignal.util;
 import java.io.IOException;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Utility for generating hex dumps.
  */
 public class Hex {

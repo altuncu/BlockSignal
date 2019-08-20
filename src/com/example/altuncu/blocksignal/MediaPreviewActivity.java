@@ -69,6 +69,7 @@ import java.io.IOException;
 import java.util.WeakHashMap;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for displaying media attachments in-app
  */
 public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity implements RecipientModifiedListener, LoaderManager.LoaderCallbacks<Pair<Cursor, Integer>> {

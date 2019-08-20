@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -38,6 +39,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Panel component combining both an editable field with a button for
  * a list-based contact selector.
  *

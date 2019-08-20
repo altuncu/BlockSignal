@@ -5,6 +5,7 @@ import android.graphics.PointF;
 import android.view.MotionEvent;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author Almer Thie (code.almeros.com)
  *         Copyright (c) 2013, Almer Thie (code.almeros.com)
  *         <p>
@@ -102,6 +103,7 @@ public class MoveGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Determine (multi)finger focal point (a.k.a. center point between all
      * fingers)
      *
@@ -134,6 +136,7 @@ public class MoveGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Listener which must be implemented which is used by MoveGestureDetector
      * to perform callbacks to any implementing class which is registered to a
      * MoveGestureDetector via the constructor.
@@ -149,6 +152,7 @@ public class MoveGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Helper class which may be extended and where the methods may be
      * implemented. This way it is not necessary to implement all methods
      * of OnMoveGestureListener.

@@ -29,6 +29,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Utility methods to help display dates in a nice, easily readable way.
  */
 public class DateUtils extends android.text.format.DateUtils {

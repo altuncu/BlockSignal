@@ -186,6 +186,7 @@ import static org.whispersystems.signalservice.internal.push.SignalServiceProtos
 import com.example.altuncu.blocksignal.blockstack.VerifyIdentity;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for displaying a message thread, as well as
  * composing/sending a new message into that thread.
  *

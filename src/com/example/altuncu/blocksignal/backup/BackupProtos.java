@@ -13,14 +13,17 @@ public final class BackupProtos {
 
     // optional string statement = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     boolean hasStatement();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     java.lang.String getStatement();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -28,30 +31,36 @@ public final class BackupProtos {
 
     // repeated .signal.SqlStatement.SqlParameter parameters = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     java.util.List<com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter>
         getParametersList();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter getParameters(int index);
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     int getParametersCount();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     java.util.List<? extends com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder>
         getParametersOrBuilderList();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder getParametersOrBuilder(
         int index);
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.SqlStatement}
    */
   public static final class SqlStatement extends
@@ -162,14 +171,17 @@ public final class BackupProtos {
 
       // optional string stringParamter = 1;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       boolean hasStringParamter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       java.lang.String getStringParamter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       com.google.protobuf.ByteString
@@ -177,45 +189,54 @@ public final class BackupProtos {
 
       // optional uint64 integerParameter = 2;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 integerParameter = 2;</code>
        */
       boolean hasIntegerParameter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 integerParameter = 2;</code>
        */
       long getIntegerParameter();
 
       // optional double doubleParameter = 3;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional double doubleParameter = 3;</code>
        */
       boolean hasDoubleParameter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional double doubleParameter = 3;</code>
        */
       double getDoubleParameter();
 
       // optional bytes blobParameter = 4;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes blobParameter = 4;</code>
        */
       boolean hasBlobParameter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes blobParameter = 4;</code>
        */
       com.google.protobuf.ByteString getBlobParameter();
 
       // optional bool nullparameter = 5;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool nullparameter = 5;</code>
        */
       boolean hasNullparameter();
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool nullparameter = 5;</code>
        */
       boolean getNullparameter();
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.SqlStatement.SqlParameter}
      */
     public static final class SqlParameter extends
@@ -335,12 +356,14 @@ public final class BackupProtos {
       public static final int STRINGPARAMTER_FIELD_NUMBER = 1;
       private java.lang.Object stringParamter_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       public boolean hasStringParamter() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       public java.lang.String getStringParamter() {
@@ -358,6 +381,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string stringParamter = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -378,12 +402,14 @@ public final class BackupProtos {
       public static final int INTEGERPARAMETER_FIELD_NUMBER = 2;
       private long integerParameter_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 integerParameter = 2;</code>
        */
       public boolean hasIntegerParameter() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 integerParameter = 2;</code>
        */
       public long getIntegerParameter() {
@@ -394,12 +420,14 @@ public final class BackupProtos {
       public static final int DOUBLEPARAMETER_FIELD_NUMBER = 3;
       private double doubleParameter_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional double doubleParameter = 3;</code>
        */
       public boolean hasDoubleParameter() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional double doubleParameter = 3;</code>
        */
       public double getDoubleParameter() {
@@ -410,12 +438,14 @@ public final class BackupProtos {
       public static final int BLOBPARAMETER_FIELD_NUMBER = 4;
       private com.google.protobuf.ByteString blobParameter_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes blobParameter = 4;</code>
        */
       public boolean hasBlobParameter() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes blobParameter = 4;</code>
        */
       public com.google.protobuf.ByteString getBlobParameter() {
@@ -426,12 +456,14 @@ public final class BackupProtos {
       public static final int NULLPARAMETER_FIELD_NUMBER = 5;
       private boolean nullparameter_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool nullparameter = 5;</code>
        */
       public boolean hasNullparameter() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool nullparameter = 5;</code>
        */
       public boolean getNullparameter() {
@@ -580,6 +612,7 @@ public final class BackupProtos {
         return builder;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * Protobuf type {@code signal.SqlStatement.SqlParameter}
        */
       public static final class Builder extends
@@ -738,12 +771,14 @@ public final class BackupProtos {
         // optional string stringParamter = 1;
         private java.lang.Object stringParamter_ = "";
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public boolean hasStringParamter() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public java.lang.String getStringParamter() {
@@ -758,6 +793,7 @@ public final class BackupProtos {
           }
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public com.google.protobuf.ByteString
@@ -774,6 +810,7 @@ public final class BackupProtos {
           }
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public Builder setStringParamter(
@@ -787,6 +824,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public Builder clearStringParamter() {
@@ -796,6 +834,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional string stringParamter = 1;</code>
          */
         public Builder setStringParamterBytes(
@@ -812,18 +851,21 @@ public final class BackupProtos {
         // optional uint64 integerParameter = 2;
         private long integerParameter_ ;
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional uint64 integerParameter = 2;</code>
          */
         public boolean hasIntegerParameter() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional uint64 integerParameter = 2;</code>
          */
         public long getIntegerParameter() {
           return integerParameter_;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional uint64 integerParameter = 2;</code>
          */
         public Builder setIntegerParameter(long value) {
@@ -833,6 +875,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional uint64 integerParameter = 2;</code>
          */
         public Builder clearIntegerParameter() {
@@ -845,18 +888,21 @@ public final class BackupProtos {
         // optional double doubleParameter = 3;
         private double doubleParameter_ ;
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional double doubleParameter = 3;</code>
          */
         public boolean hasDoubleParameter() {
           return ((bitField0_ & 0x00000004) == 0x00000004);
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional double doubleParameter = 3;</code>
          */
         public double getDoubleParameter() {
           return doubleParameter_;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional double doubleParameter = 3;</code>
          */
         public Builder setDoubleParameter(double value) {
@@ -866,6 +912,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional double doubleParameter = 3;</code>
          */
         public Builder clearDoubleParameter() {
@@ -878,18 +925,21 @@ public final class BackupProtos {
         // optional bytes blobParameter = 4;
         private com.google.protobuf.ByteString blobParameter_ = com.google.protobuf.ByteString.EMPTY;
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bytes blobParameter = 4;</code>
          */
         public boolean hasBlobParameter() {
           return ((bitField0_ & 0x00000008) == 0x00000008);
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bytes blobParameter = 4;</code>
          */
         public com.google.protobuf.ByteString getBlobParameter() {
           return blobParameter_;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bytes blobParameter = 4;</code>
          */
         public Builder setBlobParameter(com.google.protobuf.ByteString value) {
@@ -902,6 +952,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bytes blobParameter = 4;</code>
          */
         public Builder clearBlobParameter() {
@@ -914,18 +965,21 @@ public final class BackupProtos {
         // optional bool nullparameter = 5;
         private boolean nullparameter_ ;
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bool nullparameter = 5;</code>
          */
         public boolean hasNullparameter() {
           return ((bitField0_ & 0x00000010) == 0x00000010);
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bool nullparameter = 5;</code>
          */
         public boolean getNullparameter() {
           return nullparameter_;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bool nullparameter = 5;</code>
          */
         public Builder setNullparameter(boolean value) {
@@ -935,6 +989,7 @@ public final class BackupProtos {
           return this;
         }
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * <code>optional bool nullparameter = 5;</code>
          */
         public Builder clearNullparameter() {
@@ -960,12 +1015,14 @@ public final class BackupProtos {
     public static final int STATEMENT_FIELD_NUMBER = 1;
     private java.lang.Object statement_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     public boolean hasStatement() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     public java.lang.String getStatement() {
@@ -983,6 +1040,7 @@ public final class BackupProtos {
       }
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string statement = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1003,12 +1061,14 @@ public final class BackupProtos {
     public static final int PARAMETERS_FIELD_NUMBER = 2;
     private java.util.List<com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter> parameters_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     public java.util.List<com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter> getParametersList() {
       return parameters_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     public java.util.List<? extends com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder>
@@ -1016,18 +1076,21 @@ public final class BackupProtos {
       return parameters_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     public int getParametersCount() {
       return parameters_.size();
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter getParameters(int index) {
       return parameters_.get(index);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder getParametersOrBuilder(
@@ -1153,6 +1216,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.SqlStatement}
      */
     public static final class Builder extends
@@ -1317,12 +1381,14 @@ public final class BackupProtos {
       // optional string statement = 1;
       private java.lang.Object statement_ = "";
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public boolean hasStatement() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public java.lang.String getStatement() {
@@ -1337,6 +1403,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1353,6 +1420,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public Builder setStatement(
@@ -1366,6 +1434,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public Builder clearStatement() {
@@ -1375,6 +1444,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string statement = 1;</code>
        */
       public Builder setStatementBytes(
@@ -1402,6 +1472,7 @@ public final class BackupProtos {
           com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter, com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder> parametersBuilder_;
 
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public java.util.List<com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter> getParametersList() {
@@ -1412,6 +1483,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public int getParametersCount() {
@@ -1422,6 +1494,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter getParameters(int index) {
@@ -1432,6 +1505,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder setParameters(
@@ -1449,6 +1523,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder setParameters(
@@ -1463,6 +1538,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder addParameters(com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter value) {
@@ -1479,6 +1555,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder addParameters(
@@ -1496,6 +1573,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder addParameters(
@@ -1510,6 +1588,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder addParameters(
@@ -1524,6 +1603,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder addAllParameters(
@@ -1538,6 +1618,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder clearParameters() {
@@ -1551,6 +1632,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public Builder removeParameters(int index) {
@@ -1564,6 +1646,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.Builder getParametersBuilder(
@@ -1571,6 +1654,7 @@ public final class BackupProtos {
         return getParametersFieldBuilder().getBuilder(index);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder getParametersOrBuilder(
@@ -1581,6 +1665,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public java.util.List<? extends com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameterOrBuilder>
@@ -1592,6 +1677,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.Builder addParametersBuilder() {
@@ -1599,6 +1685,7 @@ public final class BackupProtos {
             com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.getDefaultInstance());
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.Builder addParametersBuilder(
@@ -1607,6 +1694,7 @@ public final class BackupProtos {
             index, com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.getDefaultInstance());
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>repeated .signal.SqlStatement.SqlParameter parameters = 2;</code>
        */
       public java.util.List<com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.SqlParameter.Builder>
@@ -1644,14 +1732,17 @@ public final class BackupProtos {
 
     // optional string file = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     boolean hasFile();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     java.lang.String getFile();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -1659,14 +1750,17 @@ public final class BackupProtos {
 
     // optional string key = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     boolean hasKey();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     java.lang.String getKey();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -1674,20 +1768,24 @@ public final class BackupProtos {
 
     // optional string value = 3;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     boolean hasValue();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     java.lang.String getValue();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     com.google.protobuf.ByteString
         getValueBytes();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.SharedPreference}
    */
   public static final class SharedPreference extends
@@ -1797,12 +1895,14 @@ public final class BackupProtos {
     public static final int FILE_FIELD_NUMBER = 1;
     private java.lang.Object file_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     public boolean hasFile() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     public java.lang.String getFile() {
@@ -1820,6 +1920,7 @@ public final class BackupProtos {
       }
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string file = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1840,12 +1941,14 @@ public final class BackupProtos {
     public static final int KEY_FIELD_NUMBER = 2;
     private java.lang.Object key_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     public boolean hasKey() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     public java.lang.String getKey() {
@@ -1863,6 +1966,7 @@ public final class BackupProtos {
       }
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string key = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1883,12 +1987,14 @@ public final class BackupProtos {
     public static final int VALUE_FIELD_NUMBER = 3;
     private java.lang.Object value_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     public java.lang.String getValue() {
@@ -1906,6 +2012,7 @@ public final class BackupProtos {
       }
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string value = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -2048,6 +2155,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.SharedPreference}
      */
     public static final class Builder extends
@@ -2192,12 +2300,14 @@ public final class BackupProtos {
       // optional string file = 1;
       private java.lang.Object file_ = "";
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public boolean hasFile() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public java.lang.String getFile() {
@@ -2212,6 +2322,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -2228,6 +2339,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public Builder setFile(
@@ -2241,6 +2353,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public Builder clearFile() {
@@ -2250,6 +2363,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string file = 1;</code>
        */
       public Builder setFileBytes(
@@ -2266,12 +2380,14 @@ public final class BackupProtos {
       // optional string key = 2;
       private java.lang.Object key_ = "";
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public java.lang.String getKey() {
@@ -2286,6 +2402,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -2302,6 +2419,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public Builder setKey(
@@ -2315,6 +2433,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public Builder clearKey() {
@@ -2324,6 +2443,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string key = 2;</code>
        */
       public Builder setKeyBytes(
@@ -2340,12 +2460,14 @@ public final class BackupProtos {
       // optional string value = 3;
       private java.lang.Object value_ = "";
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public java.lang.String getValue() {
@@ -2360,6 +2482,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -2376,6 +2499,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public Builder setValue(
@@ -2389,6 +2513,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public Builder clearValue() {
@@ -2398,6 +2523,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string value = 3;</code>
        */
       public Builder setValueBytes(
@@ -2427,35 +2553,42 @@ public final class BackupProtos {
 
     // optional uint64 rowId = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 rowId = 1;</code>
      */
     boolean hasRowId();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 rowId = 1;</code>
      */
     long getRowId();
 
     // optional uint64 attachmentId = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 attachmentId = 2;</code>
      */
     boolean hasAttachmentId();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 attachmentId = 2;</code>
      */
     long getAttachmentId();
 
     // optional uint32 length = 3;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 3;</code>
      */
     boolean hasLength();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 3;</code>
      */
     int getLength();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.Attachment}
    */
   public static final class Attachment extends
@@ -2565,12 +2698,14 @@ public final class BackupProtos {
     public static final int ROWID_FIELD_NUMBER = 1;
     private long rowId_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 rowId = 1;</code>
      */
     public boolean hasRowId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 rowId = 1;</code>
      */
     public long getRowId() {
@@ -2581,12 +2716,14 @@ public final class BackupProtos {
     public static final int ATTACHMENTID_FIELD_NUMBER = 2;
     private long attachmentId_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 attachmentId = 2;</code>
      */
     public boolean hasAttachmentId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint64 attachmentId = 2;</code>
      */
     public long getAttachmentId() {
@@ -2597,12 +2734,14 @@ public final class BackupProtos {
     public static final int LENGTH_FIELD_NUMBER = 3;
     private int length_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 3;</code>
      */
     public boolean hasLength() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 3;</code>
      */
     public int getLength() {
@@ -2735,6 +2874,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.Attachment}
      */
     public static final class Builder extends
@@ -2873,18 +3013,21 @@ public final class BackupProtos {
       // optional uint64 rowId = 1;
       private long rowId_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 rowId = 1;</code>
        */
       public boolean hasRowId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 rowId = 1;</code>
        */
       public long getRowId() {
         return rowId_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 rowId = 1;</code>
        */
       public Builder setRowId(long value) {
@@ -2894,6 +3037,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 rowId = 1;</code>
        */
       public Builder clearRowId() {
@@ -2906,18 +3050,21 @@ public final class BackupProtos {
       // optional uint64 attachmentId = 2;
       private long attachmentId_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 attachmentId = 2;</code>
        */
       public boolean hasAttachmentId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 attachmentId = 2;</code>
        */
       public long getAttachmentId() {
         return attachmentId_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 attachmentId = 2;</code>
        */
       public Builder setAttachmentId(long value) {
@@ -2927,6 +3074,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint64 attachmentId = 2;</code>
        */
       public Builder clearAttachmentId() {
@@ -2939,18 +3087,21 @@ public final class BackupProtos {
       // optional uint32 length = 3;
       private int length_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 3;</code>
        */
       public boolean hasLength() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 3;</code>
        */
       public int getLength() {
         return length_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 3;</code>
        */
       public Builder setLength(int value) {
@@ -2960,6 +3111,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 3;</code>
        */
       public Builder clearLength() {
@@ -2985,14 +3137,17 @@ public final class BackupProtos {
 
     // optional string name = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     boolean hasName();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     java.lang.String getName();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -3000,15 +3155,18 @@ public final class BackupProtos {
 
     // optional uint32 length = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 2;</code>
      */
     boolean hasLength();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 2;</code>
      */
     int getLength();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.Avatar}
    */
   public static final class Avatar extends
@@ -3113,12 +3271,14 @@ public final class BackupProtos {
     public static final int NAME_FIELD_NUMBER = 1;
     private java.lang.Object name_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     public java.lang.String getName() {
@@ -3136,6 +3296,7 @@ public final class BackupProtos {
       }
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional string name = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -3156,12 +3317,14 @@ public final class BackupProtos {
     public static final int LENGTH_FIELD_NUMBER = 2;
     private int length_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 2;</code>
      */
     public boolean hasLength() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 length = 2;</code>
      */
     public int getLength() {
@@ -3286,6 +3449,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.Avatar}
      */
     public static final class Builder extends
@@ -3417,12 +3581,14 @@ public final class BackupProtos {
       // optional string name = 1;
       private java.lang.Object name_ = "";
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public java.lang.String getName() {
@@ -3437,6 +3603,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -3453,6 +3620,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public Builder setName(
@@ -3466,6 +3634,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public Builder clearName() {
@@ -3475,6 +3644,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional string name = 1;</code>
        */
       public Builder setNameBytes(
@@ -3491,18 +3661,21 @@ public final class BackupProtos {
       // optional uint32 length = 2;
       private int length_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 2;</code>
        */
       public boolean hasLength() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 2;</code>
        */
       public int getLength() {
         return length_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 2;</code>
        */
       public Builder setLength(int value) {
@@ -3512,6 +3685,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 length = 2;</code>
        */
       public Builder clearLength() {
@@ -3537,15 +3711,18 @@ public final class BackupProtos {
 
     // optional uint32 version = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 version = 1;</code>
      */
     boolean hasVersion();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 version = 1;</code>
      */
     int getVersion();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.DatabaseVersion}
    */
   public static final class DatabaseVersion extends
@@ -3645,12 +3822,14 @@ public final class BackupProtos {
     public static final int VERSION_FIELD_NUMBER = 1;
     private int version_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 version = 1;</code>
      */
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional uint32 version = 1;</code>
      */
     public int getVersion() {
@@ -3767,6 +3946,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.DatabaseVersion}
      */
     public static final class Builder extends
@@ -3887,18 +4067,21 @@ public final class BackupProtos {
       // optional uint32 version = 1;
       private int version_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 version = 1;</code>
        */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 version = 1;</code>
        */
       public int getVersion() {
         return version_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 version = 1;</code>
        */
       public Builder setVersion(int value) {
@@ -3908,6 +4091,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional uint32 version = 1;</code>
        */
       public Builder clearVersion() {
@@ -3933,25 +4117,30 @@ public final class BackupProtos {
 
     // optional bytes iv = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes iv = 1;</code>
      */
     boolean hasIv();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes iv = 1;</code>
      */
     com.google.protobuf.ByteString getIv();
 
     // optional bytes salt = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes salt = 2;</code>
      */
     boolean hasSalt();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes salt = 2;</code>
      */
     com.google.protobuf.ByteString getSalt();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.Header}
    */
   public static final class Header extends
@@ -4056,12 +4245,14 @@ public final class BackupProtos {
     public static final int IV_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString iv_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes iv = 1;</code>
      */
     public boolean hasIv() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes iv = 1;</code>
      */
     public com.google.protobuf.ByteString getIv() {
@@ -4072,12 +4263,14 @@ public final class BackupProtos {
     public static final int SALT_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString salt_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes salt = 2;</code>
      */
     public boolean hasSalt() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bytes salt = 2;</code>
      */
     public com.google.protobuf.ByteString getSalt() {
@@ -4202,6 +4395,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.Header}
      */
     public static final class Builder extends
@@ -4331,18 +4525,21 @@ public final class BackupProtos {
       // optional bytes iv = 1;
       private com.google.protobuf.ByteString iv_ = com.google.protobuf.ByteString.EMPTY;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes iv = 1;</code>
        */
       public boolean hasIv() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes iv = 1;</code>
        */
       public com.google.protobuf.ByteString getIv() {
         return iv_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes iv = 1;</code>
        */
       public Builder setIv(com.google.protobuf.ByteString value) {
@@ -4355,6 +4552,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes iv = 1;</code>
        */
       public Builder clearIv() {
@@ -4367,18 +4565,21 @@ public final class BackupProtos {
       // optional bytes salt = 2;
       private com.google.protobuf.ByteString salt_ = com.google.protobuf.ByteString.EMPTY;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes salt = 2;</code>
        */
       public boolean hasSalt() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes salt = 2;</code>
        */
       public com.google.protobuf.ByteString getSalt() {
         return salt_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes salt = 2;</code>
        */
       public Builder setSalt(com.google.protobuf.ByteString value) {
@@ -4391,6 +4592,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bytes salt = 2;</code>
        */
       public Builder clearSalt() {
@@ -4416,99 +4618,120 @@ public final class BackupProtos {
 
     // optional .signal.Header header = 1;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     boolean hasHeader();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.Header getHeader();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.HeaderOrBuilder getHeaderOrBuilder();
 
     // optional .signal.SqlStatement statement = 2;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     boolean hasStatement();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement getStatement();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatementOrBuilder getStatementOrBuilder();
 
     // optional .signal.SharedPreference preference = 3;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     boolean hasPreference();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference getPreference();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreferenceOrBuilder getPreferenceOrBuilder();
 
     // optional .signal.Attachment attachment = 4;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     boolean hasAttachment();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.Attachment getAttachment();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.AttachmentOrBuilder getAttachmentOrBuilder();
 
     // optional .signal.DatabaseVersion version = 5;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     boolean hasVersion();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion getVersion();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersionOrBuilder getVersionOrBuilder();
 
     // optional bool end = 6;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bool end = 6;</code>
      */
     boolean hasEnd();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bool end = 6;</code>
      */
     boolean getEnd();
 
     // optional .signal.Avatar avatar = 7;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     boolean hasAvatar();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.Avatar getAvatar();
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     com.example.altuncu.blocksignal.backup.BackupProtos.AvatarOrBuilder getAvatarOrBuilder();
   }
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Protobuf type {@code signal.BackupFrame}
    */
   public static final class BackupFrame extends
@@ -4686,18 +4909,21 @@ public final class BackupProtos {
     public static final int HEADER_FIELD_NUMBER = 1;
     private com.example.altuncu.blocksignal.backup.BackupProtos.Header header_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.Header getHeader() {
       return header_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Header header = 1;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.HeaderOrBuilder getHeaderOrBuilder() {
@@ -4708,18 +4934,21 @@ public final class BackupProtos {
     public static final int STATEMENT_FIELD_NUMBER = 2;
     private com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement statement_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     public boolean hasStatement() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement getStatement() {
       return statement_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SqlStatement statement = 2;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatementOrBuilder getStatementOrBuilder() {
@@ -4730,18 +4959,21 @@ public final class BackupProtos {
     public static final int PREFERENCE_FIELD_NUMBER = 3;
     private com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference preference_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     public boolean hasPreference() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference getPreference() {
       return preference_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.SharedPreference preference = 3;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreferenceOrBuilder getPreferenceOrBuilder() {
@@ -4752,18 +4984,21 @@ public final class BackupProtos {
     public static final int ATTACHMENT_FIELD_NUMBER = 4;
     private com.example.altuncu.blocksignal.backup.BackupProtos.Attachment attachment_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     public boolean hasAttachment() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.Attachment getAttachment() {
       return attachment_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Attachment attachment = 4;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.AttachmentOrBuilder getAttachmentOrBuilder() {
@@ -4774,18 +5009,21 @@ public final class BackupProtos {
     public static final int VERSION_FIELD_NUMBER = 5;
     private com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion version_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion getVersion() {
       return version_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.DatabaseVersion version = 5;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersionOrBuilder getVersionOrBuilder() {
@@ -4796,12 +5034,14 @@ public final class BackupProtos {
     public static final int END_FIELD_NUMBER = 6;
     private boolean end_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bool end = 6;</code>
      */
     public boolean hasEnd() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional bool end = 6;</code>
      */
     public boolean getEnd() {
@@ -4812,18 +5052,21 @@ public final class BackupProtos {
     public static final int AVATAR_FIELD_NUMBER = 7;
     private com.example.altuncu.blocksignal.backup.BackupProtos.Avatar avatar_;
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     public boolean hasAvatar() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.Avatar getAvatar() {
       return avatar_;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <code>optional .signal.Avatar avatar = 7;</code>
      */
     public com.example.altuncu.blocksignal.backup.BackupProtos.AvatarOrBuilder getAvatarOrBuilder() {
@@ -4988,6 +5231,7 @@ public final class BackupProtos {
       return builder;
     }
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Protobuf type {@code signal.BackupFrame}
      */
     public static final class Builder extends
@@ -5218,12 +5462,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.Header, com.example.altuncu.blocksignal.backup.BackupProtos.Header.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.HeaderOrBuilder> headerBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public boolean hasHeader() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Header getHeader() {
@@ -5234,6 +5480,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public Builder setHeader(com.example.altuncu.blocksignal.backup.BackupProtos.Header value) {
@@ -5250,6 +5497,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public Builder setHeader(
@@ -5264,6 +5512,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public Builder mergeHeader(com.example.altuncu.blocksignal.backup.BackupProtos.Header value) {
@@ -5283,6 +5532,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public Builder clearHeader() {
@@ -5296,6 +5546,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Header.Builder getHeaderBuilder() {
@@ -5304,6 +5555,7 @@ public final class BackupProtos {
         return getHeaderFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.HeaderOrBuilder getHeaderOrBuilder() {
@@ -5314,6 +5566,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Header header = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -5335,12 +5588,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement, com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatementOrBuilder> statementBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public boolean hasStatement() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement getStatement() {
@@ -5351,6 +5606,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public Builder setStatement(com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement value) {
@@ -5367,6 +5623,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public Builder setStatement(
@@ -5381,6 +5638,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public Builder mergeStatement(com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement value) {
@@ -5400,6 +5658,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public Builder clearStatement() {
@@ -5413,6 +5672,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatement.Builder getStatementBuilder() {
@@ -5421,6 +5681,7 @@ public final class BackupProtos {
         return getStatementFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SqlStatementOrBuilder getStatementOrBuilder() {
@@ -5431,6 +5692,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SqlStatement statement = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -5452,12 +5714,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference, com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreferenceOrBuilder> preferenceBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public boolean hasPreference() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference getPreference() {
@@ -5468,6 +5732,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public Builder setPreference(com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference value) {
@@ -5484,6 +5749,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public Builder setPreference(
@@ -5498,6 +5764,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public Builder mergePreference(com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference value) {
@@ -5517,6 +5784,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public Builder clearPreference() {
@@ -5530,6 +5798,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreference.Builder getPreferenceBuilder() {
@@ -5538,6 +5807,7 @@ public final class BackupProtos {
         return getPreferenceFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.SharedPreferenceOrBuilder getPreferenceOrBuilder() {
@@ -5548,6 +5818,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.SharedPreference preference = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -5569,12 +5840,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.Attachment, com.example.altuncu.blocksignal.backup.BackupProtos.Attachment.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.AttachmentOrBuilder> attachmentBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public boolean hasAttachment() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Attachment getAttachment() {
@@ -5585,6 +5858,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public Builder setAttachment(com.example.altuncu.blocksignal.backup.BackupProtos.Attachment value) {
@@ -5601,6 +5875,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public Builder setAttachment(
@@ -5615,6 +5890,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public Builder mergeAttachment(com.example.altuncu.blocksignal.backup.BackupProtos.Attachment value) {
@@ -5634,6 +5910,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public Builder clearAttachment() {
@@ -5647,6 +5924,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Attachment.Builder getAttachmentBuilder() {
@@ -5655,6 +5933,7 @@ public final class BackupProtos {
         return getAttachmentFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.AttachmentOrBuilder getAttachmentOrBuilder() {
@@ -5665,6 +5944,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Attachment attachment = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -5686,12 +5966,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion, com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersionOrBuilder> versionBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion getVersion() {
@@ -5702,6 +5984,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public Builder setVersion(com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion value) {
@@ -5718,6 +6001,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public Builder setVersion(
@@ -5732,6 +6016,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public Builder mergeVersion(com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion value) {
@@ -5751,6 +6036,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public Builder clearVersion() {
@@ -5764,6 +6050,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersion.Builder getVersionBuilder() {
@@ -5772,6 +6059,7 @@ public final class BackupProtos {
         return getVersionFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.DatabaseVersionOrBuilder getVersionOrBuilder() {
@@ -5782,6 +6070,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.DatabaseVersion version = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -5801,18 +6090,21 @@ public final class BackupProtos {
       // optional bool end = 6;
       private boolean end_ ;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool end = 6;</code>
        */
       public boolean hasEnd() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool end = 6;</code>
        */
       public boolean getEnd() {
         return end_;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool end = 6;</code>
        */
       public Builder setEnd(boolean value) {
@@ -5822,6 +6114,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional bool end = 6;</code>
        */
       public Builder clearEnd() {
@@ -5836,12 +6129,14 @@ public final class BackupProtos {
       private com.google.protobuf.SingleFieldBuilder<
           com.example.altuncu.blocksignal.backup.BackupProtos.Avatar, com.example.altuncu.blocksignal.backup.BackupProtos.Avatar.Builder, com.example.altuncu.blocksignal.backup.BackupProtos.AvatarOrBuilder> avatarBuilder_;
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public boolean hasAvatar() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Avatar getAvatar() {
@@ -5852,6 +6147,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public Builder setAvatar(com.example.altuncu.blocksignal.backup.BackupProtos.Avatar value) {
@@ -5868,6 +6164,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public Builder setAvatar(
@@ -5882,6 +6179,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public Builder mergeAvatar(com.example.altuncu.blocksignal.backup.BackupProtos.Avatar value) {
@@ -5901,6 +6199,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public Builder clearAvatar() {
@@ -5914,6 +6213,7 @@ public final class BackupProtos {
         return this;
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.Avatar.Builder getAvatarBuilder() {
@@ -5922,6 +6222,7 @@ public final class BackupProtos {
         return getAvatarFieldBuilder().getBuilder();
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       public com.example.altuncu.blocksignal.backup.BackupProtos.AvatarOrBuilder getAvatarOrBuilder() {
@@ -5932,6 +6233,7 @@ public final class BackupProtos {
         }
       }
       /**
+ * Copyright (c) 2019 Enes Altuncu
        * <code>optional .signal.Avatar avatar = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<

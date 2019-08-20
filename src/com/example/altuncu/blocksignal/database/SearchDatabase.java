@@ -9,6 +9,7 @@ import net.sqlcipher.database.SQLiteDatabase;
 import com.example.altuncu.blocksignal.database.helpers.SQLCipherOpenHelper;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Contains all databases necessary for full-text search (FTS).
  */
 public class SearchDatabase extends Database {

@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -94,6 +95,7 @@ public class TextEntity extends MotionEntity {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * If reuseBmp is not null, and size of the new bitmap matches the size of the reuseBmp,
    * new bitmap won't be created, reuseBmp it will be reused instead
    *

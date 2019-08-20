@@ -22,6 +22,7 @@ import java.lang.System;
 import java.util.ArrayList;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A convenience class that presents a two-dimensional ArrayList
  * as a Cursor.
  */

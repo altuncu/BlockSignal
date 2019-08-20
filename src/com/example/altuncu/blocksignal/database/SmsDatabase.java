@@ -55,6 +55,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Database for storage of SMS messages.
  *
  * @author Moxie Marlinspike

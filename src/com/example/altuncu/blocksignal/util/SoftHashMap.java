@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A <code><em>Soft</em>HashMap</code> is a memory-constrained map that stores its <em>values</em> in
  * {@link SoftReference SoftReference}s.  (Contrast this with the JDK's
  * {@link WeakHashMap WeakHashMap}, which uses weak references for its <em>keys</em>, which is of little value if you
@@ -47,33 +48,39 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SoftHashMap<K, V> implements Map<K, V> {
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The default value of the RETENTION_SIZE attribute, equal to 100.
    */
   private static final int DEFAULT_RETENTION_SIZE = 100;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The internal HashMap that will hold the SoftReference.
    */
   private final Map<K, SoftValue<V, K>> map;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The number of strong references to hold internally, that is, the number of instances to prevent
    * from being garbage collected automatically (unlike other soft references).
    */
   private final int RETENTION_SIZE;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The FIFO list of strong references (not to be garbage collected), order of last access.
    */
   private final Queue<V> strongReferences; //guarded by 'strongReferencesLock'
   private final ReentrantLock strongReferencesLock;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Reference queue for cleared SoftReference objects.
    */
   private final ReferenceQueue<? super V> queue;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new SoftHashMap with a default retention size size of
    * {@link #DEFAULT_RETENTION_SIZE DEFAULT_RETENTION_SIZE} (100 entries).
    *
@@ -84,6 +91,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new SoftHashMap with the specified retention size.
    * <p/>
    * The retention size (n) is the total number of most recent entries in the map that will be strongly referenced
@@ -109,6 +117,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a {@code SoftHashMap} backed by the specified {@code source}, with a default retention
    * size of {@link #DEFAULT_RETENTION_SIZE DEFAULT_RETENTION_SIZE} (100 entries).
    *
@@ -121,6 +130,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a {@code SoftHashMap} backed by the specified {@code source}, with the specified retention size.
    * <p/>
    * The retention size (n) is the total number of most recent entries in the map that will be strongly referenced
@@ -183,6 +193,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Traverses the ReferenceQueue and removes garbage-collected SoftValue objects from the backing map
    * by looking them up using the SoftValue.key data member.
    */
@@ -243,6 +254,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new entry, but wraps the value in a SoftValue instance to enable auto garbage collection.
    */
   public V put(K key, V value) {
@@ -294,6 +306,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * We define our own subclass of SoftReference which contains
    * not only the value but also the key to make it easier to find
    * the entry in the HashMap after it's been garbage collected.
@@ -303,6 +316,7 @@ public class SoftHashMap<K, V> implements Map<K, V> {
     private final K key;
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Constructs a new instance, wrapping the value, key, and queue, as
      * required by the superclass.
      *

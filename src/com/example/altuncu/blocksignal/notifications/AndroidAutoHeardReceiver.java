@@ -32,6 +32,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Marks an Android Auto as read after the driver have listened to it
  */
 public class AndroidAutoHeardReceiver extends BroadcastReceiver {

@@ -3,6 +3,7 @@ package com.example.altuncu.blocksignal.util;
 import android.os.Handler;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A class that will throttle the number of runnables executed to be at most once every specified
  * interval.
  *
@@ -17,6 +18,7 @@ public class Debouncer {
   private final long    threshold;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * @param threshold Only one runnable will be executed via {@link #publish(Runnable)} every
    *                  {@code threshold} milliseconds.
    */

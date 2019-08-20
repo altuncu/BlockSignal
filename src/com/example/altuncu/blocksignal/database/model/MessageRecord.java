@@ -34,6 +34,7 @@ import com.example.altuncu.blocksignal.util.GroupUtil;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * The base class for message record models that are displayed in
  * conversations, as opposed to models that are displayed in a thread list.
  * Encapsulates the shared data between both SMS and MMS messages.

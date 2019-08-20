@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,6 +79,7 @@ public class TextLayer extends Layer {
 
   public interface Limits {
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * limit text size to view bounds
      * so that users don't put small font size and scale it 100+ times
      */

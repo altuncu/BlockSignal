@@ -30,6 +30,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * The message record model which represents standard SMS messages.
  *
  * @author Moxie Marlinspike

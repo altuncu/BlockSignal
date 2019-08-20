@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,6 +29,7 @@ import android.util.Log;
 public class Layer {
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * rotation relative to the layer center, in degrees
    */
   @FloatRange(from = 0.0F, to = 360.0F)
@@ -35,14 +37,17 @@ public class Layer {
 
   private float scale;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * top left X coordinate, relative to parent canvas
    */
   private float x;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * top left Y coordinate, relative to parent canvas
    */
   private float y;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * is layer flipped horizontally (by X-coordinate)
    */
   private boolean isFlipped;

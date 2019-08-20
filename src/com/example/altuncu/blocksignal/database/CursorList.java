@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A list backed by a {@link Cursor} that retrieves models using a provided {@link ModelBuilder}.
  * Allows you to abstract away the use of a {@link Cursor} while still getting the benefits of a
  * {@link Cursor} (e.g. windowing).

@@ -59,6 +59,7 @@ import com.example.altuncu.blocksignal.util.DynamicLanguage;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity that prompts for a user's passphrase.
  *
  * @author Moxie Marlinspike

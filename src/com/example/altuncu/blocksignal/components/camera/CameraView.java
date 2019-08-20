@@ -1,4 +1,5 @@
-/***
+/**
+ * Copyright (c) 2019 Enes Altuncu*
  Copyright (c) 2013-2014 CommonsWare, LLC
  Portions Copyright (C) 2007 The Android Open Source Project
 

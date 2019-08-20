@@ -23,6 +23,7 @@ import android.widget.ImageView;
 
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * AspectRatioImageView maintains an aspect ratio by adjusting the width or height dimension. The
  * aspect ratio (width to height ratio) and adjustment dimension can be configured.
  */
@@ -65,6 +66,7 @@ public class AspectRatioImageView extends ImageView {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the aspect ratio that should be respected during measurement.
    *
    * @param aspectRatio desired width to height ratio
@@ -74,6 +76,7 @@ public class AspectRatioImageView extends ImageView {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Resets the size to 0.
    */
   public void resetSize() {
@@ -99,6 +102,7 @@ public class AspectRatioImageView extends ImageView {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the height that will satisfy the width to height aspect ratio, keeping the given
    * width fixed.
    */
@@ -110,6 +114,7 @@ public class AspectRatioImageView extends ImageView {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the width that will satisfy the width to height aspect ratio, keeping the given
    * height fixed.
    */

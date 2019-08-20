@@ -41,6 +41,7 @@ public class AttachmentUtil {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Deletes the specified attachment. If its the only attachment for its linked message, the entire
    * message is deleted.
    */

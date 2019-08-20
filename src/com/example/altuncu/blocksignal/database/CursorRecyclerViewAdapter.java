@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2015 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +29,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * RecyclerView.Adapter that manages a Cursor, comparable to the CursorAdapter usable in ListView/GridView.
  */
 public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

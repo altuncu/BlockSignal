@@ -33,6 +33,7 @@ import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.util.ExpirationUtil;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * The message record model which represents thread heading messages.
  *
  * @author Moxie Marlinspike

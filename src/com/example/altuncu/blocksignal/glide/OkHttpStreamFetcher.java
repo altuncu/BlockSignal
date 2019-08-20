@@ -18,6 +18,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Fetches an {@link InputStream} using the okhttp library.
  */
 class OkHttpStreamFetcher implements DataFetcher<InputStream> {

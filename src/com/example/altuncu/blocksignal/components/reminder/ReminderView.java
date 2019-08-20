@@ -15,6 +15,7 @@ import com.example.altuncu.blocksignal.R;
 import com.example.altuncu.blocksignal.util.ViewUtil;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * View to display actionable reminders to the user
  */
 public class ReminderView extends LinearLayout {

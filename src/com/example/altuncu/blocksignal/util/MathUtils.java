@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 public class MathUtils {
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * For more info:
      * <a href="http://math.stackexchange.com/questions/190111/how-to-check-if-a-point-is-inside-a-rectangle">StackOverflow: How to check point is in rectangle</a>
      *
@@ -26,6 +27,7 @@ public class MathUtils {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * calculates cross product of vectors AB and AC
      *
      * @param a beginning of 2 vectors
@@ -38,6 +40,7 @@ public class MathUtils {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * calculates cross product of vectors AB and AC
      *
      * @param ax X coordinate of point A

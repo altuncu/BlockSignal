@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2014 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -45,6 +46,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * List adapter to display all contacts and their related information
  *
  * @author Jake McGinty

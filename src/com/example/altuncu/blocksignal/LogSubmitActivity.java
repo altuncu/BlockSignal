@@ -12,6 +12,7 @@ import com.example.altuncu.blocksignal.util.DynamicTheme;
 import org.whispersystems.libpastelog.SubmitLogFragment;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for submitting logcat logs to a pastebin service.
  */
 public class LogSubmitActivity extends BaseActionBarActivity implements SubmitLogFragment.OnLogSubmittedListener {

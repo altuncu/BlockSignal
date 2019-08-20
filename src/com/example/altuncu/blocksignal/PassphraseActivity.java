@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +29,7 @@ import com.example.altuncu.blocksignal.service.KeyCachingService;
 
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Base Activity for changing/prompting local encryption passphrase.
  *
  * @author Moxie Marlinspike

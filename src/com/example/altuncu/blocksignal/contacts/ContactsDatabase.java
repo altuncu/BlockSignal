@@ -48,6 +48,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Database to supply all types of contacts that TextSecure needs to know about
  *
  * @author Jake McGinty

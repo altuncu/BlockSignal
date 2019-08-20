@@ -62,6 +62,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A cursor adapter for a conversation thread.  Ultimately
  * used by ComposeMessageActivity to display a conversation
  * thread in a ListActivity.

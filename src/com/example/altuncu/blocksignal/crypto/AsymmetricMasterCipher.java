@@ -1,4 +1,5 @@
-/** 
+/**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  * Copyright (C) 2013 Open Whisper Systems
  * 
@@ -34,6 +35,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class is used to asymmetricly encrypt local data.  This is used in the case
  * where TextSecure receives an SMS, but the user's local encryption passphrase is
  * not cached (either because of a timeout, or because it hasn't yet been entered).

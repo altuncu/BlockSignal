@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2014 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +22,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * FutureTask with a reference identifier tag.
  *
  * @author Jake McGinty

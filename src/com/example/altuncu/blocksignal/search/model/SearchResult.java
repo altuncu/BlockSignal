@@ -9,6 +9,7 @@ import com.example.altuncu.blocksignal.recipients.Recipient;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Represents an all-encompassing search result that can contain various result for different
  * subcategories.
  */

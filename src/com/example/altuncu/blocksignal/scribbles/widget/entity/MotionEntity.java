@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,39 +38,46 @@ import com.example.altuncu.blocksignal.scribbles.viewmodel.Layer;
 public abstract class MotionEntity {
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * data
    */
   @NonNull
   protected final Layer layer;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * transformation matrix for the entity
    */
   protected final Matrix matrix = new Matrix();
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * true - entity is selected and need to draw it's border
    * false - not selected, no need to draw it's border
    */
   private boolean isSelected;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * maximum scale of the initial image, so that
    * the entity still fits within the parent canvas
    */
   protected float holyScale;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * width of canvas the entity is drawn in
    */
   @IntRange(from = 0)
   protected int canvasWidth;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * height of canvas the entity is drawn in
    */
   @IntRange(from = 0)
   protected int canvasHeight;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Destination points of the entity
    * 5 points. Size of array - 10; Starting upper left corner, clockwise
    * last point is the same as first to close the circle
@@ -77,6 +85,7 @@ public abstract class MotionEntity {
    */
   private final float[] destPoints = new float[10]; // x0, y0, x1, y1, x2, y2, x3, y3, x0, y0
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Initial points of the entity
    * @see #destPoints
    */
@@ -102,6 +111,7 @@ public abstract class MotionEntity {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * S - scale matrix, R - rotate matrix, T - translate matrix,
    * L - result transformation matrix
    * <p>
@@ -193,6 +203,7 @@ public abstract class MotionEntity {
   private final PointF pD = new PointF();
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * For more info:
    * <a href="http://math.stackexchange.com/questions/190111/how-to-check-if-a-point-is-inside-a-rectangle">StackOverflow: How to check point is in rectangle</a>
    * <p>NOTE: it's easier to apply the same transformation matrix (calculated before) to the original source points, rather than
@@ -219,6 +230,7 @@ public abstract class MotionEntity {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * http://judepereira.com/blog/calculate-the-real-scale-factor-and-the-angle-of-rotation-from-an-android-matrix/
    *
    * @param canvas Canvas to draw

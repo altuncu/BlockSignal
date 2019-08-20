@@ -49,6 +49,7 @@ import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Small service that stays running to keep a key cached in memory.
  *
  * @author Moxie Marlinspike
@@ -168,6 +169,7 @@ public class KeyCachingService extends Service {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Workaround for Android bug:
    * https://code.google.com/p/android/issues/detail?id=53313
    */

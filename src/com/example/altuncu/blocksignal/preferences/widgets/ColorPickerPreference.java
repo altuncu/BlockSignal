@@ -94,6 +94,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the current color.
    *
    * @return The current color.
@@ -103,6 +104,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the current color.
    *
    * @param color The current color.
@@ -112,6 +114,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns all of the available colors.
    *
    * @return The available colors.
@@ -121,6 +124,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the available colors.
    *
    * @param colors The available colors.
@@ -130,6 +134,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns whether the available colors should be sorted automatically based on their HSV
    * values.
    *
@@ -141,6 +146,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets whether the available colors should be sorted automatically based on their HSV
    * values. The sorting does not modify the order of the original colors supplied via
    * {@link #setColors(int[])} or the XML attribute {@code app:colors}.
@@ -153,6 +159,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the available colors' descriptions that can be used by accessibility services.
    *
    * @return The available colors' descriptions.
@@ -162,6 +169,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the available colors' descriptions that can be used by accessibility services.
    *
    * @param colorDescriptions The available colors' descriptions.
@@ -171,6 +179,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the number of columns to be used in the picker dialog for displaying the available
    * colors. If the value is less than or equals to 0, the number of columns will be determined
    * automatically by the system using FlexboxLayoutManager.
@@ -183,6 +192,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the number of columns to be used in the picker dialog for displaying the available
    * colors. If the value is less than or equals to 0, the number of columns will be determined
    * automatically by the system using FlexboxLayoutManager.
@@ -196,6 +206,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the size of the color swatches in the dialog. It can be either
    * {@link ColorPickerDialog#SIZE_SMALL} or {@link ColorPickerDialog#SIZE_LARGE}.
    *
@@ -209,6 +220,7 @@ public class ColorPickerPreference extends DialogPreference {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Sets the size of the color swatches in the dialog. It can be either
    * {@link ColorPickerDialog#SIZE_SMALL} or {@link ColorPickerDialog#SIZE_LARGE}.
    *

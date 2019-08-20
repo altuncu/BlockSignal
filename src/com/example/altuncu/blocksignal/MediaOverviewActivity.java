@@ -69,6 +69,7 @@ import java.util.Collection;
 import java.util.Locale;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for displaying media attachments in-app
  */
 public class MediaOverviewActivity extends PassphraseRequiredActionBarActivity  {

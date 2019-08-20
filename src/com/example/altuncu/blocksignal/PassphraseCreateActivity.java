@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,6 +28,7 @@ import com.example.altuncu.blocksignal.util.Util;
 import com.example.altuncu.blocksignal.util.VersionTracker;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for creating a user's local encryption passphrase.
  *
  * @author Moxie Marlinspike

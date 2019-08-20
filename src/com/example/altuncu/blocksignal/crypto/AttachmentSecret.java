@@ -20,6 +20,7 @@ import com.example.altuncu.blocksignal.util.JsonUtils;
 import java.io.IOException;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Encapsulates the key material used to encrypt attachments on disk.
  *
  * There are two logical pieces of material, a deprecated set of keys used to encrypt

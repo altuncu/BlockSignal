@@ -20,6 +20,7 @@ import androidx.loader.content.AsyncTaskLoader;
 import android.content.Context;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Loader which extends AsyncTaskLoaders and handles caveats
  * as pointed out in http://code.google.com/p/android/issues/detail?id=14944.
  *

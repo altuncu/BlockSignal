@@ -51,6 +51,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.whispersystems.libsignal.IdentityKey;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A UI widget that encapsulates the entire in-call screen
  * for both initiators and responders.
  *

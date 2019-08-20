@@ -30,6 +30,7 @@ import java.security.SecureRandomSpi;
 import java.security.Security;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class is taken directly from the Android blog post announcing this bug:
  * http://android-developers.blogspot.com/2013/08/some-securerandom-thoughts.html
  *
@@ -39,6 +40,7 @@ import java.security.Security;
  */
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Fixes for the output of the default PRNG having low entropy.
  *
  * The fixes need to be applied via {@link #apply()} before any use of Java
@@ -52,10 +54,12 @@ public final class PRNGFixes {
   private static final byte[] BUILD_FINGERPRINT_AND_DEVICE_SERIAL =
       getBuildFingerprintAndDeviceSerial();
 
-  /** Hidden constructor to prevent instantiation. */
+  /**
+ * Copyright (c) 2019 Enes Altuncu Hidden constructor to prevent instantiation. */
   private PRNGFixes() {}
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Applies all fixes.
    *
    * @throws SecurityException if a fix is needed but could not be applied.
@@ -66,6 +70,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Applies the fix for OpenSSL PRNG having low entropy. Does nothing if the
    * fix is not needed.
    *
@@ -100,6 +105,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Installs a Linux PRNG-backed {@code SecureRandom} implementation as the
    * default. Does nothing if the implementation is already the default or if
    * there is not need to install the implementation.
@@ -150,6 +156,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * {@code Provider} of {@code SecureRandom} engines which pass through
    * all requests to the Linux PRNG.
    */
@@ -170,6 +177,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * {@link SecureRandomSpi} which passes all requests to the Linux PRNG
    * ({@code /dev/urandom}).
    */
@@ -192,6 +200,7 @@ public final class PRNGFixes {
     private static final Object sLock = new Object();
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Input stream for reading from Linux PRNG or {@code null} if not yet
      * opened.
      *
@@ -200,6 +209,7 @@ public final class PRNGFixes {
     private static DataInputStream sUrandomIn;
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Output stream for writing to Linux PRNG or {@code null} if not yet
      * opened.
      *
@@ -208,6 +218,7 @@ public final class PRNGFixes {
     private static OutputStream sUrandomOut;
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Whether this engine instance has been seeded. This is needed because
      * each instance needs to seed itself if the client does not explicitly
      * seed it.
@@ -291,6 +302,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Generates a device- and invocation-specific seed to be mixed into the
    * Linux PRNG.
    */
@@ -312,6 +324,7 @@ public final class PRNGFixes {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Gets the hardware serial number of this device.
    *
    * @return serial number or {@code null} if not available.

@@ -24,27 +24,32 @@ import java.io.InputStream;
 
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * An input stream, which limits its data size. This stream is
  * used, if the content length is unknown.
  */
 public class LimitedInputStream extends FilterInputStream {
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The maximum size of an item, in bytes.
    */
   private long sizeMax;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The current number of bytes.
    */
   private long count;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Whether this stream is already closed.
    */
   private boolean closed;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new instance.
    * @param pIn The input stream, which shall be limited.
    * @param pSizeMax The limit; no more than this number of bytes
@@ -56,6 +61,7 @@ public class LimitedInputStream extends FilterInputStream {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Reads the next byte of data from this input stream. The value
    * byte is returned as an <code>int</code> in the range
    * <code>0</code> to <code>255</code>. If no byte is available
@@ -83,6 +89,7 @@ public class LimitedInputStream extends FilterInputStream {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Reads up to <code>len</code> bytes of data from this input stream
    * into an array of bytes. If <code>len</code> is not zero, the method
    * blocks until some input is available; otherwise, no

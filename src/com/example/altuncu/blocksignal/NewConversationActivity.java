@@ -29,6 +29,7 @@ import com.example.altuncu.blocksignal.database.ThreadDatabase;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity container for starting a new conversation.
  *
  * @author Moxie Marlinspike

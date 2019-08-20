@@ -10,6 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Controls access to the proximity lock.
  * The proximity lock is not part of the public API.
  *

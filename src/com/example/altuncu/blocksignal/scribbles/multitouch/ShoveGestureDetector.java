@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author Robert Nordan (robert.nordan@norkart.no)
  *         <p>
  *         Copyright (c) 2013, Norkart AS
@@ -148,6 +149,7 @@ public class ShoveGestureDetector extends TwoFingerGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Return the distance in pixels from the previous shove event to the current
      * event.
      *
@@ -166,6 +168,7 @@ public class ShoveGestureDetector extends TwoFingerGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Listener which must be implemented which is used by ShoveGestureDetector
      * to perform callbacks to any implementing class which is registered to a
      * ShoveGestureDetector via the constructor.
@@ -181,6 +184,7 @@ public class ShoveGestureDetector extends TwoFingerGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Helper class which may be extended and where the methods may be
      * implemented. This way it is not necessary to implement all methods
      * of OnShoveGestureListener.

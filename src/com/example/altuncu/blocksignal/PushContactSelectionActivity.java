@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity container for selecting a list of contacts.
  *
  * @author Moxie Marlinspike

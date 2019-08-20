@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,6 +24,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Arrays;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * When a user first initializes TextSecure, a few secrets
  * are generated.  These are:
  *

@@ -40,6 +40,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A CursorAdapter for building a list of conversation threads.
  *
  * @author Moxie Marlinspike

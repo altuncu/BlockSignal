@@ -31,6 +31,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Represents the message record model for MMS messages that are
  * notifications (ie: they're pointers to undownloaded media).
  *

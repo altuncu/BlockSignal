@@ -7,6 +7,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Maintains wake lock state.
  *
  * @author Stuart O. Anderson

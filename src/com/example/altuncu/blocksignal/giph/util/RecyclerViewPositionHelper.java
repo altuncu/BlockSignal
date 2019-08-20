@@ -25,6 +25,7 @@ public class RecyclerViewPositionHelper {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the adapter item count.
    *
    * @return The total number on items in a layout manager
@@ -34,6 +35,7 @@ public class RecyclerViewPositionHelper {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the adapter position of the first visible view. This position does not include
    * adapter changes that were dispatched after the last layout pass.
    *
@@ -46,6 +48,7 @@ public class RecyclerViewPositionHelper {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the adapter position of the first fully visible view. This position does not include
    * adapter changes that were dispatched after the last layout pass.
    *
@@ -58,6 +61,7 @@ public class RecyclerViewPositionHelper {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the adapter position of the last visible view. This position does not include
    * adapter changes that were dispatched after the last layout pass.
    *
@@ -70,6 +74,7 @@ public class RecyclerViewPositionHelper {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Returns the adapter position of the last fully visible view. This position does not include
    * adapter changes that were dispatched after the last layout pass.
    *

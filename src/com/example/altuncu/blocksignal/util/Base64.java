@@ -1,6 +1,7 @@
 package com.example.altuncu.blocksignal.util;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * <p>Encodes and decodes to and from Base64 notation.</p>
  * <p>Homepage: <a href="http://iharder.net/base64">http://iharder.net/base64</a>.</p>
  * 
@@ -142,28 +143,35 @@ public class Base64
 /* ********  P U B L I C   F I E L D S  ******** */   
     
     
-    /** No options specified. Value is zero. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu No options specified. Value is zero. */
     public final static int NO_OPTIONS = 0;
     
-    /** Specify encoding in first bit. Value is one. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Specify encoding in first bit. Value is one. */
     public final static int ENCODE = 1;
     
     
-    /** Specify decoding in first bit. Value is zero. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Specify decoding in first bit. Value is zero. */
     public final static int DECODE = 0;
     
 
-    /** Specify that data should be gzip-compressed in second bit. Value is two. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Specify that data should be gzip-compressed in second bit. Value is two. */
     public final static int GZIP = 2;
 
-    /** Specify that gzipped data should <em>not</em> be automatically gunzipped. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Specify that gzipped data should <em>not</em> be automatically gunzipped. */
     public final static int DONT_GUNZIP = 4;
     
     
-    /** Do break lines when encoding. Value is 8. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Do break lines when encoding. Value is 8. */
     public final static int DO_BREAK_LINES = 8;
 	
-    /** 
+    /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encode using Base64-like encoding that is URL- and Filename-safe as described
      * in Section 4 of RFC3548: 
      * <a href="http://www.faqs.org/rfcs/rfc3548.html">http://www.faqs.org/rfcs/rfc3548.html</a>.
@@ -175,6 +183,7 @@ public class Base64
 
 
      /**
+ * Copyright (c) 2019 Enes Altuncu
       * Encode using the special "ordered" dialect of Base64 described here:
       * <a href="http://www.faqs.org/qa/rfcc-1940.html">http://www.faqs.org/qa/rfcc-1940.html</a>.
       */
@@ -184,19 +193,23 @@ public class Base64
 /* ********  P R I V A T E   F I E L D S  ******** */  
     
     
-    /** Maximum line length (76) of Base64 output. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Maximum line length (76) of Base64 output. */
     private final static int MAX_LINE_LENGTH = 76;
     
     
-    /** The equals sign (=) as a byte. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu The equals sign (=) as a byte. */
     private final static byte EQUALS_SIGN = (byte)'=';
     
     
-    /** The new line character (\n) as a byte. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu The new line character (\n) as a byte. */
     private final static byte NEW_LINE = (byte)'\n';
     
     
-    /** Preferred encoding. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Preferred encoding. */
     private final static String PREFERRED_ENCODING = "US-ASCII";
     
 	
@@ -206,7 +219,8 @@ public class Base64
 	
 /* ********  S T A N D A R D   B A S E 6 4   A L P H A B E T  ******** */	
     
-    /** The 64 valid Base64 values. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu The 64 valid Base64 values. */
     /* Host platform me be something funny like EBCDIC, so we hardcode these values. */
     private final static byte[] _STANDARD_ALPHABET = {
         (byte)'A', (byte)'B', (byte)'C', (byte)'D', (byte)'E', (byte)'F', (byte)'G',
@@ -222,7 +236,8 @@ public class Base64
     };
 	
     
-    /** 
+    /**
+ * Copyright (c) 2019 Enes Altuncu
      * Translates a Base64 value to either its 6-bit reconstruction value
      * or a negative number indicating some other meaning.
      **/
@@ -264,6 +279,7 @@ public class Base64
 /* ********  U R L   S A F E   B A S E 6 4   A L P H A B E T  ******** */
 	
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Used in the URL- and Filename-safe dialect described in Section 4 of RFC3548: 
      * <a href="http://www.faqs.org/rfcs/rfc3548.html">http://www.faqs.org/rfcs/rfc3548.html</a>.
      * Notice that the last two bytes become "hyphen" and "underscore" instead of "plus" and "slash."
@@ -282,6 +298,7 @@ public class Base64
     };
 	
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Used in decoding URL- and Filename-safe dialects of Base64.
      */
     private final static byte[] _URL_SAFE_DECODABET = {
@@ -327,6 +344,7 @@ public class Base64
 /* ********  O R D E R E D   B A S E 6 4   A L P H A B E T  ******** */
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * I don't get the point of this technique, but someone requested it,
      * and it is described here:
      * <a href="http://www.faqs.org/qa/rfcc-1940.html">http://www.faqs.org/qa/rfcc-1940.html</a>.
@@ -347,6 +365,7 @@ public class Base64
     };
 	
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Used in decoding the "ordered" dialect of Base64.
      */
     private final static byte[] _ORDERED_DECODABET = {
@@ -392,6 +411,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Returns one of the _SOMETHING_ALPHABET byte arrays depending on
      * the options specified.
      * It's possible, though silly, to specify ORDERED <b>and</b> URLSAFE
@@ -410,6 +430,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Returns one of the _SOMETHING_DECODABET byte arrays depending on
      * the options specified.
      * It's possible, though silly, to specify ORDERED and URL_SAFE
@@ -428,7 +449,8 @@ public class Base64
 
 
     
-    /** Defeats instantiation. */
+    /**
+ * Copyright (c) 2019 Enes Altuncu Defeats instantiation. */
     private Base64(){}
     
 
@@ -452,6 +474,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encodes up to the first three bytes of array <var>threeBytes</var>
      * and returns a four-byte array in Base64 notation.
      * The actual number of significant bytes in your array is
@@ -473,6 +496,7 @@ public class Base64
 
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * <p>Encodes up to three bytes of the array <var>source</var>
      * and writes the resulting four Base64 bytes to <var>destination</var>.
      * The source and destination arrays can be manipulated
@@ -547,6 +571,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Performs Base64 encoding on the <code>raw</code> ByteBuffer,
      * writing it to the <code>encoded</code> ByteBuffer.
      * This is an experimental feature. Currently it does not
@@ -571,6 +596,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Performs Base64 encoding on the <code>raw</code> ByteBuffer,
      * writing it to the <code>encoded</code> CharBuffer.
      * This is an experimental feature. Currently it does not
@@ -599,6 +625,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Serializes an object and returns the Base64-encoded
      * version of that serialized object.  
      *  
@@ -624,6 +651,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Serializes an object and returns the Base64-encoded
      * version of that serialized object.
      *  
@@ -706,6 +734,7 @@ public class Base64
     
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encodes a byte array into Base64 notation.
      * Does not GZip-compress data.
      *  
@@ -752,6 +781,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encodes a byte array into Base64 notation.
      * <p>
      * Example options:<pre>
@@ -786,6 +816,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encodes a byte array into Base64 notation.
      * Does not GZip-compress data.
      *  
@@ -820,6 +851,7 @@ public class Base64
     
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Encodes a byte array into Base64 notation.
      * <p>
      * Example options:<pre>
@@ -868,6 +900,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Similar to {@link #encodeBytes(byte[])} but returns
      * a byte array instead of instantiating a String. This is more efficient
      * if you're working with I/O streams and have large data sets to encode.
@@ -890,6 +923,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Similar to {@link #encodeBytes(byte[], int, int, int)} but returns
      * a byte array instead of instantiating a String. This is more efficient
      * if you're working with I/O streams and have large data sets to encode.
@@ -1020,6 +1054,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes four bytes from array <var>source</var>
      * and writes the resulting bytes (up to three of them)
      * to <var>destination</var>.
@@ -1123,6 +1158,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Low-level access to decoding ASCII characters in
      * the form of a byte array. <strong>Ignores GUNZIP option, if
      * it's set.</strong> This is not generally a recommended method,
@@ -1147,6 +1183,7 @@ public class Base64
        
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Low-level access to decoding ASCII characters in
      * the form of a byte array. <strong>Ignores GUNZIP option, if
      * it's set.</strong> This is not generally a recommended method,
@@ -1232,6 +1269,7 @@ public class Base64
 	
 	
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes data from Base64 notation, automatically
      * detecting gzip-compressed data and decompressing it.
      *
@@ -1258,6 +1296,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes data from Base64 notation, automatically
      * detecting gzip-compressed data and decompressing it.
      *
@@ -1331,6 +1370,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Attempts to decode Base64 data and deserialize a Java
      * Object within. Returns <tt>null</tt> if there was an error.
      *
@@ -1349,6 +1389,7 @@ public class Base64
     
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Attempts to decode Base64 data and deserialize a Java
      * Object within. Returns <tt>null</tt> if there was an error.
      * If <tt>loader</tt> is not null, it will be the class loader
@@ -1419,6 +1460,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Convenience method for encoding data to a file.
      *
      * <p>As of v 2.3, if there is a error,
@@ -1456,6 +1498,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Convenience method for decoding data to a file.
      *
      * <p>As of v 2.3, if there is a error,
@@ -1490,6 +1533,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Convenience method for reading a base64-encoded
      * file and decoding it.
      *
@@ -1551,6 +1595,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Convenience method for reading a binary file
      * and base64-encoding it.
      *
@@ -1602,6 +1647,7 @@ public class Base64
         }   // end encodeFromFile
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Reads <tt>infile</tt> and encodes it to <tt>outfile</tt>.
      *
      * @param infile Input file
@@ -1630,6 +1676,7 @@ public class Base64
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Reads <tt>infile</tt> and decodes it to <tt>outfile</tt>.
      *
      * @param infile Input file
@@ -1662,6 +1709,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * A {@link Base64.InputStream} will read data from another
      * <tt>java.io.InputStream</tt>, given in the constructor,
      * and encode/decode to/from Base64 notation on the fly.
@@ -1683,6 +1731,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Constructs a {@link Base64.InputStream} in DECODE mode.
          *
          * @param in the <tt>java.io.InputStream</tt> from which to read data.
@@ -1694,6 +1743,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Constructs a {@link Base64.InputStream} in
          * either ENCODE or DECODE mode.
          * <p>
@@ -1727,6 +1777,7 @@ public class Base64
         }   // end constructor
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Reads enough of the input stream to convert
          * to/from Base64 and returns the next byte.
          *
@@ -1831,6 +1882,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Calls {@link #read()} repeatedly until the end of stream
          * is reached or <var>len</var> bytes are read.
          * Returns number of bytes read into array or -1 if
@@ -1875,6 +1927,7 @@ public class Base64
     
     
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * A {@link Base64.OutputStream} will write data to another
      * <tt>java.io.OutputStream</tt>, given in the constructor,
      * and encode/decode to/from Base64 notation on the fly.
@@ -1896,6 +1949,7 @@ public class Base64
         private byte[]  decodabet;  // Local copies to avoid extra method calls
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Constructs a {@link Base64.OutputStream} in ENCODE mode.
          *
          * @param out the <tt>java.io.OutputStream</tt> to which data will be written.
@@ -1907,6 +1961,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Constructs a {@link Base64.OutputStream} in
          * either ENCODE or DECODE mode.
          * <p>
@@ -1941,6 +1996,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Writes the byte to the output stream after
          * converting to/from Base64 notation.
          * When encoding, bytes are buffered three
@@ -1999,6 +2055,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Calls {@link #write(int)} repeatedly until <var>len</var> 
          * bytes are written.
          *
@@ -2025,6 +2082,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Method added by PHIL. [Thanks, PHIL. -Rob]
          * This pads the buffer without closing the stream.
          * @throws java.io.IOException  if there's an error.
@@ -2043,7 +2101,8 @@ public class Base64
         }   // end flush
 
         
-        /** 
+        /**
+ * Copyright (c) 2019 Enes Altuncu
          * Flushes and closes (I think, in the superclass) the stream. 
          *
          * @since 1.3
@@ -2064,6 +2123,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Suspends encoding of the stream.
          * May be helpful if you need to embed a piece of
          * base64-encoded data in a stream.
@@ -2078,6 +2138,7 @@ public class Base64
         
         
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Resumes encoding of the stream.
          * May be helpful if you need to embed a piece of
          * base64-encoded data in a stream.

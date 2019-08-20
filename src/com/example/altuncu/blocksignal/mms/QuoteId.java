@@ -10,6 +10,7 @@ import com.example.altuncu.blocksignal.database.Address;
 import com.example.altuncu.blocksignal.database.model.MessageRecord;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Represents the information required to find the {@link MessageRecord} pointed to by a quote.
  */
 public class QuoteId {

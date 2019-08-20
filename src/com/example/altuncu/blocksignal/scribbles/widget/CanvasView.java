@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * CanvasView.java
  *
  * Copyright (c) 2014 Tomohiro IKEDA (Korilakkuma)
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class defines fields and methods for drawing.
  */
 public class CanvasView extends View {
@@ -92,6 +94,7 @@ public class CanvasView extends View {
   private boolean active = false;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Copy Constructor
    *
    * @param context
@@ -104,6 +107,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Copy Constructor
    *
    * @param context
@@ -115,6 +119,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Copy Constructor
    *
    * @param context
@@ -131,6 +136,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method creates the instance of Paint.
    * In addition, this method sets styles for Paint.
    *
@@ -163,6 +169,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method initialize Path.
    * Namely, this method creates the instance of Path,
    * and moves current position.
@@ -183,6 +190,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method updates the lists for the instance of Path and Paint.
    * "Undo" and "Redo" are enabled by this method.
    *
@@ -207,6 +215,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method gets the instance of Path that pointer indicates.
    *
    * @return the instance of Path
@@ -216,6 +225,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method defines processes on MotionEvent.ACTION_DOWN
    *
    * @param event This is argument of onTouchEvent method
@@ -254,6 +264,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method defines processes on MotionEvent.ACTION_MOVE
    *
    * @param event This is argument of onTouchEvent method
@@ -327,6 +338,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method defines processes on MotionEvent.ACTION_DOWN
    *
    * @param event This is argument of onTouchEvent method
@@ -344,6 +356,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method updates the instance of Canvas (View)
    *
    * @param canvas the new instance of Canvas
@@ -396,6 +409,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method set event listener for drawing.
    *
    * @param event the instance of MotionEvent
@@ -426,6 +440,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for mode.
    *
    * @return
@@ -435,6 +450,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for mode.
    *
    * @param mode
@@ -444,6 +460,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for drawer.
    *
    * @return
@@ -453,6 +470,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for drawer.
    *
    * @param drawer
@@ -462,6 +480,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method draws canvas again for Undo.
    *
    * @return If Undo is enabled, this is returned as true. Otherwise, this is returned as false.
@@ -478,6 +497,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method draws canvas again for Redo.
    *
    * @return If Redo is enabled, this is returned as true. Otherwise, this is returned as false.
@@ -494,6 +514,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method initializes canvas.
    *
    * @return
@@ -529,6 +550,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for canvas background color
    *
    * @return
@@ -538,6 +560,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for canvas background color
    *
    * @param color
@@ -547,6 +570,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for stroke or fill.
    *
    * @return
@@ -556,6 +580,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for stroke or fill.
    *
    * @param style
@@ -565,6 +590,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for stroke color.
    *
    * @return
@@ -574,6 +600,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for stroke color.
    *
    * @param color
@@ -583,6 +610,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for fill color.
    * But, current Android API cannot set fill color (?).
    *
@@ -593,6 +621,7 @@ public class CanvasView extends View {
   };
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for fill color.
    * But, current Android API cannot set fill color (?).
    *
@@ -603,6 +632,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for stroke width.
    *
    * @return
@@ -612,6 +642,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for stroke width.
    *
    * @param width
@@ -625,6 +656,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for alpha.
    *
    * @return
@@ -634,6 +666,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for alpha.
    * The 1st argument must be between 0 and 255.
    *
@@ -648,6 +681,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for amount of blur.
    *
    * @return
@@ -657,6 +691,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for amount of blur.
    * The 1st argument is greater than or equal to 0.0.
    *
@@ -671,6 +706,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is getter for line cap.
    *
    * @return
@@ -680,6 +716,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method is setter for line cap.
    *
    * @param cap
@@ -689,6 +726,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method gets current canvas as bitmap.
    *
    * @return This is returned as bitmap.
@@ -701,6 +739,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method gets current canvas as scaled bitmap.
    *
    * @return This is returned as scaled bitmap.
@@ -713,6 +752,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method draws the designated bitmap to canvas.
    *
    * @param bitmap
@@ -723,6 +763,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method draws the designated byte array of bitmap to canvas.
    *
    * @param byteArray This is returned as byte array of bitmap.
@@ -732,6 +773,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This static method gets the designated bitmap as byte array.
    *
    * @param bitmap
@@ -747,6 +789,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method gets the bitmap as byte array.
    *
    * @param format
@@ -761,6 +804,7 @@ public class CanvasView extends View {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * This method gets the bitmap as byte array.
    * Bitmap format is PNG, and quality is 100.
    *

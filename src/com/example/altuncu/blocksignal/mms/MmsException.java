@@ -18,12 +18,14 @@
 package com.example.altuncu.blocksignal.mms;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A generic exception that is thrown by the Mms client.
  */
 public class MmsException extends Exception {
   private static final long serialVersionUID = -7323249827281485390L;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new MmsException.
    */
   public MmsException() {
@@ -31,6 +33,7 @@ public class MmsException extends Exception {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new MmsException with the specified detail message.
    *
    * @param message the detail message.
@@ -40,6 +43,7 @@ public class MmsException extends Exception {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new MmsException with the specified cause.
    *
    * @param cause the cause.
@@ -49,6 +53,7 @@ public class MmsException extends Exception {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Creates a new MmsException with the specified detail message and cause.
    *
    * @param message the detail message.

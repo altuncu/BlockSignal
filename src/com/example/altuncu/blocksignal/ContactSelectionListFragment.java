@@ -60,6 +60,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Fragment for selecting a one or more contacts from a list.
  *
  * @author Moxie Marlinspike

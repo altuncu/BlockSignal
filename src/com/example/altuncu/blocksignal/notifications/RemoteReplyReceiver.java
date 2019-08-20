@@ -38,6 +38,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Get the response text from the Wearable Device and sends an message as a reply
  */
 public class RemoteReplyReceiver extends BroadcastReceiver {

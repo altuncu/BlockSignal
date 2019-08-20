@@ -36,6 +36,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Utility class for working with identity keys.
  * 
  * @author Moxie Marlinspike

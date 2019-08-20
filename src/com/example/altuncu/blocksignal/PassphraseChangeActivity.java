@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -34,6 +35,7 @@ import com.example.altuncu.blocksignal.util.DynamicTheme;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity for changing a user's local encryption passphrase.
  *
  * @author Moxie Marlinspike

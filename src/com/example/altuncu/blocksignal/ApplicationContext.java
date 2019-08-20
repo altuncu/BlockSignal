@@ -59,6 +59,7 @@ import java.util.concurrent.TimeUnit;
 import dagger.ObjectGraph;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Will be called once when the TextSecure process is created.
  *
  * We're using this as an insertion point to patch up the Android PRNG disaster,

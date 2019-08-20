@@ -32,6 +32,7 @@ import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This adapter is used to filter contacts on both name and number.
  */
 public class RecipientsAdapter extends ResourceCursorAdapter {
@@ -122,6 +123,7 @@ public class RecipientsAdapter extends ResourceCursorAdapter {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Returns true if all the characters are meaningful as digits
      * in a phone number -- letters, digits, and a few punctuation marks.
      */

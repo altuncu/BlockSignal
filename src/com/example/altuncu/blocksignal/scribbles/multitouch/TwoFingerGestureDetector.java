@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author Almer Thie (code.almeros.com)
  *         Copyright (c) 2013, Almer Thie (code.almeros.com)
  *         <p>
@@ -81,6 +82,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Return the current distance between the two pointers forming the
      * gesture in progress.
      *
@@ -96,6 +98,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Return the previous distance between the two pointers forming the
      * gesture in progress.
      *
@@ -111,6 +114,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Check if we have a sloppy gesture. Sloppy gestures can happen if the edge
      * of the user's hand is touching the screen, for example.
      *
@@ -154,6 +158,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * MotionEvent has no getRawX(int) method; simulate it pending future API approval.
      *
      * @param event
@@ -169,6 +174,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * MotionEvent has no getRawY(int) method; simulate it pending future API approval.
      *
      * @param event

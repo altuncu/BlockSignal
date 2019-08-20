@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2012 Moxie Marlinspike
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,6 +34,7 @@ import com.example.altuncu.blocksignal.recipients.Recipient;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Represents the message record model for MMS messages that contain
  * media (ie: they've been downloaded).
  *

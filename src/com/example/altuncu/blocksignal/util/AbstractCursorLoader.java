@@ -6,6 +6,7 @@ import android.database.Cursor;
 import androidx.loader.content.AsyncTaskLoader;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A Loader similar to CursorLoader that doesn't require queries to go through the ContentResolver
  * to get the benefits of reloading when content has changed.
  */

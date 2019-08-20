@@ -62,6 +62,7 @@ public abstract class BaseActionBarActivity extends AppCompatActivity {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Modified from: http://stackoverflow.com/a/13098824
    */
   private void forceOverflowMenu() {

@@ -99,6 +99,7 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * The register account activity.  Prompts ths user for their registration information
  * and begins the account registration process.
  *

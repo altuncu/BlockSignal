@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2017 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,6 +28,7 @@ import android.widget.ImageView;
 import com.example.altuncu.blocksignal.R;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * List preference that disables dependents when set to "none", similar to a CheckBoxPreference.
  *
  * @author Taylor Kline

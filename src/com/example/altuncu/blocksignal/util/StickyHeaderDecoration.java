@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A sticky header decoration for android's RecyclerView.
  * Currently only supports LinearLayoutManager in VERTICAL orientation.
  */
@@ -30,6 +31,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
   private       boolean               sticky;
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * @param adapter the sticky header adapter to use
    */
   public StickyHeaderDecoration(StickyHeaderAdapter adapter, boolean renderInline, boolean sticky) {
@@ -40,6 +42,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * {@inheritDoc}
    */
   @Override
@@ -104,6 +107,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * {@inheritDoc}
    */
   @Override
@@ -182,6 +186,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * The adapter to assist the {@link StickyHeaderDecoration} in creating and binding the header views.
    *
    * @param <T> the header view holder
@@ -189,6 +194,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
   public interface StickyHeaderAdapter<T extends ViewHolder> {
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Returns the header id for the item at the given position.
      *
      * @param position the item position
@@ -197,6 +203,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
     long getHeaderId(int position);
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Creates a new header ViewHolder.
      *
      * @param parent the header's view parent
@@ -205,6 +212,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
     T onCreateHeaderViewHolder(ViewGroup parent);
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Updates the header view to reflect the header data for the given position
      * @param viewHolder the header view holder
      * @param position the header's item position

@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2015 Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify

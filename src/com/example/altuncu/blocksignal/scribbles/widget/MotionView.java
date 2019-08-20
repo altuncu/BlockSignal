@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -218,6 +219,7 @@ public class MotionView  extends FrameLayout implements TextWatcher {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * draws all entities on the canvas
    * @param canvas Canvas where to draw all entities
    */
@@ -228,6 +230,7 @@ public class MotionView  extends FrameLayout implements TextWatcher {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * as a side effect - the method deselects Entity (if any selected)
    * @return bitmap with all the Entities at their current positions
    */

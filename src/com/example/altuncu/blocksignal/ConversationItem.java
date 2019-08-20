@@ -101,6 +101,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A view that displays an individual conversation item within a conversation
  * thread.  Used by ComposeMessageActivity's ListActivity via a ConversationAdapter.
  *

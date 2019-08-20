@@ -33,6 +33,7 @@ import java.util.Locale;
 import java.util.concurrent.Executors;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A fragment that is displayed to do full-text search of messages, groups, and contacts.
  */
 public class SearchFragment extends Fragment implements SearchListAdapter.EventListener {

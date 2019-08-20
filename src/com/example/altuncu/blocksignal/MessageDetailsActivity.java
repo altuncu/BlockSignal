@@ -65,6 +65,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author Jake McGinty
  */
 public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity implements LoaderCallbacks<Cursor>, RecipientModifiedListener {

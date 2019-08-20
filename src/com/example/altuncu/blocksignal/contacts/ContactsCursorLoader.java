@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * CursorLoader that initializes a ContactsDatabase instance
  *
  * @author Jake McGinty

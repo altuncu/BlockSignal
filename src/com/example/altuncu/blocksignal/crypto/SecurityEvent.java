@@ -7,6 +7,7 @@ import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.service.KeyCachingService;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class processes key exchange interactions.
  *
  * @author Moxie Marlinspike

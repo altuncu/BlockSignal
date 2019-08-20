@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Simple container that confines the children to a subrectangle specified as percentage values of
  * the container size. The children are centered horizontally and vertically inside the confined
  * space.

@@ -30,6 +30,7 @@ import java.util.Properties;
 import java.util.StringTokenizer;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author      Stefan "frostymarvelous" Froelich <stefan d0t froelich At whisppa DoT com>
  */
 public class AttachmentServer implements Runnable {
@@ -248,6 +249,7 @@ public class AttachmentServer implements Runnable {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Find byte index separating header from body. It must be the last byte of
      * the first two sequential new lines.
      **/
@@ -264,6 +266,7 @@ public class AttachmentServer implements Runnable {
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes the sent headers and loads the data into java Properties' key -
      * value pairs
      **/
@@ -319,6 +322,7 @@ public class AttachmentServer implements Runnable {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes parameters in percent-encoded URI-format ( e.g.
      * "name=Jack%20Daniels&pass=Single%20Malt" ) and adds them to given
      * Properties. NOTE: this doesn't support multiple identical keys due to the
@@ -341,6 +345,7 @@ public class AttachmentServer implements Runnable {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Decodes the percent encoding scheme. <br/>
      * For example: "an+example%20string" -> "an example string"
      */

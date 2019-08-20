@@ -30,6 +30,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Manages data retrieval for search.
  */
 class SearchRepository {
@@ -117,6 +118,7 @@ class SearchRepository {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Unfortunately {@link DatabaseUtils#sqlEscapeString(String)} is not sufficient for our purposes.
    * MATCH queries have a separate format of their own that disallow most "special" characters.
    */

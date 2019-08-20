@@ -26,6 +26,7 @@ import android.os.Message;
 import android.util.Log;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * This class is used to listen to the accelerometer to monitor the
  * orientation of the phone. The client of this class is notified when
  * the orientation changes between horizontal and vertical.

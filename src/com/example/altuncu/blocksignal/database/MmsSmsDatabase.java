@@ -181,6 +181,7 @@ public class MmsSmsDatabase extends Database {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Retrieves the position of the message with the provided timestamp in the query results you'd
    * get from calling {@link #getConversation(long)}.
    *

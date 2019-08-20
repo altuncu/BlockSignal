@@ -78,6 +78,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Activity to create and update groups
  *
  * @author Jake McGinty

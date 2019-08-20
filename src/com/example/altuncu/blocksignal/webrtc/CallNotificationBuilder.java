@@ -15,6 +15,7 @@ import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.service.WebRtcCallService;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Manages the state of the WebRtc items in the Android notification bar.
  *
  * @author Moxie Marlinspike

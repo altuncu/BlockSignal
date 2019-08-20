@@ -10,6 +10,7 @@ import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 import java.security.SecureRandom;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A provider that is responsible for creating or retrieving the AttachmentSecret model.
  *
  * On modern Android, the serialized secrets are themselves encrypted using a key that lives

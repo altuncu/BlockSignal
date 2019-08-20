@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2016 UPTech
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,14 +26,17 @@ package com.example.altuncu.blocksignal.scribbles.viewmodel;
 public class Font {
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * color value (ex: 0xFF00FF)
    */
   private int color;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * name of the font
    */
   private String typeface;
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * size of the font, relative to parent
    */
   private float size;

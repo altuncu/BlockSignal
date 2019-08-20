@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Listens for incoming PSTN calls and rejects them if a RedPhone call is already in progress.
  *
  * Unstable use of reflection employed to gain access to ITelephony.

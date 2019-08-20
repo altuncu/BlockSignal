@@ -8,6 +8,7 @@ import android.os.Build;
 import com.example.altuncu.blocksignal.util.TextSecurePreferences;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Respond to a PanicKit trigger Intent by locking the app.  PanicKit provides a
  * common framework for creating "panic button" apps that can trigger actions
  * in "panic responder" apps.  In this case, the response is to lock the app,

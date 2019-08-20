@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (c) 2014-present Vincent DURMONT vdurmont@gmail.com
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -26,6 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Based in part on code from emoji-java
  */
 public class EmojiTree {

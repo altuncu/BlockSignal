@@ -15,6 +15,7 @@ import java.io.InputStream;
 import okhttp3.OkHttpClient;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * A simple model loader for fetching media over http/https using OkHttp.
  */
 public class OkHttpUrlLoader implements ModelLoader<GlideUrl, InputStream> {

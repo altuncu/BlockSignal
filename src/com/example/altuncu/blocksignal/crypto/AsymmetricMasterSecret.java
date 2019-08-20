@@ -1,4 +1,5 @@
-/** 
+/**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2011 Whisper Systems
  * Copyright (C) 2013 Open Whisper Systems
  * 
@@ -21,6 +22,7 @@ import org.whispersystems.libsignal.ecc.ECPrivateKey;
 import org.whispersystems.libsignal.ecc.ECPublicKey;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * When a user first initializes TextSecure, a few secrets
  * are generated.  These are:
  * 

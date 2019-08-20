@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Allows multiple default uncaught exception handlers to be registered
  *
  * Calls all registered handlers in reverse order of registration.

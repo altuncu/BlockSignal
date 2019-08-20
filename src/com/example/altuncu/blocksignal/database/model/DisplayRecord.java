@@ -25,6 +25,7 @@ import com.example.altuncu.blocksignal.database.SmsDatabase;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * The base class for all message record models.  Encapsulates basic data
  * shared between ThreadRecord and MessageRecord.
  *

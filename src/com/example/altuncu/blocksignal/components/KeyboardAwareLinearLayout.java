@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Copyright (C) 2014 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
@@ -37,6 +38,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * LinearLayout that, when a view container, will report back when it thinks a soft keyboard
  * has been opened and what its height would be.
  */

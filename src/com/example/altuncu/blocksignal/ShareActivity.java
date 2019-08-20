@@ -58,6 +58,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * An activity to quickly share content with contacts
  *
  * @author Jake McGinty

@@ -83,6 +83,7 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, List<Recipient>> {
   }
 
   /**
+ * Copyright (c) 2019 Enes Altuncu
    * Wraps a List of Recipient (just like @class Recipients),
    * but with focus on the order of the Recipients.
    * So that the order of the RecipientStrings[] matches

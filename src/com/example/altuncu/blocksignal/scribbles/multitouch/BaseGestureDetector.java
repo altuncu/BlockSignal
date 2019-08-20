@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * @author Almer Thie (code.almeros.com)
  *         Copyright (c) 2013, Almer Thie (code.almeros.com)
  *         <p>
@@ -25,6 +26,7 @@ import android.view.MotionEvent;
  */
 public abstract class BaseGestureDetector {
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * This value is the threshold ratio between the previous combined pressure
      * and the current combined pressure. When pressure decreases rapidly
      * between events the position values can often be imprecise, as it usually
@@ -46,6 +48,7 @@ public abstract class BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * All gesture detectors need to be called through this method to be able to
      * detect gestures. This method delegates work to handler methods
      * (handleStartProgressEvent, handleInProgressEvent) implemented in
@@ -65,6 +68,7 @@ public abstract class BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Called when the current event occurred when NO gesture is in progress
      * yet. The handling in this implementation may set the gesture in progress
      * (via mGestureInProgress) or out of progress
@@ -75,6 +79,7 @@ public abstract class BaseGestureDetector {
     protected abstract void handleStartProgressEvent(int actionCode, MotionEvent event);
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Called when the current event occurred when a gesture IS in progress. The
      * handling in this implementation may set the gesture out of progress (via
      * mGestureInProgress).
@@ -118,6 +123,7 @@ public abstract class BaseGestureDetector {
 
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Returns {@code true} if a gesture is currently in progress.
      *
      * @return {@code true} if a gesture is currently in progress, {@code false} otherwise.
@@ -127,6 +133,7 @@ public abstract class BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Return the time difference in milliseconds between the previous accepted
      * GestureDetector event and the current GestureDetector event.
      *
@@ -137,6 +144,7 @@ public abstract class BaseGestureDetector {
     }
 
     /**
+ * Copyright (c) 2019 Enes Altuncu
      * Return the event time of the current GestureDetector event being
      * processed.
      *

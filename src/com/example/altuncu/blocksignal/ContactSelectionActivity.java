@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Base activity container for selecting a list of contacts.
  *
  * @author Moxie Marlinspike

@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Modified version of
  * https://github.com/AndroidDeveloperLB/LollipopContactsRecyclerViewFastScroller
  *

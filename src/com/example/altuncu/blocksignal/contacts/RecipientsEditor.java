@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Copyright (c) 2019 Enes Altuncu
  * Provide UI for editing the recipients of multi-media messages.
  */
 public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
@@ -296,6 +297,7 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         }
 
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Returns the start of the token that ends at offset
          * <code>cursor</code> within <code>text</code>.
          * It is a method from the MultiAutoCompleteTextView.Tokenizer interface.
@@ -315,6 +317,7 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         }
 
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Returns the end of the token (minus trailing punctuation)
          * that begins at offset <code>cursor</code> within <code>text</code>.
          * It is a method from the MultiAutoCompleteTextView.Tokenizer interface.
@@ -336,6 +339,7 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         }
 
         /**
+ * Copyright (c) 2019 Enes Altuncu
          * Returns <code>text</code>, modified, if necessary, to ensure that
          * it ends with a token terminator (for example a space or comma).
          * It is a method from the MultiAutoCompleteTextView.Tokenizer interface.
