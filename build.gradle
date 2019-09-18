@@ -274,7 +274,7 @@ android {
 
  defaultConfig {
   versionCode 1071
-  versionName "1.1.0"
+  versionName "1.1.1"
 
   applicationId "com.example.altuncu.blocksignal"
   minSdkVersion 19
