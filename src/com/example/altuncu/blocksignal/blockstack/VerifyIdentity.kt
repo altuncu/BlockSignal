@@ -61,7 +61,7 @@ class VerifyIdentity {
                 _blockstackSession?.getFile("blockstack/phone.number",
                         optionsNumber, {
                     if (it.hasValue && (it.value.toString() == recipient.address.toPhoneString())) {
-                        Toast.makeText(context, "Verified by Blockstack", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(context, "Verified by Blockstack", Toast.LENGTH_LONG).show()
                         identityDatabase.setVerified(recipient.address,
                                 identityDatabase.getIdentity(recipient.address).get().getIdentityKey(),
                                 IdentityDatabase.VerifiedStatus.VERIFIED)
