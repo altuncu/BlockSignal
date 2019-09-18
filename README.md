@@ -4,6 +4,10 @@ BlockSignal is a secure instant messaging application based on Signal Android wh
 
 This work is in the scope of master thesis and the corresponding research paper of Enes Altuncu under supervision of Professor Kemal Bıçakcı from TOBB University of Economics and Technology.
 
+# Support
+
+As BlockSignal has been developed for the academic purposes, it is not a fully-tested software to be used as a commercial product. Therefore, it may (most probably, does) contain some bugs which are not in our responsibility meaning that we may not always have time to solve the issues reported. However, it is recommended to report the possible issues to inform other developers that might encounter the same issues later. 
+
 # Citation
 
 You can freely use this application in your studies, projects etc. by obeying the rules of GPLv3 licence. If you want to use this repository in an academical research, please cite our related paper as the following:
