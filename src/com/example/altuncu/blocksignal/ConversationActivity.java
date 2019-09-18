@@ -22,6 +22,7 @@ import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
@@ -87,10 +88,6 @@ import com.example.altuncu.blocksignal.components.camera.QuickAttachmentDrawer.A
 import com.example.altuncu.blocksignal.components.camera.QuickAttachmentDrawer.DrawerState;
 import com.example.altuncu.blocksignal.components.emoji.EmojiDrawer;
 import com.example.altuncu.blocksignal.components.emoji.EmojiStrings;
-import com.example.altuncu.blocksignal.components.identity.UntrustedSendDialog;
-import com.example.altuncu.blocksignal.components.identity.UnverifiedBannerView;
-import com.example.altuncu.blocksignal.components.identity.UnverifiedSendDialog;
-import com.example.altuncu.blocksignal.components.identity.VerifiedBannerView;
 import com.example.altuncu.blocksignal.components.location.SignalPlace;
 import com.example.altuncu.blocksignal.components.reminder.ExpiredBuildReminder;
 import com.example.altuncu.blocksignal.components.reminder.InviteReminder;
@@ -240,8 +237,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   InputAwareLayout            container;
   private   View                        composePanel;
   protected Stub<ReminderView>          reminderView;
-  private   Stub<UnverifiedBannerView>  unverifiedBannerView;
-  private   Stub<VerifiedBannerView>    verifiedBannerView;
   private   Stub<GroupShareProfileView> groupShareProfileView;
 
   private   AttachmentTypeSelector attachmentTypeSelector;
@@ -914,48 +909,41 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleUnverifiedRecipients() {
     List<Recipient>      unverifiedRecipients = identityRecords.getUnverifiedRecipients(this);
-    List<IdentityRecord> unverifiedRecords    = identityRecords.getUnverifiedRecords();
     String               message              = IdentityUtil.getUnverifiedSendDialogDescription(this, unverifiedRecipients);
 
     if (message == null) return;
 
-    //noinspection CodeBlock2Expr
-    new UnverifiedSendDialog(this, message, unverifiedRecords, () -> {
-      initializeIdentityRecords().addListener(new ListenableFuture.Listener<Boolean>() {
-        @Override
-        public void onSuccess(Boolean result) {
+
+    initializeIdentityRecords().addListener(new ListenableFuture.Listener<Boolean>() {
+      @Override
+      public void onSuccess(Boolean result) {
           sendMessage();
         }
 
-        @Override
-        public void onFailure(ExecutionException e) {
+      @Override
+      public void onFailure(ExecutionException e) {
           throw new AssertionError(e);
         }
-      });
-    }).show();
+    });
   }
 
   private void handleUntrustedRecipients() {
     List<Recipient>      untrustedRecipients = identityRecords.getUntrustedRecipients(this);
-    List<IdentityRecord> untrustedRecords    = identityRecords.getUntrustedRecords();
     String               untrustedMessage    = IdentityUtil.getUntrustedSendDialogDescription(this, untrustedRecipients);
 
     if (untrustedMessage == null) return;
 
-    //noinspection CodeBlock2Expr
-    new UntrustedSendDialog(this, untrustedMessage, untrustedRecords, () -> {
-      initializeIdentityRecords().addListener(new ListenableFuture.Listener<Boolean>() {
-        @Override
-        public void onSuccess(Boolean result) {
+    initializeIdentityRecords().addListener(new ListenableFuture.Listener<Boolean>() {
+      @Override
+      public void onSuccess(Boolean result) {
           sendMessage();
         }
 
-        @Override
-        public void onFailure(ExecutionException e) {
+      @Override
+      public void onFailure(ExecutionException e) {
           throw new AssertionError(e);
         }
       });
-    }).show();
   }
 
   private void handleSecurityChange(boolean isSecureText, boolean isDefaultSms) {
@@ -1195,44 +1183,23 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
       @Override
       protected void onPostExecute(@NonNull Pair<IdentityRecordList, String> result) {
-        IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(ConversationActivity.this);
-
         Log.w(TAG, "Got identity records: " + result.first.isUnverified());
         identityRecords.replaceWith(result.first);
 
         VerifyIdentity blockstack = new VerifyIdentity();
-        boolean isVerified;
 
         if (result.second != null) {
           Log.w(TAG, "Verifying: " + result.first.getUnverifiedRecords().size());
           if (result.first.getUnverifiedRecords().size() == 1) {
-            isVerified = blockstack.verifyKeys(recipient);
-            if (isVerified) {
-                Log.d(TAG, "Replacing banner...");
-                verifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords());
-                for (IdentityRecord identityRecord : result.first.getUnverifiedRecords()) {
-                        identityDatabase.setVerified(identityRecord.getAddress(),
-                        identityRecord.getIdentityKey(),
-                        VerifiedStatus.DEFAULT);
-                }
-            }
-            else {
-                unverifiedBannerView.get().display(result.second, result.first.getUnverifiedRecords());
-            }
-          } else {
-            String[] unverifiedNames = new String[result.first.getUnverifiedRecords().size()];
-
-            for (int i=0;i<result.first.getUnverifiedRecords().size();i++) {
-              unverifiedNames[i] = Recipient.from(ConversationActivity.this, result.first.getUnverifiedRecords().get(i).getAddress(), false).toShortString();
+            blockstack.verifyKeys(recipient, ConversationActivity.this);
+          }
+        } else {
+            for (int i = 0; i < result.first.getUnverifiedRecords().size(); i++) {
+              blockstack.verifyKeys(recipient, ConversationActivity.this);
             }
           }
-        }
-
-        titleView.setVerified(isSecureText && identityRecords.isVerified());
-
-        future.set(true);
+          future.set(true);
       }
-
     }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, recipient);
 
     return future;

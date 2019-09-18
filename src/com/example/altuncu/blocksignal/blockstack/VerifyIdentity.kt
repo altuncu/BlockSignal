@@ -23,51 +23,90 @@
 package com.example.altuncu.blocksignal.blockstack
 
 import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.altuncu.blocksignal.recipients.Recipient
 import org.blockstack.android.sdk.BlockstackSession
 import org.blockstack.android.sdk.model.GetFileOptions
 import com.example.altuncu.blocksignal.BlockstackActivity
+import com.example.altuncu.blocksignal.ConversationListActivity
+import com.example.altuncu.blocksignal.R
+import com.example.altuncu.blocksignal.database.DatabaseFactory
+import com.example.altuncu.blocksignal.database.IdentityDatabase
 import org.blockstack.android.sdk.model.PutFileOptions
+import java.net.URL
 
 
 class VerifyIdentity {
 
     private val TAG = VerifyIdentity::class.java.simpleName
 
-    var phoneNumber: String = "NULL"
+    private var _blockstackSession: BlockstackSession? = BlockstackActivity.blockstackSession
 
-    private var _blockstackSession: BlockstackSession = BlockstackActivity().blockstackSession()
+    fun verifyKeys(recipient: Recipient, context: Context) {
+        val optionsKey = GetFileOptions(decrypt = false, username = recipient.profileName, verify = true,
+                                     zoneFileLookupURL = URL("https://core.blockstack.org/v1/names"),
+                                     app = "https://blocksignal.netlify.com")
+        val optionsNumber = GetFileOptions(decrypt = false, username = recipient.profileName,
+                                     zoneFileLookupURL = URL("https://core.blockstack.org/v1/names"),
+                                     app = "https://blocksignal.netlify.com")
+        val identityDatabase = DatabaseFactory.getIdentityDatabase(context)
 
-    fun verifyKeys(recipient: Recipient): Boolean {
-        var appKey = "NULL"
-        val options = GetFileOptions(decrypt = false, username = recipient.profileName, verify = true)
-        _blockstackSession.getFile("blockstack/app.key", options, { contentResult ->
+
+        _blockstackSession?.getFile("blockstack/app.key", optionsKey) { contentResult ->
             if (contentResult.hasValue) {
-                appKey = contentResult.value.toString()
-                Log.d(TAG, "File contents: ${appKey}")
+                _blockstackSession?.getFile("blockstack/phone.number",
+                        optionsNumber, {
+                    if (it.hasValue && (it.value.toString() == recipient.address.toPhoneString())) {
+                        Toast.makeText(context, "Verified by Blockstack", Toast.LENGTH_LONG).show()
+                        identityDatabase.setVerified(recipient.address,
+                                identityDatabase.getIdentity(recipient.address).get().getIdentityKey(),
+                                IdentityDatabase.VerifiedStatus.VERIFIED)
+                    } else {
+                        Log.d(TAG, it.error)
+                        identityDatabase.setVerified(recipient.address,
+                                identityDatabase.getIdentity(recipient.address).get().getIdentityKey(),
+                                IdentityDatabase.VerifiedStatus.UNVERIFIED)
+
+                        val dialog = AlertDialog.Builder(context)
+                        dialog.setTitle("Critical Security Issue")
+                        dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated.")
+                        dialog.setIconAttribute(R.attr.dialog_alert_icon)
+                        val dialogClickListener = { _: DialogInterface, _: Int ->
+                            val intent = Intent(context, ConversationListActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            context.startActivity(intent)
+                        }
+                        dialog.setPositiveButton(R.string.ok, dialogClickListener)
+                        dialog.create().show()
+                    }
+                })
             } else {
                 Log.d(TAG, contentResult.error)
-            }
-        })
+                identityDatabase.setVerified(recipient.address,
+                        identityDatabase.getIdentity(recipient.address).get().getIdentityKey(),
+                        IdentityDatabase.VerifiedStatus.UNVERIFIED)
 
-        var number = "NULL"
-        _blockstackSession.getFile("blockstack/phone.number",
-                                    GetFileOptions(decrypt = false, username = recipient.profileName), {
-            if (it.hasValue) {
-                number = it.value.toString()
-                Log.d(TAG, "File contents: ${number}")
-            } else {
-                Log.d(TAG, it.error)
+                val dialog = AlertDialog.Builder(context)
+                dialog.setTitle("Critical Security Issue")
+                dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated.")
+                dialog.setIconAttribute(R.attr.dialog_alert_icon)
+                val dialogClickListener = { _: DialogInterface, _: Int ->
+                    val intent = Intent(context, ConversationListActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    context.startActivity(intent)
+                }
+                dialog.setPositiveButton(R.string.ok, dialogClickListener)
+                dialog.create().show()
             }
-        })
-
-        return (appKey != "NULL") && (number == recipient.address.toPhoneString())
+        }
     }
 
     fun storeNumber(number: String) {
-        _blockstackSession.putFile("blockstack/phone.number", number, PutFileOptions(false), { readURLResult ->
+        _blockstackSession?.putFile("blockstack/phone.number", number, PutFileOptions(false), { readURLResult ->
             if (readURLResult.hasValue) {
                 val readURL = readURLResult.value!!
                 Log.d(TAG, "File stored at: ${readURL}")
@@ -77,5 +116,3 @@ class VerifyIdentity {
         })
     }
 }
-
-

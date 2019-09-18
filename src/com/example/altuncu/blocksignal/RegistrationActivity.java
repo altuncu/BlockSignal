@@ -50,6 +50,7 @@ import com.google.i18n.phonenumbers.Phonenumber;
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.blockstack.android.sdk.BlockstackSession;
+import org.blockstack.android.sdk.model.UserData;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -97,6 +98,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import org.blockstack.android.sdk.model.GetFileOptions;
+
+import kotlin.reflect.jvm.internal.impl.types.KotlinType;
+import kotlin.text.StringsKt;
 
 /**
  * Copyright (c) 2019 Enes Altuncu
@@ -442,20 +448,17 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
 
     VerifyIdentity session = new VerifyIdentity();
 
-    Object lock = new Object();
-    synchronized (lock) {
-        if (_blockstackSession.getLoaded() == true) {
-            if (_blockstackSession.isUserSignedIn()) {
-                session.storeNumber(getConfiguredE164Number());
-            } else {
-                startActivity(new Intent(this, BlockstackActivity.class));
-            }
+    if (_blockstackSession.getLoaded() == true) {
+        if (_blockstackSession.isUserSignedIn()) {
+            session.storeNumber(getConfiguredE164Number());
+        } else {
+            startActivity(new Intent(this, BlockstackActivity.class));
         }
-
     }
 
-    final String e164number = session.getPhoneNumber();
-    final String gaiaHubURL = _blockstackSession.loadUserData().getHubUrl() + "blockstack/phone.number";
+    final String e164number = getConfiguredE164Number();
+    final String gaiaHubURL = BlockstackActivity.getGaiaHubURL() + "phone.number";
+    Log.d(TAG, "URL: " + gaiaHubURL);
 
     if (!PhoneNumberFormatter.isValidNumber(e164number)) {
       Dialogs.showAlertDialog(this, getString(com.example.altuncu.blocksignal.R.string.RegistrationActivity_invalid_number),
@@ -969,7 +972,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements Verif
     Intent nextIntent = getIntent().getParcelableExtra("next_intent");
 
     if (nextIntent == null) {
-      nextIntent = new Intent(RegistrationActivity.this, BlockstackActivity.class);
+      nextIntent = new Intent(RegistrationActivity.this, ConversationListActivity.class);
     }
 
     startActivity(nextIntent);

@@ -28,9 +28,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.example.altuncu.blocksignal.crypto.IdentityKeyUtil
+import com.example.altuncu.blocksignal.util.TextSecurePreferences
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import org.blockstack.android.sdk.*
+import org.blockstack.android.sdk.model.GetFileOptions
 import org.blockstack.android.sdk.model.PutFileOptions
 import org.blockstack.android.sdk.model.UserData
 import org.blockstack.android.sdk.model.toBlockstackConfig
@@ -45,6 +47,8 @@ class BlockstackActivity : AppCompatActivity() {
         var avatar: String? = null
         @JvmStatic
         var blockstackSession: BlockstackSession? = null
+        @JvmStatic
+        var gaiaHubURL: String = "NULL"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) = runBlocking {
@@ -52,8 +56,10 @@ class BlockstackActivity : AppCompatActivity() {
 
         var nextIntent: Intent? = intent.getParcelableExtra("next_intent")
 
-        val newSession = async { establishSession() }
-        newSession.await()
+        val config = "https://blocksignal.netlify.com"
+                .toBlockstackConfig(arrayOf(Scope.StoreWrite))
+
+        blockstackSession = BlockstackSession(this@BlockstackActivity, config)
 
         if (intent?.action == Intent.ACTION_VIEW) {
             handleAuthResponse(intent)
@@ -61,6 +67,7 @@ class BlockstackActivity : AppCompatActivity() {
 
         val signedIn = blockstackSession().isUserSignedIn()
         if (signedIn) {
+            TextSecurePreferences.setSignedInBlockstack(this@BlockstackActivity, true)
             if (nextIntent == null) {
                 nextIntent = Intent(this@BlockstackActivity, RegistrationActivity::class.java)
             }
@@ -75,14 +82,8 @@ class BlockstackActivity : AppCompatActivity() {
         }
     }
 
-    private fun establishSession() {
-        val config = "https://blocksignal.netlify.com"
-                .toBlockstackConfig(arrayOf(Scope.StoreWrite))
-
-        blockstackSession = BlockstackSession(this@BlockstackActivity, config)
-    }
-
     private fun onSignIn() {
+        TextSecurePreferences.setSignedInBlockstack(this@BlockstackActivity, true)
         var nextIntent: Intent? = intent.getParcelableExtra("next_intent")
 
         var userData: UserData? = blockstackSession().loadUserData()
@@ -96,7 +97,8 @@ class BlockstackActivity : AppCompatActivity() {
                                     PutFileOptions(false, sign = true), { readURLResult ->
             if (readURLResult.hasValue) {
                 val readURL = readURLResult.value!!
-                Log.d(TAG, "File stored at: ${readURL}")
+                gaiaHubURL = readURL.removeSuffix("app.key")
+                Log.d(TAG, "1 File stored at: ${readURL}")
             } else {
                 Toast.makeText(this, "error: " + readURLResult.error, Toast.LENGTH_SHORT).show()
             }

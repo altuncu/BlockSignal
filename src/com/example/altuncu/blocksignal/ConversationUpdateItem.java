@@ -1,6 +1,5 @@
 package com.example.altuncu.blocksignal;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
 
 import android.util.AttributeSet;
@@ -30,7 +28,6 @@ import com.example.altuncu.blocksignal.mms.GlideRequests;
 import com.example.altuncu.blocksignal.recipients.Recipient;
 import com.example.altuncu.blocksignal.recipients.RecipientModifiedListener;
 import com.example.altuncu.blocksignal.util.DateUtils;
-import com.example.altuncu.blocksignal.util.Dialogs;
 import com.example.altuncu.blocksignal.util.GroupUtil;
 import com.example.altuncu.blocksignal.util.IdentityUtil;
 import com.example.altuncu.blocksignal.util.Util;
@@ -67,11 +64,9 @@ public class ConversationUpdateItem extends LinearLayout
   public void onFinishInflate() {
     super.onFinishInflate();
 
-    this.icon = findViewById(com.example.altuncu.blocksignal.R.id.conversation_update_icon);
-    this.body = findViewById(com.example.altuncu.blocksignal.R.id.conversation_update_body);
-    this.date = findViewById(com.example.altuncu.blocksignal.R.id.conversation_update_date);
-
-    this.setOnClickListener(new InternalClickListener(null));
+    this.icon = findViewById(R.id.conversation_update_icon);
+    this.body = findViewById(R.id.conversation_update_body);
+    this.date = findViewById(R.id.conversation_update_date);
   }
 
   @Override
@@ -109,9 +104,9 @@ public class ConversationUpdateItem extends LinearLayout
     else if (messageRecord.isJoined())                setJoinedRecord(messageRecord);
     else if (messageRecord.isExpirationTimerUpdate()) setTimerRecord(messageRecord);
     else if (messageRecord.isEndSession())            setEndSessionRecord(messageRecord);
-    else if (messageRecord.isIdentityUpdate())        setIdentityRecord(messageRecord);
-    else if (messageRecord.isIdentityVerified() ||
-             messageRecord.isIdentityDefault())       setIdentityVerifyUpdate(messageRecord);
+    else if (messageRecord.isIdentityUpdate() ||
+             messageRecord.isIdentityVerified() ||
+             messageRecord.isIdentityDefault())       verifyIdentity();
     else                                              throw new AssertionError("Neither group nor log nor joined.");
 
     if (batchSelected.contains(messageRecord)) setSelected(true);
@@ -119,9 +114,9 @@ public class ConversationUpdateItem extends LinearLayout
   }
 
   private void setCallRecord(MessageRecord messageRecord) {
-    if      (messageRecord.isIncomingCall()) icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_call_received_grey600_24dp);
-    else if (messageRecord.isOutgoingCall()) icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_call_made_grey600_24dp);
-    else                                     icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_call_missed_grey600_24dp);
+    if      (messageRecord.isIncomingCall()) icon.setImageResource(R.drawable.ic_call_received_grey600_24dp);
+    else if (messageRecord.isOutgoingCall()) icon.setImageResource(R.drawable.ic_call_made_grey600_24dp);
+    else                                     icon.setImageResource(R.drawable.ic_call_missed_grey600_24dp);
 
     body.setText(messageRecord.getDisplayBody());
     date.setText(DateUtils.getExtendedRelativeTimeSpanString(getContext(), locale, messageRecord.getDateReceived()));
@@ -130,81 +125,11 @@ public class ConversationUpdateItem extends LinearLayout
 
   private void setTimerRecord(final MessageRecord messageRecord) {
     if (messageRecord.getExpiresIn() > 0) {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_timer_white_24dp);
+      icon.setImageResource(R.drawable.ic_timer_white_24dp);
       icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#757575"), PorterDuff.Mode.MULTIPLY));
     } else {
-      icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_timer_off_white_24dp);
+      icon.setImageResource(R.drawable.ic_timer_off_white_24dp);
       icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#757575"), PorterDuff.Mode.MULTIPLY));
-    }
-
-    body.setText(messageRecord.getDisplayBody());
-    date.setVisibility(View.GONE);
-  }
-
-  private void setIdentityRecord(final MessageRecord messageRecord) {
-    IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(getContext());
-
-    VerifyIdentity blockstack = new VerifyIdentity();
-    boolean isVerified;
-
-    isVerified = blockstack.verifyKeys(messageRecord.getIndividualRecipient());
-    if (isVerified) {
-      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
-                                   identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
-                                   IdentityDatabase.VerifiedStatus.VERIFIED);
-        Toast.makeText(getContext(), "Verified by Blockstack", Toast.LENGTH_LONG).show();
-    }
-    else {
-      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
-              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
-              VerifiedStatus.UNVERIFIED);
-
-      Builder dialog = new Builder(getContext());
-      dialog.setTitle("Critical Security Issue");
-      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
-      dialog.setIconAttribute(R.attr.dialog_alert_icon);
-      DialogInterface.OnClickListener dialogClickListener = (dif, i) -> {
-        Intent intent = new Intent(getContext(), ConversationListActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        getContext().startActivity(intent);
-      };      dialog.setPositiveButton(R.string.ok, dialogClickListener);
-      dialog.show();
-    }
-
-
-    body.setText(messageRecord.getDisplayBody());
-    date.setVisibility(View.GONE);
-  }
-
-  private void setIdentityVerifyUpdate(final MessageRecord messageRecord) {
-    IdentityDatabase   identityDatabase   = DatabaseFactory.getIdentityDatabase(getContext());
-
-    VerifyIdentity blockstack = new VerifyIdentity();
-    boolean isVerified;
-
-    isVerified = false;
-    if (isVerified) {
-      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
-              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
-              IdentityDatabase.VerifiedStatus.VERIFIED);
-    }
-    else {
-      identityDatabase.setVerified(messageRecord.getIndividualRecipient().getAddress(),
-              identityDatabase.getIdentity(messageRecord.getIndividualRecipient().getAddress()).get().getIdentityKey(),
-              IdentityDatabase.VerifiedStatus.UNVERIFIED);
-
-      AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
-      dialog.setTitle("Critical Security Issue");
-      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
-      dialog.setIconAttribute(R.attr.dialog_alert_icon);
-      DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dif, int i) {
-          getContext().startActivity(new Intent(getContext(), ConversationListActivity.class));
-        }
-      };
-      dialog.setPositiveButton(R.string.ok, dialogClickListener);
-      dialog.show();
     }
 
     body.setText(messageRecord.getDisplayBody());
@@ -212,7 +137,7 @@ public class ConversationUpdateItem extends LinearLayout
   }
 
   private void setGroupRecord(MessageRecord messageRecord) {
-    icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_group_grey600_24dp);
+    icon.setImageResource(R.drawable.ic_group_grey600_24dp);
     icon.clearColorFilter();
 
     GroupUtil.getDescription(getContext(), messageRecord.getBody()).addListener(this);
@@ -222,14 +147,14 @@ public class ConversationUpdateItem extends LinearLayout
   }
 
   private void setJoinedRecord(MessageRecord messageRecord) {
-    icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_favorite_grey600_24dp);
+    icon.setImageResource(R.drawable.ic_favorite_grey600_24dp);
     icon.clearColorFilter();
     body.setText(messageRecord.getDisplayBody());
     date.setVisibility(View.GONE);
   }
 
   private void setEndSessionRecord(MessageRecord messageRecord) {
-    icon.setImageResource(com.example.altuncu.blocksignal.R.drawable.ic_refresh_white_24dp);
+    icon.setImageResource(R.drawable.ic_refresh_white_24dp);
     icon.setColorFilter(new PorterDuffColorFilter(Color.parseColor("#757575"), PorterDuff.Mode.MULTIPLY));
     body.setText(messageRecord.getDisplayBody());
     date.setVisibility(View.GONE);
@@ -241,52 +166,36 @@ public class ConversationUpdateItem extends LinearLayout
   }
 
   @Override
-  public void setOnClickListener(View.OnClickListener l) {
-    super.setOnClickListener(new InternalClickListener(l));
-  }
-
-  @Override
   public void unbind() {
     if (sender != null) {
       sender.removeListener(this);
     }
   }
 
-  private class InternalClickListener implements View.OnClickListener {
-
-    @Nullable private final View.OnClickListener parent;
-
-    InternalClickListener(@Nullable View.OnClickListener parent) {
-      this.parent = parent;
+  private void verifyIdentity() {
+    if ((!messageRecord.isIdentityUpdate()  &&
+            !messageRecord.isIdentityDefault() &&
+            !messageRecord.isIdentityVerified()) ||
+            !batchSelected.isEmpty())
+    {
+      return;
     }
 
-    @Override
-    public void onClick(View v) {
-      if ((!messageRecord.isIdentityUpdate()  &&
-           !messageRecord.isIdentityDefault() &&
-           !messageRecord.isIdentityVerified()) ||
-          !batchSelected.isEmpty())
-      {
-        if (parent != null) parent.onClick(v);
-        return;
+    final Recipient sender = this.sender;
+
+    IdentityUtil.getRemoteIdentityKey(getContext(), sender).addListener(new ListenableFuture.Listener<Optional<IdentityRecord>>() {
+      @Override
+      public void onSuccess(Optional<IdentityRecord> result) {
+        if (result.isPresent()) {
+          VerifyIdentity blockstack = new VerifyIdentity();
+          blockstack.verifyKeys(sender, getContext());
+        }
       }
 
-      final Recipient sender = ConversationUpdateItem.this.sender;
-
-      IdentityUtil.getRemoteIdentityKey(getContext(), sender).addListener(new ListenableFuture.Listener<Optional<IdentityRecord>>() {
-        @Override
-        public void onSuccess(Optional<IdentityRecord> result) {
-          if (result.isPresent()) {
-            // Probably Redundant
-          }
-        }
-
-        @Override
-        public void onFailure(ExecutionException e) {
-          Log.w(TAG, e);
-        }
-      });
-    }
+      @Override
+      public void onFailure(ExecutionException e) {
+        Log.w(TAG, e);
+      }
+    });
   }
-
 }

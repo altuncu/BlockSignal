@@ -29,9 +29,10 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   private static final int STATE_CREATE_PASSPHRASE        = 1;
   private static final int STATE_PROMPT_PASSPHRASE        = 2;
   private static final int STATE_UPGRADE_DATABASE         = 3;
-  private static final int STATE_BLOCKSTACK_SIGNIN        = 4;
-  private static final int STATE_PROMPT_PUSH_REGISTRATION = 5;
-  private static final int STATE_EXPERIENCE_UPGRADE       = 6;
+  private static final int STATE_PROMPT_PUSH_REGISTRATION = 4;
+  private static final int STATE_EXPERIENCE_UPGRADE       = 5;
+  private static final int STATE_BLOCKSTACK_SIGNIN        = 6;
+  private static final int STATE_CREATE_PROFILE           = 7;
 
   private SignalServiceNetworkAccess networkAccess;
   private BroadcastReceiver          clearKeyReceiver;
@@ -143,6 +144,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     case STATE_UPGRADE_DATABASE:         return getUpgradeDatabaseIntent();
     case STATE_BLOCKSTACK_SIGNIN:        return getBlockstackIntent();
     case STATE_PROMPT_PUSH_REGISTRATION: return getPushRegistrationIntent();
+    case STATE_CREATE_PROFILE:           return getCreateProfileIntent();
     case STATE_EXPERIENCE_UPGRADE:       return getExperienceUpgradeIntent();
     default:                             return null;
     }
@@ -155,10 +157,12 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
       return STATE_PROMPT_PASSPHRASE;
     } else if (DatabaseUpgradeActivity.isUpdate(this)) {
       return STATE_UPGRADE_DATABASE;
-    } else if (BlockstackActivity.getBlockstackSession() == null || !BlockstackActivity.getBlockstackSession().isUserSignedIn()) {
+    } else if (!TextSecurePreferences.hasSignedInBlockstack(this)) {
       return STATE_BLOCKSTACK_SIGNIN;
     } else if (!TextSecurePreferences.hasPromptedPushRegistration(this)) {
       return STATE_PROMPT_PUSH_REGISTRATION;
+    } else if (TextSecurePreferences.getProfileName(this) == null) {
+      return STATE_CREATE_PROFILE;
     } else if (ExperienceUpgradeActivity.isUpdate(this)) {
       return STATE_EXPERIENCE_UPGRADE;
     } else {
@@ -176,7 +180,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   private Intent getUpgradeDatabaseIntent() {
     return getRoutedIntent(DatabaseUpgradeActivity.class,
-                           TextSecurePreferences.hasPromptedPushRegistration(this)
+                           TextSecurePreferences.hasSignedInBlockstack(this)
                                ? getConversationListIntent()
                                : getBlockstackIntent());
   }

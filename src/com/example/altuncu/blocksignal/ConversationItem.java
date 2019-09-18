@@ -668,22 +668,6 @@ public class ConversationItem extends LinearLayout
     if (mismatches.size() != 1) {
       throw new AssertionError("Identity mismatch count: " + mismatches.size());
     }
-
-    VerifyIdentity vi = new VerifyIdentity();
-    if (!vi.verifyKeys(recipient)) {
-      Builder dialog = new Builder(getContext());
-      dialog.setTitle("Critical Security Issue");
-      dialog.setMessage("We detected an attack threatening your security. So, this conversation will be terminated in a few seconds.");
-      dialog.setIconAttribute(attr.dialog_alert_icon);
-      DialogInterface.OnClickListener dialogClickListener = (dif, i) -> {
-        Intent intent = new Intent(context, ConversationListActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        context.startActivity(intent);
-      };
-
-      dialog.setPositiveButton(string.ok, dialogClickListener);
-      dialog.show();
-    }
   }
 
   @Override
