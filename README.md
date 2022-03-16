@@ -10,7 +10,7 @@ As BlockSignal has been developed for the academic purposes, it is not a fully-t
 
 # Citation
 
-You can freely use this application in your studies, projects etc. by obeying the rules of GPLv3 licence. If you want to use this repository in an academical research, please cite our related paper as the following:
+You can freely use this application in your studies, projects etc. by obeying the rules of GPLv3 licence. If you want to use this repository in an academical research, please cite the corresponding MSc thesis as the following:
 
 ```
 @mastersthesis{altuncu2019blokzincir,
