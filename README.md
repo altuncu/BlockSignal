@@ -12,7 +12,14 @@ As BlockSignal has been developed for the academic purposes, it is not a fully-t
 
 You can freely use this application in your studies, projects etc. by obeying the rules of GPLv3 licence. If you want to use this repository in an academical research, please cite our related paper as the following:
 
-<ADD PAPER INFO>
+```
+@mastersthesis{altuncu2019blokzincir,
+  title={Blokzincir kullan{\i}larak kimlik do{\u{g}}rulama seremonisini ortadan kald{\i}ran bir g{\"u}venli mesajla{\c{s}}ma uygulamas{\i}n{\i}n geli{\c{s}}tirilmesi},
+  author={Altuncu, Enes},
+  year={2019},
+  school={TOBB ET{\"U} Fen Bilimleri Enstit{\"u}s{\"u}}
+}
+```
 
 
 # Legal things
